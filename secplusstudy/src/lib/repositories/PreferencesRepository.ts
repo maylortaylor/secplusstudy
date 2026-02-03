@@ -24,6 +24,10 @@ export class PreferencesRepository {
 
   static savePreferences(preferences: UserPreferences): void {
     LocalStorageUtil.setItem(PREFERENCES_KEY, preferences);
+    // Dispatch custom event for same-tab updates
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new Event('preferences-updated'));
+    }
   }
 
   static updateTheme(theme: Theme): void {

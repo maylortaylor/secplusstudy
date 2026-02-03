@@ -1021,6 +1021,55 @@ For questions or issues during development, refer to:
 
 ---
 
+---
+
+## 🔧 Recent Updates & Fixes
+
+### February 3, 2026 - Theme & Layout Improvements
+
+**Issue #1: Theme and UI Size Settings Not Working**
+- **Problem**: Theme toggle (light/dark) and text size settings in the profile page were not being applied to the application
+- **Root Cause**: The root layout was a server component without access to localStorage preferences, and no mechanism existed to apply the theme/UI size classes to the DOM
+- **Solution**:
+  - Created `PreferencesProvider` component (`src/components/providers/PreferencesProvider.tsx`)
+  - Provider reads preferences directly from `PreferencesRepository` on mount
+  - Automatically applies `data-theme` attribute to `<html>` element
+  - Automatically applies UI size class (`ui-cozy`, `ui-normal`, `ui-large`) to `<body>` element
+  - Added custom event listener for same-tab preference updates
+  - Modified `PreferencesRepository` to dispatch `preferences-updated` event when preferences change
+  - Integrated provider into root layout to wrap all pages
+- **Result**: Theme and text size settings now work correctly and update instantly across the entire application
+
+**Issue #2: Page Centering Issues**
+- **Problem**: Profile and reference pages appeared off-center with more space on the right side
+- **Root Cause**: Pages were not using the same flexbox centering approach as the dashboard page
+- **Solution**:
+  - Adopted dashboard's centering pattern: `flex items-center justify-center` on parent container
+  - Profile page: Added `flex items-center justify-center` to outer div
+  - Reference page: Added `flex items-start justify-center` to outer div (items-start for scrollable content)
+  - Both pages use `w-full max-w-5xl mx-auto px-6 py-16` for consistent width and spacing
+- **Files Updated**:
+  - `src/app/profile/page.tsx` - Updated to use flexbox centering pattern
+  - `src/app/reference/page.tsx` - Updated to use flexbox centering pattern
+- **Result**: Both pages now properly centered with equal spacing on left and right sides, matching dashboard layout
+
+**Technical Implementation Details**:
+- PreferencesProvider uses React's `useEffect` to apply preferences on component mount
+- Theme changes trigger `document.documentElement.setAttribute('data-theme', theme)`
+- UI size changes update body classList: `document.body.classList.add('ui-${size}')`
+- Custom event system ensures instant updates when preferences change in the same browser tab
+- CSS custom properties in `globals.css` respond to `[data-theme='dark']` selector
+- Tailwind CSS 4 configured with custom `@variant dark` to use `[data-theme="dark"]` selector
+- Flexbox centering (`flex items-center justify-center`) provides true horizontal centering
+- `w-full` ensures content spans full width of parent while `max-w-5xl` constrains maximum width
+
+**Additional Fix - Tailwind Dark Mode Configuration**:
+- Added `@variant dark ([data-theme="dark"] &);` to globals.css
+- This configures Tailwind's `dark:` variant to use the data-theme attribute instead of media queries
+- Enables all `dark:` classes throughout the app to respond to theme changes
+
+---
+
 **End of Design Document**
 
-*Version 1.0 | Last Updated: 2026-02-03*
+*Version 1.1 | Last Updated: 2026-02-03*
