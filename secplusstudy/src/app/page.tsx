@@ -5,8 +5,8 @@ import { Button } from '@/components/atoms/Button/Button';
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
-      <div className="max-w-6xl mx-auto px-4 py-16">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center">
+      <div className="w-full max-w-5xl mx-auto px-6 py-16">
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">
             CompTIA Security+
@@ -16,7 +16,7 @@ export default function HomePage() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8">
           {/* Flashcards Card */}
           <Link href="/study">
             <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-shadow cursor-pointer border-2 border-transparent hover:border-blue-500">
@@ -51,7 +51,7 @@ export default function HomePage() {
         </div>
 
         {/* Domain Overview */}
-        <div className="mt-16 bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 max-w-4xl mx-auto">
+        <div className="mt-16 bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
             Exam Domains
           </h3>

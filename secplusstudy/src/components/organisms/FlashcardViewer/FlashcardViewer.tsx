@@ -70,6 +70,7 @@ export const FlashcardViewer: React.FC<FlashcardViewerProps> = ({
     onSpace: handleFlip,
     onArrowLeft: handlePrevious,
     onArrowRight: handleNext,
+    onArrowUp: handleShowMore,
     onEscape: onExit,
     onR: handleFlag,
   });
@@ -189,6 +190,10 @@ export const FlashcardViewer: React.FC<FlashcardViewerProps> = ({
             →
           </kbd>{' '}
           Next •{' '}
+          <kbd className="px-2 py-1 bg-white dark:bg-gray-700 rounded border border-gray-300 dark:border-gray-600">
+            ↑
+          </kbd>{' '}
+          Show More •{' '}
           <kbd className="px-2 py-1 bg-white dark:bg-gray-700 rounded border border-gray-300 dark:border-gray-600">
             R
           </kbd>{' '}

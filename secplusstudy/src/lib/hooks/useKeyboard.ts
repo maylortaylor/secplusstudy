@@ -6,6 +6,7 @@ export interface KeyboardHandlers {
   onSpace?: () => void;
   onArrowLeft?: () => void;
   onArrowRight?: () => void;
+  onArrowUp?: () => void;
   onEscape?: () => void;
   onR?: () => void;
 }
@@ -27,6 +28,10 @@ export function useKeyboard(handlers: KeyboardHandlers, enabled: boolean = true)
         case 'ArrowRight':
           event.preventDefault();
           handlers.onArrowRight?.();
+          break;
+        case 'ArrowUp':
+          event.preventDefault();
+          handlers.onArrowUp?.();
           break;
         case 'Escape':
           event.preventDefault();
