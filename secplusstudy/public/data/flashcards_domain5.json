@@ -1,0 +1,512 @@
+[
+  {
+    "id": "d5-001",
+    "domain": 5,
+    "section": "Security Governance",
+    "type": "concept",
+    "front": "Security Governance",
+    "back": {
+      "level1": "Framework of policies, procedures, and controls that guide security decision-making",
+      "level2": "The system by which an organization directs and controls its information security activities. Governance establishes accountability, assigns roles and responsibilities, ensures alignment with business objectives, and provides oversight of security programs through policies, standards, and procedures.",
+      "level3": "Exam tip: Governance is about WHO makes decisions and HOW (strategy, oversight). Different from management which is WHAT gets done (tactical execution). Key elements: board/executive oversight, security policies, defined roles (CISO, security committee), metrics and reporting. Know the hierarchy: Governance (board) → Management (executives) → Operations (staff). Questions often test distinguishing governance vs management, or identifying proper oversight roles."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["GRC", "Policies", "CISO", "Board Oversight"]
+    }
+  },
+  {
+    "id": "d5-002",
+    "domain": 5,
+    "section": "Risk Management",
+    "type": "concept",
+    "front": "Risk Management Process",
+    "back": {
+      "level1": "Identify → Assess → Respond → Monitor",
+      "level2": "The cyclical process of managing organizational risk: (1) Identify threats, vulnerabilities, and assets, (2) Assess likelihood and impact to determine risk level, (3) Respond by accepting, mitigating, transferring, or avoiding risk, (4) Monitor for changes and effectiveness of controls. Continuous cycle.",
+      "level3": "Exam tip: Know this is a continuous cycle, not one-time activity. Identify uses threat modeling, vulnerability assessments, asset inventory. Assess uses qualitative (high/medium/low) or quantitative (dollar values, probabilities) methods. Response strategies: Accept (acknowledge and live with it), Mitigate (implement controls to reduce), Transfer (insurance, outsource), Avoid (eliminate the activity). Monitor ensures controls remain effective. Questions test proper sequence and which response strategy for scenarios."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["Risk Assessment", "Risk Response", "NIST RMF"]
+    }
+  },
+  {
+    "id": "d5-003",
+    "domain": 5,
+    "section": "Risk Management",
+    "type": "concept",
+    "front": "Risk Response Strategies",
+    "back": {
+      "level1": "Accept, Mitigate (Reduce), Transfer, Avoid",
+      "level2": "Accept: acknowledge risk and take no action. Mitigate: implement controls to reduce likelihood or impact. Transfer: shift risk to third party via insurance or outsourcing. Avoid: eliminate the activity causing risk. Choice depends on risk level, cost of controls, and risk appetite.",
+      "level3": "Exam tip: MEMORIZE these four strategies. Accept is used for low-risk or when cost of controls exceeds impact (but must be formally documented and approved). Mitigate is most common - deploying firewalls, encryption, training. Transfer includes cyber insurance and outsourcing to cloud providers (they assume some risk). Avoid is most extreme - don't offer the risky service, shut down vulnerable system. Can't transfer or avoid all risks. Questions test selecting appropriate strategy for scenarios based on risk level and cost."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Risk Management", "Risk Mitigation", "Cyber Insurance", "Risk Acceptance"]
+    }
+  },
+  {
+    "id": "d5-004",
+    "domain": 5,
+    "section": "Risk Management",
+    "type": "concept",
+    "front": "Qualitative vs Quantitative Risk Assessment",
+    "back": {
+      "level1": "Qualitative: subjective ratings (High/Medium/Low); Quantitative: numerical values (dollars, probabilities)",
+      "level2": "Qualitative uses descriptive scales and expert judgment to rate risk (e.g., High likelihood, Medium impact). Faster and easier but subjective. Quantitative uses numerical calculations like ALE (Annual Loss Expectancy) = SLE × ARO. More precise but requires extensive data and is time-consuming.",
+      "level3": "Exam tip: Know when to use each. Qualitative: faster, good for initial assessments, when data is limited, comparing many risks. Quantitative: for high-value assets, cost-benefit analysis of controls, regulatory requirements. Common quantitative formulas: SLE (Single Loss Expectancy) = Asset Value × Exposure Factor; ALE (Annual Loss Expectancy) = SLE × ARO (Annual Rate of Occurrence). Questions often require calculating ALE or choosing assessment type for scenarios. Remember: most organizations use qualitative for efficiency."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["Risk Assessment", "ALE", "SLE", "ARO", "Exposure Factor"]
+    }
+  },
+  {
+    "id": "d5-005",
+    "domain": 5,
+    "section": "Compliance and Regulations",
+    "type": "standard",
+    "front": "GDPR",
+    "back": {
+      "level1": "General Data Protection Regulation",
+      "level2": "European Union privacy regulation protecting personal data of EU residents. Applies to any organization processing EU citizen data regardless of organization location. Requires consent for data processing, right to access/deletion, breach notification within 72 hours, and Data Protection Officer for large-scale processing.",
+      "level3": "Exam tip: GDPR has EXTRATERRITORIAL reach - applies to US companies processing EU citizen data. Key requirements: lawful basis for processing (consent, contract, legal obligation), data minimization, breach notification in 72 hours, right to be forgotten (erasure), data portability. Fines up to 4% of global revenue or €20M. Know the difference from other privacy laws: GDPR is strictest with highest penalties. Questions test requirements, scope, and key rights (access, erasure, portability, restriction)."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Privacy", "PII", "Data Protection", "DPO", "Right to be Forgotten"]
+    }
+  },
+  {
+    "id": "d5-006",
+    "domain": 5,
+    "section": "Compliance and Regulations",
+    "type": "standard",
+    "front": "HIPAA",
+    "back": {
+      "level1": "Health Insurance Portability and Accountability Act",
+      "level2": "US federal law protecting health information privacy and security. Applies to covered entities (healthcare providers, insurers, clearinghouses) and business associates. Requires administrative, physical, and technical safeguards for PHI (Protected Health Information), breach notification, and patient rights to access records.",
+      "level3": "Exam tip: HIPAA protects PHI (Protected Health Information). Key rules: Privacy Rule (patient rights, minimum necessary use), Security Rule (administrative/physical/technical safeguards for ePHI), Breach Notification Rule (notify within 60 days). Applies to covered entities AND business associates (vendors handling PHI). Security Rule requires: risk assessment, encryption of ePHI at rest and in transit, access controls, audit logs. Violations result in tiered penalties. Questions test PHI protection requirements and who HIPAA applies to."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["PHI", "ePHI", "Privacy", "Healthcare", "Business Associate"]
+    }
+  },
+  {
+    "id": "d5-007",
+    "domain": 5,
+    "section": "Compliance and Regulations",
+    "type": "standard",
+    "front": "PCI DSS",
+    "back": {
+      "level1": "Payment Card Industry Data Security Standard",
+      "level2": "Security standard for organizations that handle credit card information. Mandated by card brands (Visa, Mastercard, etc.) not government. Requires: secure network, protect cardholder data with encryption, vulnerability management, access controls, monitoring, and security policy. Annual assessment required.",
+      "level3": "Exam tip: PCI DSS has 12 requirements across 6 goals: (1-2) Build and maintain secure network/systems, (3-4) Protect cardholder data, (5-6) Maintain vulnerability management program, (7-9) Implement access controls, (10-11) Monitor and test networks, (12) Maintain security policy. Key requirements: encrypt card data in transit and storage (or don't store it), restrict access on need-to-know basis, assign unique ID to each person with computer access, log and monitor all access. Questions test requirements and scope (applies to anyone storing/processing/transmitting card data)."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["Compliance", "Credit Cards", "Cardholder Data", "Encryption"]
+    }
+  },
+  {
+    "id": "d5-008",
+    "domain": 5,
+    "section": "Security Policies",
+    "type": "concept",
+    "front": "Security Policy Types",
+    "back": {
+      "level1": "Organizational (high-level), System-specific (technical), Issue-specific (focused)",
+      "level2": "Organizational: broad, strategic policies from leadership covering entire security program. System-specific: technical policies for particular systems (firewall policy, encryption policy). Issue-specific: addresses specific security topics (acceptable use, remote access, incident response).",
+      "level3": "Exam tip: Know the hierarchy: Policies (high-level mandatory rules) → Standards (specific mandatory requirements) → Guidelines (recommended practices) → Procedures (step-by-step instructions). Organizational policies are board-approved and broad ('protect information assets'). System-specific are technical ('all databases must use AES-256'). Issue-specific address behaviors ('users must not share passwords'). Questions test distinguishing policy levels and knowing which type addresses specific situations."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Policies", "Standards", "Guidelines", "Procedures"]
+    }
+  },
+  {
+    "id": "d5-009",
+    "domain": 5,
+    "section": "Security Policies",
+    "type": "concept",
+    "front": "Acceptable Use Policy (AUP)",
+    "back": {
+      "level1": "Defines proper and improper use of organizational IT resources",
+      "level2": "Policy that specifies what users can and cannot do with company systems, networks, and data. Covers: internet usage, email, software installation, personal use, prohibited activities (hacking, illegal downloads), and consequences for violations. Users typically must acknowledge upon hiring and annually.",
+      "level3": "Exam tip: AUP is one of the most common security policies. Key elements: scope (who it applies to), acceptable uses (business purposes, limited personal use), prohibited activities (illegal content, unauthorized access, malware distribution, excessive personal use), monitoring notice (users should be informed), consequences of violations. Know that AUP helps establish reasonable expectation of privacy and supports legal action against violators. Questions test what belongs in AUP and why users must acknowledge it."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["Policies", "User Behavior", "Monitoring", "Legal"]
+    }
+  },
+  {
+    "id": "d5-010",
+    "domain": 5,
+    "section": "Security Awareness",
+    "type": "concept",
+    "front": "Security Awareness Training",
+    "back": {
+      "level1": "Education program to teach employees about security threats and proper practices",
+      "level2": "Regular training covering: phishing recognition, password security, physical security, social engineering, data handling, incident reporting. Should be: mandatory for all users, conducted at hire and annually, tailored to roles, include testing (simulated phishing), and track completion.",
+      "level3": "Exam tip: Security awareness addresses the human element - weakest link in security. Key topics: identifying phishing emails, creating strong passwords, recognizing social engineering, securing devices, reporting suspicious activity, data classification handling. Know that effectiveness measured through: training completion rates, simulated phishing click rates, reported incidents. Best practices: ongoing (not one-time), role-based content (developers get different training than finance), engaging (not just PowerPoint), measured. Questions test components of effective training programs."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["Training", "Phishing", "Human Element", "Social Engineering"]
+    }
+  },
+  {
+    "id": "d5-011",
+    "domain": 5,
+    "section": "Risk Management",
+    "type": "concept",
+    "front": "Risk Register",
+    "back": {
+      "level1": "Document that identifies and tracks organizational risks and their treatments",
+      "level2": "A living document cataloging identified risks with details: risk description, likelihood, impact, risk score, owner, current controls, residual risk, treatment plan, and status. Used for risk tracking, prioritization, and communication to stakeholders.",
+      "level3": "Exam tip: Risk register is a key risk management tool. Typical fields: Risk ID, Description, Category (strategic/operational/financial/compliance), Likelihood (probability), Impact (severity), Inherent Risk (before controls), Current Controls, Residual Risk (after controls), Treatment (accept/mitigate/transfer/avoid), Owner (accountable person), Status, Review Date. Updated regularly as new risks emerge and treatments are implemented. Used for reporting to executives and board. Questions test understanding of what goes in risk register and how it's used in risk management process."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Risk Management", "Risk Tracking", "Residual Risk", "Inherent Risk"]
+    }
+  },
+  {
+    "id": "d5-012",
+    "domain": 5,
+    "section": "Risk Management",
+    "type": "concept",
+    "front": "Business Impact Analysis (BIA)",
+    "back": {
+      "level1": "Process to identify critical business functions and impact of disruptions",
+      "level2": "Analyzes business processes to determine: criticality, dependencies, Maximum Tolerable Downtime (MTD), Recovery Time Objective (RTO), Recovery Point Objective (RPO), and impact of outages (financial, operational, reputational). Used for business continuity and disaster recovery planning.",
+      "level3": "Exam tip: BIA drives BC/DR planning by identifying WHAT needs to be recovered and HOW FAST. Key metrics: MTD (maximum time business can survive without function), RTO (target recovery time), RPO (maximum acceptable data loss measured in time). Example: Email system might have MTD=24hrs, RTO=4hrs, RPO=1hr. BIA process: identify critical functions, determine dependencies, assess impacts (quantitative and qualitative), define recovery priorities. Output feeds into DR planning. Questions test understanding of MTD/RTO/RPO and BIA process."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["BCP", "DRP", "RTO", "RPO", "MTD", "Business Continuity"]
+    }
+  },
+  {
+    "id": "d5-013",
+    "domain": 5,
+    "section": "Compliance and Regulations",
+    "type": "concept",
+    "front": "Data Classification",
+    "back": {
+      "level1": "Categorizing data based on sensitivity to determine appropriate protection levels",
+      "level2": "Process of labeling data according to sensitivity and impact if disclosed. Common classifications: Public (no harm), Internal (limited harm), Confidential (significant harm), Restricted/Highly Confidential (severe harm). Each level has required security controls for handling, storage, transmission, and disposal.",
+      "level3": "Exam tip: Data classification drives security controls. Government uses: Unclassified, Confidential, Secret, Top Secret. Private sector often uses: Public, Internal, Confidential, Restricted. Each level requires specific controls - e.g., Restricted data requires encryption at rest/transit, strict access controls, detailed audit logging. Know that data should be classified by DATA OWNER (not IT), and classification should be reviewed periodically. Labels can be manual or automatic (DLP). Questions test matching controls to classification levels and knowing who classifies data."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Data Handling", "DLP", "Data Owner", "Confidentiality"]
+    }
+  },
+  {
+    "id": "d5-014",
+    "domain": 5,
+    "section": "Security Governance",
+    "type": "concept",
+    "front": "Separation of Duties (SoD)",
+    "back": {
+      "level1": "Security principle requiring multiple people to complete sensitive tasks",
+      "level2": "Control that divides critical functions among different people to prevent fraud and error. No single person should be able to complete a sensitive transaction alone. Example: person who approves payments cannot also execute them; developer cannot deploy code to production without review.",
+      "level3": "Exam tip: SoD prevents fraud, errors, and abuse of privilege. Classic example: accounts payable - different people should: create vendor, approve purchase, issue payment, reconcile accounts. In IT: developers shouldn't have production access, change approval should be separate from implementation, backup/restore should be different from daily admin. When SoD isn't feasible due to small staff, implement COMPENSATING CONTROLS like detailed logging, management review, dual approval. Questions test identifying where SoD is needed and recognizing violations."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Security Controls", "Fraud Prevention", "Least Privilege", "Compensating Controls"]
+    }
+  },
+  {
+    "id": "d5-015",
+    "domain": 5,
+    "section": "Security Governance",
+    "type": "concept",
+    "front": "Change Management",
+    "back": {
+      "level1": "Formal process for requesting, reviewing, approving, and documenting system changes",
+      "level2": "Structured approach to modifying IT systems: (1) Submit change request with details and justification, (2) Review by Change Advisory Board (CAB), (3) Approve/reject based on risk and impact, (4) Schedule change during maintenance window, (5) Implement with backout plan, (6) Verify and document. Reduces unplanned outages.",
+      "level3": "Exam tip: Change management prevents unauthorized or untested changes that cause outages. Key elements: formal request process, risk assessment, testing in non-prod, CAB approval, scheduled maintenance windows, backout plan (how to reverse if it fails), documentation. Know emergency change process (expedited approval for urgent security patches). Common failure: changes without approval causing outages. Questions test proper change management process and identifying what requires change control (answer: nearly everything except emergency security patches may have expedited process)."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["CAB", "Configuration Management", "ITIL", "Backout Plan"]
+    }
+  },
+  {
+    "id": "d5-016",
+    "domain": 5,
+    "section": "Compliance and Regulations",
+    "type": "concept",
+    "front": "Data Retention Policy",
+    "back": {
+      "level1": "Rules defining how long to keep data and when to securely delete it",
+      "level2": "Policy specifying retention periods for different data types based on legal, regulatory, and business requirements. Includes: what data to retain, how long (emails 7 years, logs 1 year), storage location, and secure disposal method. Balances compliance requirements against storage costs and legal discovery risks.",
+      "level3": "Exam tip: Retention policy addresses two competing concerns: retain long enough for compliance/legal but not longer than necessary (storage costs, discovery risk). Requirements come from: regulations (SOX requires 7 years for financial records, HIPAA 6 years for medical), legal statutes of limitations, business needs. Must include SECURE DISPOSAL procedures (degaussing, shredding, cryptographic erasure). Applies to all media: electronic, paper, backups. Know that retaining too long increases eDiscovery costs and risk. Questions test knowing retention requirements and proper disposal."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Data Lifecycle", "Disposal", "Compliance", "eDiscovery"]
+    }
+  },
+  {
+    "id": "d5-017",
+    "domain": 5,
+    "section": "Security Policies",
+    "type": "concept",
+    "front": "Clean Desk Policy",
+    "back": {
+      "level1": "Requirement to secure sensitive materials when leaving workspace",
+      "level2": "Security policy requiring employees to clear desks of sensitive documents and lock computers when away. Prevents unauthorized access to information via shoulder surfing or theft of unattended materials. Part of physical security controls addressing human behavior.",
+      "level3": "Exam tip: Clean desk is a simple but effective physical security control. Requirements typically include: lock away sensitive documents, lock computer when leaving (Windows+L), don't leave passwords visible, secure removable media, clear whiteboards of sensitive info. Related: clean screen policy (no sensitive info on displays visible to others). Easy to implement and enforce. Often combined with clear screen policy. Questions test identifying this as appropriate control for physical security scenarios like preventing information disclosure to visitors or cleaning crew."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["Physical Security", "Data Protection", "Security Policies"]
+    }
+  },
+  {
+    "id": "d5-018",
+    "domain": 5,
+    "section": "Risk Management",
+    "type": "concept",
+    "front": "Third-Party Risk Management",
+    "back": {
+      "level1": "Process for assessing and managing risks from vendors and partners",
+      "level2": "Evaluating security risks introduced by third parties who access systems, data, or facilities. Includes: vendor risk assessments before contracts, security requirements in agreements, ongoing monitoring, and right to audit. Addresses supply chain risks and vendor security incidents.",
+      "level3": "Exam tip: Third-party risk is significant because vendor breach can compromise your organization (Target breach via HVAC vendor). Key activities: pre-contract security assessment, require security standards in contracts (SLAs), ongoing monitoring of vendor security posture, incident notification requirements, right to audit clauses, business continuity validation. Know that cloud providers, SaaS vendors, contractors, and service providers all introduce risk. Common issues: vendor has weaker security, shared responsibility confusion, lack of visibility. Questions test vendor risk assessment and contract requirements."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Vendor Management", "Supply Chain", "SLA", "Risk Assessment"]
+    }
+  },
+  {
+    "id": "d5-019",
+    "domain": 5,
+    "section": "Compliance and Regulations",
+    "type": "standard",
+    "front": "SOC 2",
+    "back": {
+      "level1": "Service Organization Control 2 - Audit report on service provider's controls",
+      "level2": "Voluntary compliance standard for service providers (SaaS, cloud, data centers) demonstrating controls over security, availability, processing integrity, confidentiality, and privacy. Type I (controls designed properly at point in time) or Type II (controls operating effectively over period - preferred). Third-party CPA audited.",
+      "level3": "Exam tip: SOC 2 is for SERVICE PROVIDERS to prove security to CUSTOMERS. Based on Trust Services Criteria: Security (required), Availability, Processing Integrity, Confidentiality, Privacy (optional). Type I is snapshot (controls exist), Type II covers 6-12 months (controls work). Different from SOC 1 (financial controls for auditors). Know that SOC 2 reports are confidential (shared under NDA with customers), unlike SOC 3 (public summary). Questions test knowing SOC 2 purpose, Type I vs Type II difference, and that it's for service providers."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["Compliance", "Audit", "Service Provider", "Trust Services Criteria"]
+    }
+  },
+  {
+    "id": "d5-020",
+    "domain": 5,
+    "section": "Security Governance",
+    "type": "concept",
+    "front": "Mandatory Vacation",
+    "back": {
+      "level1": "Security control requiring employees to take consecutive days off",
+      "level2": "Policy requiring employees, especially those in sensitive positions, to take mandatory consecutive time off (typically 1-2 weeks annually) during which someone else performs their duties. Fraud detection control - continuous schemes often require daily attention to conceal, so forced absence exposes irregularities.",
+      "level3": "Exam tip: Mandatory vacation is a DETECTIVE control for insider fraud. Requires actual absence (not just off but checking email) and someone else performing duties. Most effective when combined with job rotation. Classic use cases: financial roles, system administrators, privileged users. Historical examples: fraud discovered when person on mandatory vacation and replacement finds discrepancies. Know this is different from regular vacation - must be CONSECUTIVE days and duties MUST be reassigned. Questions test identifying this control for fraud detection scenarios."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Detective Controls", "Fraud Prevention", "Job Rotation", "Insider Threat"]
+    }
+  },
+  {
+    "id": "d5-021",
+    "domain": 5,
+    "section": "Security Awareness",
+    "type": "concept",
+    "front": "Phishing Simulation",
+    "back": {
+      "level1": "Controlled test sending fake phishing emails to employees to measure awareness",
+      "level2": "Security awareness program component that sends simulated phishing emails to employees to test their ability to recognize and report phishing attempts. Tracks metrics like click rate and report rate. Those who click receive immediate training (teachable moment). Used to measure training effectiveness and target additional education.",
+      "level3": "Exam tip: Phishing simulation is a MEASUREMENT tool for security awareness effectiveness. Best practices: start easy and increase difficulty, immediate training for clickers (not punishment), vary phishing types (credential harvest, malware, urgency), run regularly (quarterly), track trends, celebrate reporters. Know that goal is EDUCATION not punishment - shaming users is counterproductive. Metrics tracked: click rate (lower is better), report rate (higher is better), improvement over time. Questions test knowing this measures awareness and proper use (educational not punitive)."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["Security Awareness", "Training", "Phishing", "Metrics"]
+    }
+  },
+  {
+    "id": "d5-022",
+    "domain": 5,
+    "section": "Security Governance",
+    "type": "concept",
+    "front": "Security Metrics and KPIs",
+    "back": {
+      "level1": "Measurable values demonstrating security program effectiveness",
+      "level2": "Quantitative measures used to track security performance and communicate status to stakeholders. Examples: mean time to detect (MTTD), mean time to respond (MTTR), patch compliance percentage, number of critical vulnerabilities, phishing click rate, security training completion. Should be actionable, measurable, and aligned with business objectives.",
+      "level3": "Exam tip: Metrics demonstrate security program value and drive improvement. Good metrics are SMART: Specific, Measurable, Actionable, Relevant, Time-bound. Common metrics: MTTD (faster is better), MTTR (faster is better), number of incidents (context needed), patching compliance % (higher is better), critical vulns open (lower is better). Know difference between LEADING indicators (predict future - training completion, vulnerability scans) and LAGGING indicators (past performance - incidents, breaches). Questions test selecting appropriate metrics for scenarios and understanding metric value."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["KPI", "MTTD", "MTTR", "Reporting", "Performance Measurement"]
+    }
+  },
+  {
+    "id": "d5-023",
+    "domain": 5,
+    "section": "Risk Management",
+    "type": "concept",
+    "front": "Risk Appetite vs Risk Tolerance",
+    "back": {
+      "level1": "Appetite: Amount of risk willing to accept; Tolerance: Acceptable deviation from appetite",
+      "level2": "Risk Appetite is the broad amount and type of risk an organization is willing to take to achieve objectives (set by board/executives). Risk Tolerance is the acceptable level of variation from appetite for specific risks (operational limits). Appetite is strategic, tolerance is tactical.",
+      "level3": "Exam tip: Appetite is HIGH-LEVEL strategic direction from leadership. Example: 'We accept moderate cybersecurity risk to enable innovation.' Tolerance sets SPECIFIC LIMITS. Example: 'No critical vulnerabilities older than 30 days.' Think: Appetite is policy, Tolerance is enforcement threshold. Risk Threshold is specific point triggering action. Know that these guide risk response decisions - risks within tolerance may be accepted, beyond tolerance must be addressed. Questions test distinguishing between appetite and tolerance, or identifying which stakeholder sets each (board sets appetite, management sets tolerance)."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["Risk Management", "Risk Threshold", "Governance", "Executive"]
+    }
+  },
+  {
+    "id": "d5-024",
+    "domain": 5,
+    "section": "Compliance and Regulations",
+    "type": "concept",
+    "front": "Privacy Impact Assessment (PIA)",
+    "back": {
+      "level1": "Analysis of how personally identifiable information is collected, used, shared, and maintained",
+      "level2": "Systematic evaluation performed before implementing systems that collect, store, or process PII. Identifies privacy risks and ensures compliance with privacy regulations. Documents: what PII is collected, why, how it's protected, who has access, retention period, and user rights. Required by many privacy regulations.",
+      "level3": "Exam tip: PIA is done BEFORE implementing new systems handling PII (proactive, not reactive). Key questions answered: Is PII collection necessary? Is collection minimized? How is PII protected? How long retained? Are users informed? Can users access/delete data? Required by GDPR (called DPIA - Data Protection Impact Assessment), federal systems, and many privacy laws. Know that PIA helps identify privacy risks early when they're cheaper to fix. Questions test knowing when PIA is required and what it assesses."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Privacy", "PII", "GDPR", "DPIA", "Risk Assessment"]
+    }
+  },
+  {
+    "id": "d5-025",
+    "domain": 5,
+    "section": "Security Policies",
+    "type": "concept",
+    "front": "Information Security Roles",
+    "back": {
+      "level1": "Data Owner, Data Custodian, Data Processor, Data Controller",
+      "level2": "Data Owner: business executive with authority over data classification and access decisions. Data Custodian: IT staff implementing and maintaining technical protections. Data Processor: entity processing data on behalf of controller. Data Controller: determines purposes and means of processing (GDPR term).",
+      "level3": "Exam tip: MEMORIZE role distinctions. Owner (business) DECIDES sensitivity and who gets access. Custodian (IT) IMPLEMENTS controls like encryption and backups. User ACCESSES data per owner's permissions. Processor HANDLES data per controller's instructions (think cloud provider). Controller DETERMINES how data is used (think company using cloud). Know that Owner is accountable (business risk), Custodian is responsible (technical implementation). Questions test identifying proper role for specific activities: classifying data = Owner, configuring encryption = Custodian, defining data processing purposes = Controller."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["Data Governance", "GDPR", "Data Classification", "Accountability"]
+    }
+  },
+  {
+    "id": "d5-026",
+    "domain": 5,
+    "section": "Compliance and Regulations",
+    "type": "standard",
+    "front": "SOX",
+    "back": {
+      "level1": "Sarbanes-Oxley Act",
+      "level2": "US federal law requiring public companies to implement controls over financial reporting to prevent corporate fraud. Section 404 requires assessment of internal controls. IT implications: separation of duties, change management, access controls, and audit logging for financial systems. CFO and CEO must personally certify accuracy of financial reports.",
+      "level3": "Exam tip: SOX was response to Enron/WorldCom scandals. IT security requirements stem from Section 404 (internal controls assessment). Key IT controls: separation of duties (developers can't access production financial systems), change management (all changes to financial systems documented/approved), access controls (who can modify financial data), audit logging (track all changes). Retention requirement: 7 years for financial records. Know that SOX applies to PUBLIC companies and their auditors. Questions test knowing SOX requires IT controls for financial data integrity."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Compliance", "Financial", "Audit", "Internal Controls"]
+    }
+  },
+  {
+    "id": "d5-027",
+    "domain": 5,
+    "section": "Security Governance",
+    "type": "concept",
+    "front": "Security Baselines",
+    "back": {
+      "level1": "Minimum security settings required for systems to be deployed",
+      "level2": "Documented set of mandatory security configurations applied to systems. Examples: CIS Benchmarks, DISA STIGs, vendor hardening guides. Covers: patching, password policies, disabled services, encryption, logging. Systems must meet baseline before production deployment. Verified through automated scanning (SCAP).",
+      "level3": "Exam tip: Baselines define MINIMUM required security - starting point, not end point. Common sources: CIS Benchmarks (consensus community standards), DISA STIGs (DoD), vendor guides (Microsoft Security Baselines). Benefits: consistent security across fleet, compliance demonstration, reduce attack surface. Implemented via: golden images (templates), configuration management tools (Ansible, GPO), automated scanning (SCAP). Know that baselines should be: documented, approved by management, enforced technically, verified regularly. Questions test knowing baseline purpose and implementation methods."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Configuration Management", "CIS Benchmarks", "STIG", "Hardening", "SCAP"]
+    }
+  },
+  {
+    "id": "d5-028",
+    "domain": 5,
+    "section": "Risk Management",
+    "type": "concept",
+    "front": "Inherent vs Residual Risk",
+    "back": {
+      "level1": "Inherent: risk before controls; Residual: risk after controls applied",
+      "level2": "Inherent risk is the level of risk present before any controls or mitigations (raw risk). Residual risk is what remains after implementing security controls. Goal is to reduce residual risk to acceptable level within risk appetite. Residual risk that exceeds tolerance requires additional controls or risk acceptance.",
+      "level3": "Exam tip: MEMORIZE the difference. Inherent = BEFORE controls (worst case). Residual = AFTER controls (current state). Formula: Residual Risk = Inherent Risk - Control Effectiveness. Example: inherent risk of laptop theft is HIGH. After implementing encryption and tracking software, residual risk is LOW (data protected even if stolen). Know that: you ASSESS inherent risk, APPLY controls, MEASURE residual risk, and ACCEPT, transfer, or further mitigate residual. Questions test calculating residual risk or identifying which type is described."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Risk Management", "Security Controls", "Risk Assessment"]
+    }
+  },
+  {
+    "id": "d5-029",
+    "domain": 5,
+    "section": "Security Awareness",
+    "type": "concept",
+    "front": "Insider Threat Indicators",
+    "back": {
+      "level1": "Behavioral and technical signs that may indicate malicious insider activity",
+      "level2": "Warning signs include: accessing data outside normal job duties, attempting to bypass security controls, downloading large amounts of data, working odd hours, financial difficulties, disgruntlement, policy violations, resigned but still accessing systems. Detected through UEBA, access monitoring, and manager awareness.",
+      "level3": "Exam tip: Insider threats are hard to detect because insiders have legitimate access. Red flags: unusual access patterns (data not related to job, access during off-hours), bulk data downloads, accessing data shortly before resignation, repeated security policy violations, attempting to disable logging, excessive use of removable media. Detection requires: access logging, UEBA, manager training to spot behavioral changes, exit interview security checklist. Know that addressing requires sensitivity - investigate before accusing. Questions test identifying insider threat indicators from scenarios."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Insider Threat", "UEBA", "Behavioral Analysis", "Access Monitoring"]
+    }
+  },
+  {
+    "id": "d5-030",
+    "domain": 5,
+    "section": "Compliance and Regulations",
+    "type": "concept",
+    "front": "Data Sovereignty",
+    "back": {
+      "level1": "Concept that data is subject to laws of the country where it is stored",
+      "level2": "Legal principle that data stored in a country is subject to that country's laws regarding access, privacy, and security. Critical for cloud computing where data may be stored internationally. Some regulations (GDPR, Russian data localization law) require citizen data to remain in-country or restrict international transfers.",
+      "level3": "Exam tip: Data sovereignty creates compliance challenges for global organizations. Key issues: GDPR restricts transfers outside EU unless adequate protections (Standard Contractual Clauses, adequacy decisions), some countries require data localization (Russia, China), government access to data varies by jurisdiction (US CLOUD Act, EU privacy protections). Know that organizations must: understand where cloud data is stored, ensure compliance with all applicable jurisdictions, use regional cloud instances if needed. Questions test knowing sovereignty implications for cloud storage and cross-border data transfers."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["Cloud", "GDPR", "Data Localization", "Privacy", "Jurisdiction"]
+    }
+  }
+]

@@ -1,0 +1,512 @@
+[
+  {
+    "id": "d4-001",
+    "domain": 4,
+    "section": "Security Monitoring",
+    "type": "acronym",
+    "front": "SIEM",
+    "back": {
+      "level1": "Security Information and Event Management",
+      "level2": "A centralized system that aggregates, correlates, and analyzes security event data from across an organization's infrastructure. SIEM solutions collect logs from firewalls, IDS/IPS, servers, and applications to provide real-time analysis and alerting.",
+      "level3": "Exam tip: SIEM is often tested with questions about log aggregation, correlation rules, and incident detection. Remember that SIEM combines both SIM (Security Information Management) and SEM (Security Event Management). Common vendors include Splunk, IBM QRadar, and ArcSight. Know that SIEM can help with compliance reporting and forensic analysis."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["SOAR", "IDS", "IPS", "Log Aggregation"]
+    }
+  },
+  {
+    "id": "d4-002",
+    "domain": 4,
+    "section": "Security Monitoring",
+    "type": "acronym",
+    "front": "SOAR",
+    "back": {
+      "level1": "Security Orchestration, Automation, and Response",
+      "level2": "A platform that integrates security tools and automates incident response workflows. SOAR solutions enable security teams to define playbooks that automatically respond to common security events, reducing manual intervention and response times.",
+      "level3": "Exam tip: SOAR differs from SIEM by focusing on automation and orchestration of response actions. While SIEM detects and alerts, SOAR takes action. Know that SOAR can integrate with multiple security tools (firewalls, EDR, ticketing systems) and execute automated remediation. Common use cases include automated malware containment, user account lockouts, and threat intelligence enrichment."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["SIEM", "Playbook", "Automation", "Orchestration"]
+    }
+  },
+  {
+    "id": "d4-003",
+    "domain": 4,
+    "section": "Security Monitoring",
+    "type": "tool",
+    "front": "IDS",
+    "back": {
+      "level1": "Intrusion Detection System",
+      "level2": "A passive monitoring system that analyzes network traffic or host activity to detect potential security threats. IDS can be network-based (NIDS) or host-based (HIDS). When suspicious activity is detected, it generates alerts but does not take action to block the traffic.",
+      "level3": "Exam tip: Key distinction - IDS DETECTS but does NOT block (unlike IPS). Know the two detection methods: signature-based (matches known attack patterns) and anomaly-based (detects deviations from baseline behavior). Common IDS tools include Snort and Suricata. Remember that IDS generates false positives and requires tuning. Placement is typically at network boundaries or critical segments."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["IPS", "NIDS", "HIDS", "Snort"]
+    }
+  },
+  {
+    "id": "d4-004",
+    "domain": 4,
+    "section": "Security Monitoring",
+    "type": "tool",
+    "front": "IPS",
+    "back": {
+      "level1": "Intrusion Prevention System",
+      "level2": "An active security device that monitors network traffic and can take automatic action to block or prevent detected threats. IPS sits inline with network traffic and can drop malicious packets, reset connections, or block IP addresses in real-time.",
+      "level3": "Exam tip: Key distinction - IPS both DETECTS and BLOCKS threats (unlike IDS which only detects). Must be placed inline with traffic, which means it can impact network performance if not properly sized. Know the risk of false positives causing legitimate traffic to be blocked. IPS can use signature-based, anomaly-based, and policy-based detection. Common to see questions comparing IDS vs IPS placement and capabilities."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["IDS", "NIPS", "HIPS", "Inline"]
+    }
+  },
+  {
+    "id": "d4-005",
+    "domain": 4,
+    "section": "Incident Response",
+    "type": "process",
+    "front": "NIST IR Lifecycle",
+    "back": {
+      "level1": "Preparation → Detection & Analysis → Containment, Eradication & Recovery → Post-Incident Activity",
+      "level2": "NIST SP 800-61 defines four phases of incident response: (1) Preparation - establishing IR capabilities, (2) Detection & Analysis - identifying and analyzing incidents, (3) Containment, Eradication & Recovery - limiting damage and restoring systems, (4) Post-Incident Activity - lessons learned and improvement.",
+      "level3": "Exam tip: This is heavily tested. Memorize the four phases in order. Know that Preparation includes training, tools, and communication plans. Detection & Analysis involves triage and severity assessment. Containment has short-term (isolate infected systems) and long-term (patch vulnerabilities) aspects. Post-incident includes root cause analysis and updating response procedures. Common scenario questions test which phase an activity belongs to."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["NIST", "SP 800-61", "Incident Response", "IR"]
+    }
+  },
+  {
+    "id": "d4-006",
+    "domain": 4,
+    "section": "Incident Response",
+    "type": "concept",
+    "front": "Containment Strategies",
+    "back": {
+      "level1": "Short-term containment and Long-term containment",
+      "level2": "Short-term containment focuses on immediate isolation to prevent spread (disconnect from network, disable accounts). Long-term containment involves applying temporary fixes while preparing for full eradication (patching, system rebuilding). The strategy depends on the incident type, business impact, and available resources.",
+      "level3": "Exam tip: Know the difference between the two types. Short-term is quick and may impact availability (example: pulling network cable). Long-term allows business continuity while preparing for recovery (example: applying temporary patches, moving to segmented VLAN). Questions often ask which containment method is appropriate for specific scenarios like ransomware (aggressive short-term) vs. data exfiltration (careful long-term to preserve evidence)."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Incident Response", "Isolation", "Eradication"]
+    }
+  },
+  {
+    "id": "d4-007",
+    "domain": 4,
+    "section": "Digital Forensics",
+    "type": "concept",
+    "front": "Order of Volatility",
+    "back": {
+      "level1": "CPU cache/registers → RAM → Swap/pagefile → Hard disk → Remote logs → Physical configuration",
+      "level2": "The order in which digital evidence should be collected, from most volatile (lost when power is removed) to least volatile (persistent). Following this order ensures that the most fragile evidence is captured first before it is lost or altered.",
+      "level3": "Exam tip: Memorize this order as it's frequently tested. Start with CPU registers and cache (most volatile), then system memory (RAM), then temporary file systems, then hard drives, then remote logs and backups, finally physical configuration and topology. Know that live system analysis must capture volatile data before powering down. Common question: what should be collected first in an investigation? Always choose the most volatile option."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["Forensics", "Evidence Collection", "Volatile Data"]
+    }
+  },
+  {
+    "id": "d4-008",
+    "domain": 4,
+    "section": "Digital Forensics",
+    "type": "concept",
+    "front": "Chain of Custody",
+    "back": {
+      "level1": "Documentation tracking who handled evidence, when, where, and why",
+      "level2": "A chronological paper trail documenting the collection, transfer, analysis, and storage of evidence. It must include: who collected it, date/time, how it was collected, who has accessed it, and where it has been stored. This ensures evidence integrity and admissibility in legal proceedings.",
+      "level3": "Exam tip: Chain of custody is critical for legal proceedings. Any break in the chain can render evidence inadmissible in court. Know that it requires: proper documentation, secure storage with access logs, hash values to prove integrity, and witness signatures. Common mistakes include failure to document transfers, allowing unauthorized access, or improper storage. Questions often test scenarios where chain of custody is broken or maintained."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Forensics", "Evidence", "Legal Hold", "Documentation"]
+    }
+  },
+  {
+    "id": "d4-009",
+    "domain": 4,
+    "section": "Digital Forensics",
+    "type": "tool",
+    "front": "Write Blocker",
+    "back": {
+      "level1": "A device that allows read-only access to storage media during forensic acquisition",
+      "level2": "Hardware or software that prevents any modification to evidence drives during imaging or analysis. It allows investigators to create forensic copies while ensuring the original evidence remains unaltered, maintaining integrity and admissibility.",
+      "level3": "Exam tip: Write blockers are essential in forensics to prevent accidental modification of evidence. Know that hardware write blockers are preferred over software because they're more reliable. They work by intercepting write commands at the hardware level. Used during disk imaging with tools like FTK Imager or dd. Remember that even mounting a drive without a write blocker can modify access timestamps, potentially compromising evidence."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["Forensics", "Evidence Preservation", "Disk Imaging"]
+    }
+  },
+  {
+    "id": "d4-010",
+    "domain": 4,
+    "section": "Security Automation",
+    "type": "acronym",
+    "front": "SCAP",
+    "back": {
+      "level1": "Security Content Automation Protocol",
+      "level2": "A suite of specifications maintained by NIST that standardizes the format for security automation data. SCAP enables automated vulnerability scanning, configuration compliance checking, and security measurement using standardized languages like OVAL, XCCDF, and CVE.",
+      "level3": "Exam tip: Know that SCAP is not a single tool but a framework of multiple specifications. Key components include: CVE (Common Vulnerabilities and Exposures), OVAL (Open Vulnerability Assessment Language), XCCDF (Extensible Configuration Checklist Description Format), and CPE (Common Platform Enumeration). Used by tools like Nessus and SCAP scanners. Common in government compliance requirements. Questions may ask about which component handles specific tasks."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["NIST", "Automation", "Vulnerability Scanning", "CVE", "OVAL"]
+    }
+  },
+  {
+    "id": "d4-011",
+    "domain": 4,
+    "section": "Vulnerability Management",
+    "type": "acronym",
+    "front": "CVE",
+    "back": {
+      "level1": "Common Vulnerabilities and Exposures",
+      "level2": "A public database of known cybersecurity vulnerabilities maintained by MITRE. Each vulnerability is assigned a unique CVE identifier (e.g., CVE-2021-44228 for Log4Shell) that allows security professionals to reference and track specific vulnerabilities across different platforms and tools.",
+      "level3": "Exam tip: CVE identifiers follow the format CVE-YEAR-NUMBER. Know that CVE provides standardized names but doesn't include severity scores (that's CVSS). The CVE database is used by vulnerability scanners, patch management systems, and security advisories. Understand the difference: CVE identifies the vulnerability, CVSS scores its severity, and vendor patches fix it. Common to see questions about the CVE numbering system or what CVE provides."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["CVSS", "Vulnerability", "MITRE", "Patch Management"]
+    }
+  },
+  {
+    "id": "d4-012",
+    "domain": 4,
+    "section": "Vulnerability Management",
+    "type": "acronym",
+    "front": "CVSS",
+    "back": {
+      "level1": "Common Vulnerability Scoring System",
+      "level2": "An open framework for communicating the severity of software vulnerabilities using a numerical score from 0-10. CVSS scores are calculated based on metrics like exploitability, impact, and complexity. Scores are categorized as Low (0.1-3.9), Medium (4.0-6.9), High (7.0-8.9), or Critical (9.0-10.0).",
+      "level3": "Exam tip: Memorize the score ranges and severity levels. CVSS v3.1 is the current version. Know the three metric groups: Base (intrinsic vulnerability characteristics), Temporal (changes over time like exploit availability), and Environmental (organization-specific factors). Base score is most commonly used. Questions often test which severity level corresponds to a given score, or ask about prioritizing patches based on CVSS scores."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["CVE", "Vulnerability", "Severity", "Risk Assessment"]
+    }
+  },
+  {
+    "id": "d4-013",
+    "domain": 4,
+    "section": "Vulnerability Management",
+    "type": "concept",
+    "front": "Vulnerability Scanning Types",
+    "back": {
+      "level1": "Credentialed (authenticated) vs. Non-credentialed (unauthenticated) scanning",
+      "level2": "Credentialed scanning uses valid login credentials to access systems and perform deeper inspection of configurations, installed software, and patch levels. Non-credentialed scanning examines systems from the network perspective without logging in, similar to how an external attacker would see the system.",
+      "level3": "Exam tip: Know the trade-offs. Credentialed scans provide more accurate and detailed results (can see missing patches, misconfigurations) but require credential management and trust. Non-credentialed scans show the external attack surface but may miss internal vulnerabilities or produce more false positives. Questions often ask which type is appropriate for specific scenarios: use credentialed for internal compliance checks, non-credentialed for external penetration testing perspective."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Vulnerability Scanning", "Nessus", "Authentication"]
+    }
+  },
+  {
+    "id": "d4-014",
+    "domain": 4,
+    "section": "Security Monitoring",
+    "type": "acronym",
+    "front": "EDR",
+    "back": {
+      "level1": "Endpoint Detection and Response",
+      "level2": "A security solution that continuously monitors and collects data from endpoints (workstations, servers, mobile devices) to detect and respond to threats. EDR provides visibility into endpoint activities, behavioral analysis, and automated or manual response capabilities like isolating infected systems.",
+      "level3": "Exam tip: EDR is evolution of traditional antivirus. Key capabilities include: continuous monitoring, behavioral analysis (not just signatures), threat hunting, forensic investigation, and automated response. Differs from antivirus by providing visibility and context, not just blocking. Common vendors: CrowdStrike, Carbon Black, SentinelOne. Know that EDR can detect fileless malware and living-off-the-land attacks that traditional AV misses. Often tested with XDR (Extended Detection and Response)."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["XDR", "Antivirus", "Endpoint Security", "Behavioral Analysis"]
+    }
+  },
+  {
+    "id": "d4-015",
+    "domain": 4,
+    "section": "Security Monitoring",
+    "type": "acronym",
+    "front": "XDR",
+    "back": {
+      "level1": "Extended Detection and Response",
+      "level2": "An evolution of EDR that integrates security data from multiple sources beyond just endpoints, including networks, cloud, email, and applications. XDR correlates data across these domains to provide holistic threat detection and automated response across the entire environment.",
+      "level3": "Exam tip: Think of XDR as EDR++ or 'EDR for everything'. Key difference from EDR: broader scope beyond endpoints. While EDR focuses on workstations/servers, XDR adds network traffic, cloud workloads, email gateways, and identity systems. Benefits include better threat correlation (connect email phish → endpoint compromise → lateral movement) and unified response. Know that XDR reduces tool sprawl and alert fatigue by centralizing security operations."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": false,
+      "relatedTerms": ["EDR", "SIEM", "Security Operations", "Correlation"]
+    }
+  },
+  {
+    "id": "d4-016",
+    "domain": 4,
+    "section": "Incident Response",
+    "type": "concept",
+    "front": "Incident Severity Levels",
+    "back": {
+      "level1": "Typically categorized as Critical, High, Medium, Low based on impact and scope",
+      "level2": "Organizations classify incidents by severity to prioritize response efforts. Critical incidents cause severe business impact (data breach, ransomware, critical system outage). High incidents have significant impact. Medium incidents have limited impact. Low incidents have minimal impact. Severity determines response time, escalation procedures, and resources allocated.",
+      "level3": "Exam tip: Know that severity classification considers: business impact, affected systems, data sensitivity, number of users impacted, and potential for spreading. Critical incidents trigger immediate executive notification and may invoke business continuity plans. Questions often present scenarios and ask you to classify severity. Key factors: Is PII/PHI exposed? Are critical systems down? Can it spread? Is there active data exfiltration? Higher severity = faster response time requirements."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Incident Response", "Triage", "Escalation", "Impact Assessment"]
+    }
+  },
+  {
+    "id": "d4-017",
+    "domain": 4,
+    "section": "Digital Forensics",
+    "type": "concept",
+    "front": "Forensic Disk Imaging",
+    "back": {
+      "level1": "Creating a bit-for-bit copy of storage media for analysis while preserving the original evidence",
+      "level2": "The process of creating an exact duplicate of a storage device, capturing every bit including deleted files, slack space, and hidden partitions. Uses tools like dd, FTK Imager, or EnCase with write blockers. The image is hashed (MD5/SHA256) to verify integrity and prove it matches the original.",
+      "level3": "Exam tip: Know the imaging process: (1) attach write blocker, (2) connect source and destination drives, (3) use imaging tool to create bit-for-bit copy, (4) generate hash of source, (5) generate hash of image, (6) verify hashes match, (7) document everything. Common formats: raw/dd (exact copy), E01 (Expert Witness Format with compression and metadata), AFF (Advanced Forensic Format). Analysis is done on the IMAGE, never the original. Questions test proper procedure and hash verification."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["Forensics", "Write Blocker", "Hash", "dd", "FTK Imager"]
+    }
+  },
+  {
+    "id": "d4-018",
+    "domain": 4,
+    "section": "Security Automation",
+    "type": "concept",
+    "front": "Playbooks and Runbooks",
+    "back": {
+      "level1": "Playbooks define automated workflows; Runbooks provide step-by-step procedures",
+      "level2": "Playbooks are automated decision trees used by SOAR platforms to respond to security events (if phishing email detected, then isolate mailbox, scan attachments, notify user). Runbooks are detailed manual procedures that guide analysts through response steps (how to investigate a phishing email step-by-step).",
+      "level3": "Exam tip: Key distinction - Playbooks are for AUTOMATION (executed by SOAR), Runbooks are for GUIDANCE (followed by humans). Playbooks contain logic flows and integrate with tools. Runbooks contain detailed instructions for analysts. Both are part of incident response preparation. Questions often test which to use: automated, repeatable tasks = playbook; complex decisions requiring human judgment = runbook. Examples: Playbook automates malware containment; Runbook guides analyst through forensic analysis."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["SOAR", "Automation", "Incident Response", "Procedures"]
+    }
+  },
+  {
+    "id": "d4-019",
+    "domain": 4,
+    "section": "Security Monitoring",
+    "type": "concept",
+    "front": "UEBA",
+    "back": {
+      "level1": "User and Entity Behavior Analytics",
+      "level2": "A security technology that uses machine learning and analytics to establish baseline behaviors for users and entities (devices, applications), then detects anomalies that may indicate compromise. UEBA can identify insider threats, compromised credentials, and advanced persistent threats that evade signature-based detection.",
+      "level3": "Exam tip: UEBA focuses on BEHAVIOR not signatures. It learns what's normal (user X typically accesses files from location Y during hours Z) and alerts on deviations (user X suddenly downloads massive data at 3 AM from foreign IP). Key use cases: detecting compromised accounts, insider threats, privilege escalation. Often integrated with SIEM. Differs from traditional monitoring by using AI/ML to spot subtle anomalies. Questions test understanding of behavioral vs signature-based detection."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["Behavioral Analysis", "Machine Learning", "Anomaly Detection", "Insider Threat"]
+    }
+  },
+  {
+    "id": "d4-020",
+    "domain": 4,
+    "section": "Vulnerability Management",
+    "type": "concept",
+    "front": "Patch Management Phases",
+    "back": {
+      "level1": "Identify → Test → Deploy → Verify",
+      "level2": "A systematic approach to applying security updates: (1) Identify available patches from vendors and vulnerability scans, (2) Test patches in non-production environment for compatibility, (3) Deploy patches to production systems in controlled manner, (4) Verify successful installation and system functionality.",
+      "level3": "Exam tip: Know that patch management is a continuous cycle. NEVER deploy untested patches directly to production - testing phase is critical to avoid breaking production systems. Deployment often uses staged rollout (pilot group first, then wider deployment). Verification includes confirming patch version and testing system functionality. Emergency patches for actively exploited vulnerabilities may have accelerated timeline but still need testing. Questions test proper sequence and importance of testing phase."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Patch Management", "Change Management", "Vulnerability Management"]
+    }
+  },
+  {
+    "id": "d4-021",
+    "domain": 4,
+    "section": "Security Monitoring",
+    "type": "concept",
+    "front": "NetFlow",
+    "back": {
+      "level1": "Network protocol that collects IP traffic flow information for monitoring and analysis",
+      "level2": "NetFlow captures metadata about network traffic (source/destination IPs, ports, protocols, bytes transferred, timestamps) without capturing actual packet content. Exported from routers and switches to collectors for analysis. Used for bandwidth monitoring, traffic analysis, and security monitoring.",
+      "level3": "Exam tip: NetFlow provides METADATA, not full packet captures. It's efficient for monitoring large networks because it only captures flow records (who talked to whom, when, how much), not packet payloads. Key fields: source/dest IP, source/dest port, protocol, interface, byte count. Variants include sFlow, IPFIX (NetFlow v10), and jFlow. Used to detect: DDoS attacks (abnormal traffic patterns), data exfiltration (large outbound transfers), network reconnaissance (port scanning). Less resource-intensive than full packet capture."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Network Monitoring", "Traffic Analysis", "sFlow", "IPFIX"]
+    }
+  },
+  {
+    "id": "d4-022",
+    "domain": 4,
+    "section": "Digital Forensics",
+    "type": "concept",
+    "front": "Memory Forensics",
+    "back": {
+      "level1": "Analysis of volatile system memory (RAM) to investigate security incidents",
+      "level2": "Capturing and analyzing the contents of RAM to find evidence that may not exist on disk, such as running processes, network connections, encryption keys, passwords, and malware running only in memory. Uses tools like Volatility, Rekall, or memory dump utilities.",
+      "level3": "Exam tip: Memory forensics is critical because: (1) malware may run fileless (only in RAM), (2) encryption keys exist in memory, (3) shows current system state at time of capture. Must be captured BEFORE shutting down (RAM is volatile). Tools like Volatility can extract: running processes, network connections, loaded DLLs, registry hives, command history. Common artifacts: process injection, hidden processes, network sockets. Questions test knowing when memory forensics is needed (fileless malware, live incident response) vs disk forensics."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["Forensics", "Volatile Data", "Volatility", "RAM Analysis"]
+    }
+  },
+  {
+    "id": "d4-023",
+    "domain": 4,
+    "section": "Incident Response",
+    "type": "concept",
+    "front": "Communication Plan",
+    "back": {
+      "level1": "Documented procedures defining how to communicate during security incidents",
+      "level2": "Establishes who needs to be notified, when, through what channels, and what information to share during incidents. Includes internal stakeholders (executives, legal, HR, IT), external parties (customers, regulators, law enforcement, media), and defines escalation paths and templates.",
+      "level3": "Exam tip: Communication plans are part of IR Preparation phase. Key elements: contact lists with multiple methods (email, phone, SMS), escalation criteria (when to notify CEO, when to call law enforcement), pre-approved message templates, secure communication channels (out-of-band in case primary is compromised). Know legal requirements: data breach notification laws, regulatory reporting timelines. Common mistakes: using compromised systems to communicate, delaying required notifications, inconsistent messaging. Questions test proper notification timing and channels."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Incident Response", "Escalation", "Stakeholders", "Breach Notification"]
+    }
+  },
+  {
+    "id": "d4-024",
+    "domain": 4,
+    "section": "Vulnerability Management",
+    "type": "concept",
+    "front": "False Positives vs False Negatives",
+    "back": {
+      "level1": "False Positive: alert when no threat exists; False Negative: no alert when threat exists",
+      "level2": "False positives occur when security tools flag benign activity as malicious (IDS alerts on legitimate traffic, vulnerability scanner reports patched system as vulnerable). False negatives occur when tools miss actual threats (malware passes through AV, scanner misses real vulnerability).",
+      "level3": "Exam tip: Know the risk trade-offs. False positives cause alert fatigue and waste analyst time but are generally LESS DANGEROUS. False negatives allow real attacks to proceed undetected and are MORE DANGEROUS. Tuning security tools involves balancing sensitivity: stricter rules reduce false negatives but increase false positives. Common causes of false positives: outdated signatures, baseline not adjusted for environment. Reducing false positives requires tuning, whitelisting, baseline refinement. Questions test which is worse in given scenarios."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Detection", "Tuning", "IDS", "Vulnerability Scanning"]
+    }
+  },
+  {
+    "id": "d4-025",
+    "domain": 4,
+    "section": "Security Automation",
+    "type": "acronym",
+    "front": "STIX/TAXII",
+    "back": {
+      "level1": "Structured Threat Information eXpression / Trusted Automated eXchange of Intelligence Information",
+      "level2": "STIX is a standardized language for describing cyber threat information (indicators, tactics, malware). TAXII is a protocol for sharing STIX data between organizations. Together they enable automated threat intelligence sharing in machine-readable format.",
+      "level3": "Exam tip: STIX defines WHAT to share (the language/format for threat data), TAXII defines HOW to share it (the transport protocol). Think of it like: STIX is like JSON/XML format, TAXII is like HTTP/HTTPS for transferring it. Used by threat intelligence platforms and sharing communities (ISACs). Benefits: automated consumption of threat feeds, standardized format enables tool integration. Questions test knowing which is format vs protocol, and use cases for threat intelligence sharing."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": false,
+      "relatedTerms": ["Threat Intelligence", "Information Sharing", "Automation", "IOC"]
+    }
+  },
+  {
+    "id": "d4-026",
+    "domain": 4,
+    "section": "Security Monitoring",
+    "type": "concept",
+    "front": "Baseline Configuration",
+    "back": {
+      "level1": "A documented secure state of systems and network used as a reference point",
+      "level2": "Establishing a known-good configuration for systems including installed software, security settings, network traffic patterns, and user behavior. Baselines enable detection of deviations that may indicate compromise, misconfiguration, or policy violations. Monitored using configuration management tools and security monitoring.",
+      "level3": "Exam tip: Baselines are used for anomaly detection and compliance checking. Types include: security baselines (CIS benchmarks, DISA STIGs), configuration baselines (gold images), performance baselines (normal CPU/memory/network usage), behavioral baselines (typical user activity). Deviations trigger alerts. Know that baselines must be maintained and updated as environment changes. Used by tools like SCAP scanners, UEBA, and configuration management. Questions test identifying when baselines are useful and how to maintain them."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Configuration Management", "Anomaly Detection", "CIS Benchmarks", "Gold Image"]
+    }
+  },
+  {
+    "id": "d4-027",
+    "domain": 4,
+    "section": "Incident Response",
+    "type": "concept",
+    "front": "Lessons Learned",
+    "back": {
+      "level1": "Post-incident review process to improve future response effectiveness",
+      "level2": "A structured meeting held after incident resolution where the response team reviews what happened, what worked well, what didn't, and what should be improved. Findings are documented and used to update IR plans, playbooks, training, and technical controls. Part of NIST's Post-Incident Activity phase.",
+      "level3": "Exam tip: Lessons learned is the FINAL phase of NIST IR lifecycle. Held within days/weeks after incident while details are fresh. Key questions asked: What happened? When was it detected? How well did response procedures work? What would we do differently? Outputs include: updated IR procedures, new detection rules, identified training needs, recommended technical improvements. Know this is a blameless process focused on improvement. Questions test knowing this is part of post-incident phase and its purpose."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["Incident Response", "Post-Incident Activity", "NIST", "Continuous Improvement"]
+    }
+  },
+  {
+    "id": "d4-028",
+    "domain": 4,
+    "section": "Digital Forensics",
+    "type": "concept",
+    "front": "Legal Hold",
+    "back": {
+      "level1": "Process of preserving all relevant data when litigation or investigation is anticipated",
+      "level2": "A legal requirement to preserve potentially relevant electronic and physical records when litigation is reasonably anticipated. Organizations must suspend normal document retention/deletion policies and preserve all data that might be relevant. Failure to preserve can result in sanctions or adverse inference.",
+      "level3": "Exam tip: Legal hold triggers when litigation or investigation is anticipated, not just when lawsuit is filed. Applies to emails, documents, logs, backups - anything potentially relevant. IT must: suspend auto-deletion policies, preserve backup tapes, prevent users from deleting files, document preservation efforts. Spoliation (destruction of evidence) can result in severe legal penalties. Know that legal hold overrides normal retention policies. Questions test knowing when to initiate and what data to preserve."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Forensics", "eDiscovery", "Evidence Preservation", "Litigation"]
+    }
+  },
+  {
+    "id": "d4-029",
+    "domain": 4,
+    "section": "Vulnerability Management",
+    "type": "concept",
+    "front": "Compensating Controls",
+    "back": {
+      "level1": "Alternative security measures when primary controls cannot be implemented",
+      "level2": "Controls deployed when preferred security measures are not technically or operationally feasible. They provide equivalent or similar protection through different means. Example: if system cannot be patched due to vendor dependency, compensating controls might include network segmentation, IPS signatures, and enhanced monitoring.",
+      "level3": "Exam tip: Compensating controls are used when primary control is impractical. Common scenarios: legacy systems that can't be patched, business requirement prevents security control, cost prohibitive. Know that compensating controls must provide EQUIVALENT protection - just being 'something' isn't enough. Examples: Can't encrypt database? Use network encryption + access controls. Can't patch? Use virtual patching via IPS + isolation. Document compensating controls for compliance. Questions test identifying appropriate compensating controls for scenarios."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Risk Mitigation", "Security Controls", "Legacy Systems", "Virtual Patching"]
+    }
+  },
+  {
+    "id": "d4-030",
+    "domain": 4,
+    "section": "Security Monitoring",
+    "type": "concept",
+    "front": "Security Orchestration",
+    "back": {
+      "level1": "Connecting security tools and data sources to enable automated workflows",
+      "level2": "The 'O' in SOAR - integrating disparate security tools (SIEM, firewalls, EDR, ticketing systems, threat intel) into a unified platform that can share data and trigger coordinated actions. Enables automated response workflows that involve multiple systems without manual intervention.",
+      "level3": "Exam tip: Orchestration is about INTEGRATION and COORDINATION of tools. Think of it as the conductor of an orchestra - it doesn't play instruments but coordinates them. Example: when SIEM detects suspicious login, orchestration platform can automatically: query EDR for process info, check threat intel feed, update firewall rules, create ticket, notify analyst. Benefits: faster response, consistency, reduced manual work. Differs from automation (which can be single-tool) by coordinating MULTIPLE tools. Questions test understanding orchestration vs automation."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["SOAR", "Automation", "Integration", "Workflow"]
+    }
+  }
+]

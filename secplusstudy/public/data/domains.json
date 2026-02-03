@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "name": "General Security Concepts",
+    "examPercentage": 12,
+    "description": "Compare and contrast various security controls, fundamental security concepts, and change management procedures.",
+    "sections": [
+      "Security Controls",
+      "Fundamental Security Concepts",
+      "Change Management",
+      "Cryptography"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Threats, Vulnerabilities, and Mitigations",
+    "examPercentage": 22,
+    "description": "Compare and contrast common threat actors, attack vectors, vulnerability types, and mitigation techniques.",
+    "sections": [
+      "Threat Actors",
+      "Attack Vectors",
+      "Vulnerability Types",
+      "Indicators of Compromise",
+      "Mitigation Techniques"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Security Architecture",
+    "examPercentage": 18,
+    "description": "Explain security concepts in enterprise architecture, network security appliances, and secure network design.",
+    "sections": [
+      "Enterprise Architecture",
+      "Network Security",
+      "Secure Communication",
+      "Infrastructure Security",
+      "Identity and Access Management"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Security Operations",
+    "examPercentage": 28,
+    "description": "Explain security alerting, monitoring concepts, incident response, and digital forensics.",
+    "sections": [
+      "Security Monitoring",
+      "Incident Response",
+      "Digital Forensics",
+      "Security Automation",
+      "Vulnerability Management"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Security Program Management and Oversight",
+    "examPercentage": 20,
+    "description": "Summarize elements of effective security governance, risk management, compliance, and security awareness.",
+    "sections": [
+      "Security Governance",
+      "Risk Management",
+      "Compliance and Regulations",
+      "Security Policies",
+      "Security Awareness"
+    ]
+  }
+]
