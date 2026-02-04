@@ -1,14 +1,12 @@
 @import "tailwindcss";
 
-@theme {
-  --color-*: initial;
-  --font-*: initial;
-  --breakpoint-*: initial;
-}
-
 @variant dark ([data-theme="dark"] &);
 
 :root {
+  /* Spacing scale */
+  --spacing: 0.25rem;
+
+  /* Color variables */
   --background: #ffffff;
   --foreground: #171717;
   --primary: #2563eb;
@@ -38,8 +36,6 @@
 
 * {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
 }
 
 html,

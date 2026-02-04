@@ -8,6 +8,7 @@ import { JsonFlashcardService } from '@/lib/services/FlashcardService';
 import { DomainService } from '@/lib/services/DomainService';
 import { Button } from '@/components/atoms/Button/Button';
 import { Icon } from '@/components/atoms/Icon/Icon';
+import { Accordion } from '@/components/molecules/Accordion/Accordion';
 
 const flashcardService = new JsonFlashcardService();
 
@@ -119,41 +120,44 @@ export default function ReferencePage() {
           </div>
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-6">
           {Object.entries(groupedFlashcards).map(([domainId, sections]) => {
             const domain = domains.find((d) => d.id === parseInt(domainId));
             return (
-              <div key={domainId} className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                  Domain {domainId}: {domain?.name}
-                </h2>
-
-                {Object.entries(sections).map(([section, cards]) => (
-                  <div key={section} className="mb-6">
-                    <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3 border-b border-gray-200 dark:border-gray-700 pb-2">
-                      {section}
-                    </h3>
-                    <div className="space-y-3">
-                      {cards.map((card) => (
-                        <div
-                          key={card.id}
-                          className="p-4 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
-                        >
-                          <div className="font-semibold text-gray-900 dark:text-white mb-1">
-                            {card.front}
+              <Accordion
+                key={domainId}
+                title={`Domain ${domainId}: ${domain?.name}`}
+                subtitle={`${domain?.examPercentage}% of exam • ${Object.values(sections).flat().length} terms`}
+                defaultOpen={parseInt(domainId) === 4}
+              >
+                <div className="space-y-8">
+                  {Object.entries(sections).map(([section, cards]) => (
+                    <div key={section}>
+                      <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4 pb-2 border-b-2 border-blue-500 dark:border-blue-400">
+                        {section}
+                      </h3>
+                      <div className="space-y-4">
+                        {cards.map((card) => (
+                          <div
+                            key={card.id}
+                            className="p-5 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:shadow-md dark:hover:border-blue-500 transition-all"
+                          >
+                            <div className="font-bold text-lg text-gray-900 dark:text-white mb-2">
+                              {card.front}
+                            </div>
+                            <div className="text-base text-blue-600 dark:text-blue-400 mb-3 font-medium">
+                              {card.back.level1}
+                            </div>
+                            <div className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                              {card.back.level2}
+                            </div>
                           </div>
-                          <div className="text-sm text-blue-600 dark:text-blue-400 mb-2">
-                            {card.back.level1}
-                          </div>
-                          <div className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
-                            {card.back.level2}
-                          </div>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              </Accordion>
             );
           })}
         </div>
