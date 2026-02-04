@@ -1,0 +1,1277 @@
+[
+  {
+    "id": "d3-001",
+    "domain": 3,
+    "section": "Enterprise Architecture",
+    "type": "acronym",
+    "front": "IaaS",
+    "back": {
+      "level1": "Infrastructure as a Service",
+      "level2": "Cloud service model where provider offers virtualized computing resources over the internet. Customer manages OS, applications, and data while provider manages physical infrastructure, virtualization, storage, and networking. Examples: AWS EC2, Azure Virtual Machines, Google Compute Engine.",
+      "level3": "Exam tip: IaaS gives MOST control but MOST responsibility. Customer manages: OS patches, application security, data security. Provider manages: physical security, hypervisor, network infrastructure. Know the shared responsibility model - you manage what runs ON the infrastructure. Questions test knowing what customer vs provider secures. Remember: IaaS = virtual servers you configure. Compare to PaaS (less control, platform managed) and SaaS (least control, just use application)."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["PaaS", "SaaS", "Cloud", "Shared Responsibility"]
+    }
+  },
+  {
+    "id": "d3-002",
+    "domain": 3,
+    "section": "Enterprise Architecture",
+    "type": "acronym",
+    "front": "PaaS",
+    "back": {
+      "level1": "Platform as a Service",
+      "level2": "Cloud service model providing platform for developing, running, and managing applications without managing underlying infrastructure. Includes OS, middleware, runtime, development tools. Customer manages applications and data. Provider manages infrastructure and platform. Examples: Azure App Service, Google App Engine, Heroku.",
+      "level3": "Exam tip: PaaS is MIDDLE ground between IaaS and SaaS. Customer manages: application code, application security, data. Provider manages: OS, runtime, middleware, infrastructure. Benefits: faster development, no OS patching, automatic scaling. Risks: vendor lock-in, less control than IaaS. Common use: developers building custom applications without managing servers. Questions test understanding shared responsibility and knowing PaaS sits between IaaS (more control) and SaaS (less control)."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["IaaS", "SaaS", "Cloud", "Development"]
+    }
+  },
+  {
+    "id": "d3-003",
+    "domain": 3,
+    "section": "Enterprise Architecture",
+    "type": "acronym",
+    "front": "SaaS",
+    "back": {
+      "level1": "Software as a Service",
+      "level2": "Cloud service model where provider delivers complete application over internet. Customer only uses the application - no infrastructure or platform management. Provider manages everything: infrastructure, platform, application, security (except user access). Examples: Microsoft 365, Salesforce, Google Workspace, Dropbox.",
+      "level3": "Exam tip: SaaS gives LEAST control but LEAST responsibility. Customer manages: user accounts, access permissions, data (sometimes). Provider manages: everything else including application security, infrastructure, backups, patches. Benefits: no installation, automatic updates, accessible anywhere. Risks: data location concerns, limited customization, dependency on provider. Questions test knowing SaaS users only manage access and data, provider handles all security. Remember: SaaS = ready-to-use applications in browser."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["IaaS", "PaaS", "Cloud", "Applications"]
+    }
+  },
+  {
+    "id": "d3-004",
+    "domain": 3,
+    "section": "Enterprise Architecture",
+    "type": "concept",
+    "front": "Public Cloud",
+    "back": {
+      "level1": "Cloud infrastructure shared by multiple organizations, owned and operated by third-party provider",
+      "level2": "Cloud deployment model where services are delivered over public internet and shared across multiple customers (multi-tenancy). Provider owns and maintains infrastructure. Organizations rent resources on-demand. Most cost-effective but least control over security. Examples: AWS, Azure, Google Cloud Platform.",
+      "level3": "Exam tip: Public cloud characteristics: multi-tenant, internet-accessible, pay-per-use, elastic scaling, provider-managed security controls. Advantages: low cost, no capital expenditure, unlimited scalability, no maintenance. Disadvantages: less control, data location concerns, compliance challenges, shared infrastructure. Know that data isolation is logical (virtualization) not physical. Questions test understanding multi-tenancy risks and knowing public cloud is most economical but least private option."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["Private Cloud", "Hybrid Cloud", "Multi-tenancy", "Cloud Deployment"]
+    }
+  },
+  {
+    "id": "d3-005",
+    "domain": 3,
+    "section": "Enterprise Architecture",
+    "type": "concept",
+    "front": "Private Cloud",
+    "back": {
+      "level1": "Cloud infrastructure dedicated to single organization, either self-hosted or managed by third party",
+      "level2": "Cloud deployment model where infrastructure serves only one organization. Can be hosted on-premises (internal private cloud) or by third-party provider (hosted private cloud). Organization has full control over resources and security. More expensive than public cloud but offers greater control and isolation. Used when compliance or security requirements prohibit public cloud.",
+      "level3": "Exam tip: Private cloud = single tenant, dedicated resources. Advantages: maximum control, enhanced security, meets compliance requirements (HIPAA, PCI DSS), customizable, predictable performance. Disadvantages: high cost, requires expertise, limited scalability, capital expenditure if on-premises. Know the difference: on-premises private cloud (you own hardware), hosted private cloud (provider owns hardware but dedicated to you). Questions test knowing private cloud offers most control but highest cost."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["Public Cloud", "Hybrid Cloud", "On-Premises", "Compliance"]
+    }
+  },
+  {
+    "id": "d3-006",
+    "domain": 3,
+    "section": "Enterprise Architecture",
+    "type": "concept",
+    "front": "Hybrid Cloud",
+    "back": {
+      "level1": "Combination of public and private cloud with orchestration between them",
+      "level2": "Cloud deployment model integrating public and private clouds while maintaining distinct entities that communicate via encrypted connections. Allows data and applications to move between environments. Organizations can keep sensitive workloads in private cloud while using public cloud for less sensitive operations or burst capacity (cloud bursting).",
+      "level3": "Exam tip: Hybrid cloud offers FLEXIBILITY - use each cloud for what it's best at. Common pattern: sensitive data/regulated workloads in private cloud, non-sensitive/variable workloads in public cloud. Cloud bursting: normally use private cloud, burst to public during high demand. Challenges: complexity, integration, data transfer costs, security at boundaries. Know that hybrid requires orchestration layer to manage resources across both clouds. Questions test understanding hybrid uses both clouds for different purposes based on security/cost needs."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Public Cloud", "Private Cloud", "Cloud Bursting", "Orchestration"]
+    }
+  },
+  {
+    "id": "d3-007",
+    "domain": 3,
+    "section": "Enterprise Architecture",
+    "type": "concept",
+    "front": "Community Cloud",
+    "back": {
+      "level1": "Cloud infrastructure shared by organizations with common requirements or mission",
+      "level2": "Cloud deployment model where infrastructure is shared among several organizations with common concerns (security, compliance, jurisdiction). Can be managed by organizations or third party, hosted on-premises or off-premises. Cost shared among community members. Common in government, healthcare, finance where regulatory requirements are similar.",
+      "level3": "Exam tip: Community cloud = shared by SPECIFIC group with common needs (not general public). Example: government agencies sharing FedRAMP-compliant cloud. Advantages: cost sharing, meets common compliance requirements, better than public cloud for control, cheaper than private cloud. Disadvantages: shared resources (less control than private), limited scalability vs public cloud. Questions test knowing community cloud serves organizations with SIMILAR requirements, contrasting it with public cloud (anyone) and private cloud (single org)."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": false,
+      "relatedTerms": ["Public Cloud", "Private Cloud", "Compliance", "Shared Infrastructure"]
+    }
+  },
+  {
+    "id": "d3-008",
+    "domain": 3,
+    "section": "Enterprise Architecture",
+    "type": "acronym",
+    "front": "CASB",
+    "back": {
+      "level1": "Cloud Access Security Broker",
+      "level2": "Security policy enforcement point between cloud service consumers and providers. Sits between users and cloud applications to enforce security policies, provide visibility into cloud usage, and protect data. Can be deployed inline (proxy) or API-based (out-of-band). Monitors activity, enforces DLP, detects threats, ensures compliance.",
+      "level3": "Exam tip: CASB provides four pillars: Visibility (discover cloud usage/shadow IT), Compliance (enforce policies/DLP), Threat Protection (detect malware/anomalies), Data Security (encrypt/tokenize). Deployment modes: inline/proxy (real-time blocking) vs API-based (after-the-fact monitoring). Use cases: prevent unauthorized cloud app usage, enforce DLP on cloud data, detect compromised accounts. Know that CASB addresses shadow IT problem - employees using unapproved cloud services. Questions test understanding CASB enforces security between users and cloud apps."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["Cloud Security", "DLP", "Shadow IT", "Proxy"]
+    }
+  },
+  {
+    "id": "d3-009",
+    "domain": 3,
+    "section": "Enterprise Architecture",
+    "type": "concept",
+    "front": "Hypervisor Types",
+    "back": {
+      "level1": "Type 1 (bare metal): runs directly on hardware; Type 2 (hosted): runs on host OS",
+      "level2": "Type 1 Hypervisor: installed directly on physical server hardware, manages guest VMs without host OS. More efficient, better performance, enterprise use. Examples: VMware ESXi, Microsoft Hyper-V, Xen. Type 2 Hypervisor: application running on host operating system, creates VMs within host OS. Less efficient, personal/development use. Examples: VMware Workstation, VirtualBox, Parallels.",
+      "level3": "Exam tip: MEMORIZE the difference. Type 1 = bare metal = production/enterprise = better performance = no host OS layer. Type 2 = hosted = development/testing = runs ON operating system = extra OS layer adds overhead. Security implication: Type 1 has smaller attack surface (no host OS to compromise). Type 1 hypervisor compromise could affect all VMs (hypervisor escape). Questions test identifying which type based on description or knowing Type 1 is more secure and performant for production."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Virtualization", "VM", "VMware", "Hyper-V"]
+    }
+  },
+  {
+    "id": "d3-010",
+    "domain": 3,
+    "section": "Enterprise Architecture",
+    "type": "concept",
+    "front": "VM Escape",
+    "back": {
+      "level1": "Attack where code running in VM breaks out to interact with host or other VMs",
+      "level2": "Critical virtualization vulnerability where malware or attacker breaks out of virtual machine isolation to compromise hypervisor or access other VMs on same host. Exploits hypervisor vulnerabilities to escape VM confinement. Once escaped, attacker can potentially control all VMs on physical server. Very rare but high impact.",
+      "level3": "Exam tip: VM escape is WORST CASE virtualization attack - breaks fundamental isolation. Prevention: keep hypervisor patched (most critical), minimize hypervisor features/attack surface, use VM isolation features, monitor for suspicious VM behavior. Know that VM escape requires hypervisor vulnerability - why Type 1 security is critical. If VM escape succeeds, attacker gains access to ALL VMs on host (multiple tenants potentially compromised). Questions test understanding VM escape breaks isolation and requires hypervisor exploitation."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["Virtualization", "Hypervisor", "VM", "Isolation"]
+    }
+  },
+  {
+    "id": "d3-011",
+    "domain": 3,
+    "section": "Enterprise Architecture",
+    "type": "concept",
+    "front": "Containers vs VMs",
+    "back": {
+      "level1": "Containers share host OS kernel and isolate at application level; VMs include full OS and isolate at hardware level",
+      "level2": "Containers: lightweight, share host OS kernel, package application with dependencies only, start in seconds, less overhead. Docker is most common. Virtual Machines: include full guest OS, hardware-level isolation via hypervisor, heavier, start in minutes, more overhead. VMs provide stronger isolation, containers provide efficiency.",
+      "level3": "Exam tip: Key differences - Containers: fast startup, lightweight, share kernel, application-level isolation, less secure isolation. VMs: slower startup, heavyweight, separate OS, hardware-level isolation, stronger security boundary. Security trade-off: container escape only affects host, VM escape is harder. Know that containers are popular for microservices (each service in container). Questions test understanding containers share OS (lighter but weaker isolation) vs VMs have full OS (heavier but stronger isolation)."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Docker", "Kubernetes", "VM", "Virtualization", "Microservices"]
+    }
+  },
+  {
+    "id": "d3-012",
+    "domain": 3,
+    "section": "Enterprise Architecture",
+    "type": "acronym",
+    "front": "SDN",
+    "back": {
+      "level1": "Software-Defined Networking",
+      "level2": "Network architecture that separates control plane (network decisions) from data plane (traffic forwarding). Centralized controller manages network devices via software rather than individual device configuration. Enables programmable networks, automation, and dynamic configuration. Controllers use protocols like OpenFlow to communicate with network devices.",
+      "level3": "Exam tip: SDN = control plane SEPARATED from data plane. Traditional networking: control and data plane on each device (distributed). SDN: centralized controller makes decisions, devices just forward traffic. Benefits: easier management, automation, rapid deployment, network as code. Security: centralized controller is single point of failure/attack - if compromised, entire network affected. Use cases: data centers, cloud networks, dynamic environments. Questions test understanding SDN centralizes network control for programmability."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["Network Architecture", "OpenFlow", "Automation", "Control Plane"]
+    }
+  },
+  {
+    "id": "d3-013",
+    "domain": 3,
+    "section": "Network Security",
+    "type": "acronym",
+    "front": "VLAN",
+    "back": {
+      "level1": "Virtual Local Area Network",
+      "level2": "Logical segmentation of network at Layer 2 (data link). VLANs partition single physical switch into multiple isolated broadcast domains. Devices in same VLAN can communicate directly; different VLANs require router/Layer 3 device. Configured on managed switches using VLAN tags (802.1Q). Enhances security through segmentation and limits broadcast traffic.",
+      "level3": "Exam tip: VLANs provide LOGICAL separation on SAME physical infrastructure. Security benefit: isolate sensitive systems (put servers on VLAN 10, users on VLAN 20 - they can't talk without routing). Know that VLAN hopping is attack where attacker jumps between VLANs by exploiting switch configuration (prevent with VLAN pruning, disable DTP). Inter-VLAN routing requires Layer 3 device. Common setup: separate VLANs for departments, guests, servers, VoIP. Questions test VLAN segmentation benefits and knowing VLANs operate at Layer 2."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Network Segmentation", "802.1Q", "Switch", "Layer 2"]
+    }
+  },
+  {
+    "id": "d3-014",
+    "domain": 3,
+    "section": "Network Security",
+    "type": "acronym",
+    "front": "DMZ",
+    "back": {
+      "level1": "Demilitarized Zone",
+      "level2": "Network segment that sits between trusted internal network and untrusted external network (internet). Contains public-facing servers (web, email, DNS) that need internet access but shouldn't directly access internal network. Protected by two firewalls: perimeter firewall (internet to DMZ) and internal firewall (DMZ to internal network). If DMZ compromised, internal network remains protected.",
+      "level3": "Exam tip: DMZ is BUFFER zone between internet and internal network. Three-legged firewall approach: external interface (internet), DMZ interface (public servers), internal interface (private network). Servers in DMZ: web servers, mail servers, DNS, FTP servers - anything internet users access. Know that DMZ servers can be compromised without exposing internal network. Common mistake: DMZ should NOT have direct access to internal network - all traffic must go through internal firewall. Questions test DMZ purpose (protect internal network) and placement of public-facing services."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Firewall", "Network Segmentation", "Screened Subnet", "Perimeter Security"]
+    }
+  },
+  {
+    "id": "d3-015",
+    "domain": 3,
+    "section": "Network Security",
+    "type": "concept",
+    "front": "Zero Trust",
+    "back": {
+      "level1": "Security model that assumes no implicit trust and verifies every access request",
+      "level2": "Security architecture based on principle 'never trust, always verify'. Assumes breach has occurred or will occur. No automatic trust based on network location (inside vs outside). Every user, device, application must be authenticated, authorized, and continuously validated before accessing resources. Implements least privilege access and microsegmentation.",
+      "level3": "Exam tip: Zero Trust core principles: verify explicitly (authenticate everything), least privilege access (minimum necessary permissions), assume breach (limit blast radius). Traditional perimeter: trust inside network, distrust outside. Zero Trust: trust nothing, verify everything regardless of location. Key technologies: MFA, microsegmentation, encryption everywhere, continuous monitoring, identity-based access. Know that Zero Trust addresses modern threats: insider attacks, lateral movement, remote work, cloud. Questions test understanding Zero Trust never assumes trust based on network location."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["Network Segmentation", "Least Privilege", "MFA", "Microsegmentation"]
+    }
+  },
+  {
+    "id": "d3-016",
+    "domain": 3,
+    "section": "Network Security",
+    "type": "concept",
+    "front": "East-West vs North-South Traffic",
+    "back": {
+      "level1": "East-West: lateral traffic between servers/systems; North-South: traffic entering/leaving network",
+      "level2": "North-South traffic: flows between data center and external networks (internet, remote sites). Crosses perimeter - enters and exits network boundary. East-West traffic: flows between systems WITHIN data center or network. Lateral movement between servers, VMs, applications. Traditionally, most security focused on North-South (perimeter), but modern threats require East-West inspection.",
+      "level3": "Exam tip: Modern security must inspect BOTH directions. North-South controlled by perimeter firewalls, internet gateways - traditional focus. East-West requires internal segmentation, microsegmentation - often neglected. Attacks use lateral movement (East-West) after initial breach. Zero Trust emphasizes East-West security. Technologies: internal firewalls, microsegmentation, VLAN ACLs for East-West. Know that cloud/data centers have MORE East-West than North-South traffic. Questions test understanding modern threats require East-West traffic inspection, not just perimeter."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Network Segmentation", "Zero Trust", "Lateral Movement", "Microsegmentation"]
+    }
+  },
+  {
+    "id": "d3-017",
+    "domain": 3,
+    "section": "Network Security",
+    "type": "concept",
+    "front": "Air Gap",
+    "back": {
+      "level1": "Physical isolation of network from all other networks with no direct connection",
+      "level2": "Security measure where critical system or network is completely physically isolated - no network connectivity to internet or other networks. Data transfer only via removable media (USB) carried by authorized personnel. Used for highest security environments: classified systems, SCADA/ICS, secure research. Prevents remote attacks but doesn't eliminate all risks.",
+      "level3": "Exam tip: Air gap = PHYSICAL isolation, strongest network separation. Use cases: nuclear facilities, classified military networks, critical infrastructure, malware analysis labs. Know limitations: USB drives can carry malware (Stuxnet crossed air gap via USB), insider threats, electromagnetic emanations (TEMPEST). Not foolproof but makes remote attack extremely difficult. Questions test understanding air gap means NO network connection (not just firewall) and knowing it's for highest security requirements when remote access risks are unacceptable."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Network Segmentation", "Physical Security", "SCADA", "ICS"]
+    }
+  },
+  {
+    "id": "d3-018",
+    "domain": 3,
+    "section": "Network Security",
+    "type": "concept",
+    "front": "Stateful vs Stateless Firewall",
+    "back": {
+      "level1": "Stateful: tracks connection state, allows return traffic; Stateless: filters each packet independently",
+      "level2": "Stateless Firewall: examines each packet in isolation based on rules (source/dest IP, port, protocol). Doesn't track connections. Must explicitly allow both outbound and return traffic. Faster but less secure. Stateful Firewall: tracks active connections, maintains state table. Automatically allows return traffic for established connections. More secure, understands session context.",
+      "level3": "Exam tip: Stateful = SMARTER (knows connection context). Example: stateful allows outbound HTTP request, automatically permits return traffic. Stateless requires TWO rules (outbound and inbound). Stateful advantages: better security (detects out-of-state packets), simpler rules, prevents spoofing. Stateless advantages: faster (no state tracking overhead), better for high-throughput. Modern firewalls are stateful. Know that stateful inspection tracks TCP state (SYN, SYN-ACK, established, FIN). Questions test understanding stateful tracks connections vs stateless treats packets independently."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Firewall", "TCP", "Connection State", "Packet Filtering"]
+    }
+  },
+  {
+    "id": "d3-019",
+    "domain": 3,
+    "section": "Network Security",
+    "type": "acronym",
+    "front": "NGFW",
+    "back": {
+      "level1": "Next-Generation Firewall",
+      "level2": "Advanced firewall combining traditional stateful inspection with additional security features: application awareness and control (Layer 7), integrated IPS, SSL/TLS inspection, user identity integration, threat intelligence feeds. Goes beyond port/protocol filtering to understand application context. Can block Facebook while allowing HTTPS, identify users regardless of IP.",
+      "level3": "Exam tip: NGFW vs traditional firewall - Traditional: Layer 3/4 (IP, port, protocol). NGFW: adds Layer 7 (application awareness), IPS, user identity, malware detection. Benefits: block specific applications (not just ports), user-based policies (not just IP), detect evasion techniques, integrated threat prevention. Example: can differentiate Netflix from YouTube even though both use HTTPS/443. Know that NGFW is evolution of traditional firewall with deep packet inspection. Questions test understanding NGFW provides application-level control beyond traditional port-based filtering."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Firewall", "IPS", "Application Control", "Deep Packet Inspection"]
+    }
+  },
+  {
+    "id": "d3-020",
+    "domain": 3,
+    "section": "Network Security",
+    "type": "acronym",
+    "front": "WAF",
+    "back": {
+      "level1": "Web Application Firewall",
+      "level2": "Security device protecting web applications by filtering/monitoring HTTP/HTTPS traffic between web application and internet. Operates at Layer 7 (application). Protects against web attacks: SQL injection, XSS, CSRF, file inclusion. Uses rules/signatures to identify malicious requests. Can be network-based, host-based, or cloud-based.",
+      "level3": "Exam tip: WAF is specifically for WEB APPLICATION protection (not general network firewall). Defends against OWASP Top 10 attacks. Deployment: reverse proxy (sits in front of web servers), inspects requests before reaching application. Know difference from network firewall: network firewall filters based on IP/port (Layer 3/4), WAF inspects HTTP content (Layer 7). WAF can block SQL injection by analyzing POST data, block XSS by sanitizing input. Questions test understanding WAF protects web apps and operates at application layer."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Firewall", "Web Security", "OWASP", "SQL Injection", "XSS"]
+    }
+  },
+  {
+    "id": "d3-021",
+    "domain": 3,
+    "section": "Network Security",
+    "type": "acronym",
+    "front": "UTM",
+    "back": {
+      "level1": "Unified Threat Management",
+      "level2": "All-in-one security appliance combining multiple security functions into single device: firewall, IPS, antivirus, anti-spam, VPN, web filtering, DLP. Simplifies management, reduces cost and complexity for small/medium businesses. Single vendor, single management interface, integrated threat intelligence.",
+      "level3": "Exam tip: UTM = multiple security functions in ONE box. Advantages: simplified management, lower cost than separate appliances, integrated correlation (different functions share threat data), single vendor support. Disadvantages: single point of failure, performance bottleneck (all traffic through one device), vendor lock-in. Best for: SMBs lacking dedicated security staff. Not ideal for: large enterprises needing specialized best-of-breed solutions. Questions test understanding UTM consolidates multiple security functions for simplicity vs performance/resilience trade-offs."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["Firewall", "IPS", "All-in-One", "SMB"]
+    }
+  },
+  {
+    "id": "d3-022",
+    "domain": 3,
+    "section": "Network Security",
+    "type": "concept",
+    "front": "Implicit Deny",
+    "back": {
+      "level1": "Security principle where everything not explicitly permitted is automatically denied",
+      "level2": "Firewall rule philosophy placing default 'deny all' rule at end of rule list. Traffic must match explicit allow rule or be dropped. Opposite of implicit allow (permit unless denied). More secure because unknown or forgotten traffic types are blocked. Standard best practice for firewalls and ACLs.",
+      "level3": "Exam tip: Implicit deny = whitelist approach (default deny, explicitly allow). Implicit allow = blacklist approach (default permit, explicitly deny). ALWAYS use implicit deny for security. Firewall processes rules top-down, if no match, implicit deny drops traffic. This catches: forgotten services, new attack vectors, misconfigurations. Know that even if not visible, implicit deny rule exists at bottom. Questions test understanding implicit deny is more secure than implicit allow and knowing it's default 'deny all' behavior."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["Firewall", "ACL", "Whitelist", "Security Principle"]
+    }
+  },
+  {
+    "id": "d3-023",
+    "domain": 3,
+    "section": "Network Security",
+    "type": "concept",
+    "front": "Forward Proxy vs Reverse Proxy",
+    "back": {
+      "level1": "Forward Proxy: serves clients accessing internet; Reverse Proxy: serves internet users accessing internal servers",
+      "level2": "Forward Proxy: sits between internal users and internet, intercepts outbound requests, retrieves content on behalf of clients. Provides anonymity, content filtering, caching. Clients configured to use proxy. Reverse Proxy: sits between internet and web servers, intercepts inbound requests, forwards to backend servers. Provides load balancing, SSL offloading, caching, WAF protection. Clients don't know proxy exists.",
+      "level3": "Exam tip: MEMORIZE direction. Forward = internal users → internet (content filtering, anonymous browsing, DLP). Reverse = internet → internal servers (load balancing, SSL termination, hiding backend). Forward proxy CLIENT knows about proxy and is configured to use it. Reverse proxy CLIENT doesn't know proxy exists (transparent). Security uses: forward proxy enforces acceptable use policy, blocks malicious sites, DLP. Reverse proxy protects web servers, offloads SSL, provides WAF. Questions test knowing which direction each proxy serves."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Proxy", "Load Balancer", "Content Filtering", "SSL Offloading"]
+    }
+  },
+  {
+    "id": "d3-024",
+    "domain": 3,
+    "section": "Network Security",
+    "type": "concept",
+    "front": "Load Balancer",
+    "back": {
+      "level1": "Device distributing network traffic across multiple servers for performance and availability",
+      "level2": "Distributes incoming requests across pool of backend servers to prevent overload, improve response time, ensure availability. Monitors server health, removes failed servers from pool. Types: Layer 4 (transport - TCP/UDP port-based) and Layer 7 (application - HTTP content-based). Methods: round-robin, least connections, IP hash, weighted distribution.",
+      "level3": "Exam tip: Load balancer provides HIGH AVAILABILITY and PERFORMANCE. Layer 4 load balancing: fast, based on IP/port, doesn't inspect content. Layer 7: slower, application-aware, can route based on URL/cookies/headers. Features: health checks (detect failed servers), session persistence/sticky sessions (keep user on same server), SSL offloading (decrypt traffic at load balancer). Know that load balancer is also security control - can implement WAF, DDoS protection, rate limiting. Questions test understanding load balancing distributes traffic for availability/performance."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["High Availability", "Reverse Proxy", "SSL Offloading", "Scalability"]
+    }
+  },
+  {
+    "id": "d3-025",
+    "domain": 3,
+    "section": "Network Security",
+    "type": "acronym",
+    "front": "NAC",
+    "back": {
+      "level1": "Network Access Control",
+      "level2": "Security solution that enforces policy-based access to network resources. Checks device compliance before granting network access: OS patches, antivirus status, firewall enabled, device ownership. Can quarantine non-compliant devices to remediation VLAN. Uses 802.1X for authentication. Can be agent-based (software on device) or agentless (network-based checks).",
+      "level3": "Exam tip: NAC enforces 'health checks' before network access. Process: device connects → NAC checks compliance (patches, AV, configuration) → compliant devices get full access, non-compliant quarantined to remediation VLAN. Agent-based NAC: software on endpoint provides detailed health info. Agentless: network-based scanning, works with unmanaged devices (printers, IoT) but less detailed. 802.1X provides port-based authentication. Use cases: BYOD policies, preventing infected devices from spreading malware. Questions test understanding NAC checks device posture before granting access."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["802.1X", "Posture Assessment", "VLAN", "Compliance", "BYOD"]
+    }
+  },
+  {
+    "id": "d3-026",
+    "domain": 3,
+    "section": "Network Security",
+    "type": "acronym",
+    "front": "802.1X",
+    "back": {
+      "level1": "IEEE standard for port-based network access control and authentication",
+      "level2": "Authentication protocol for wired and wireless networks. Three components: Supplicant (client device), Authenticator (switch/access point), Authentication Server (RADIUS). Supplicant provides credentials, authenticator enforces access, RADIUS validates credentials. Prevents unauthorized devices from accessing network until authenticated. Uses EAP for credential exchange.",
+      "level3": "Exam tip: 802.1X provides port-based authentication - port blocked until device authenticates. Process: device connects → 802.1X authenticator blocks traffic → supplicant sends credentials via EAP → authenticator forwards to RADIUS → RADIUS validates → port unblocked if approved. Know the three components and roles. Common with: wireless (WPA2-Enterprise), wired (secure switch ports), NAC solutions. Benefits: prevents unauthorized access, works with RADIUS/Active Directory. Questions test understanding 802.1X blocks network access until authentication succeeds."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["NAC", "RADIUS", "EAP", "Port Security", "Authentication"]
+    }
+  },
+  {
+    "id": "d3-027",
+    "domain": 3,
+    "section": "Network Security",
+    "type": "concept",
+    "front": "Port Security",
+    "back": {
+      "level1": "Switch feature restricting which devices can connect based on MAC address",
+      "level2": "Layer 2 security that limits network access on switch ports by MAC address. Administrator configures allowed MAC addresses per port or maximum number of MACs. Prevents unauthorized devices, MAC flooding attacks, and switch port hijacking. Violation actions: shutdown port, restrict (drop unauthorized frames), or protect (drop silently).",
+      "level3": "Exam tip: Port security = MAC-based access control on switches. Configuration options: static (manually specify allowed MACs), dynamic (learn first N MACs that connect), sticky (dynamic MACs saved to config). Violation modes: shutdown (disable port - most secure), restrict (drop frames, log), protect (drop frames silently). Use case: prevent users from connecting unauthorized devices, limit MACs per port (prevent switch from workstation). Know that MAC addresses can be spoofed - port security is not strong authentication. Questions test understanding port security restricts access by MAC address."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Switch", "MAC Address", "Layer 2 Security", "MAC Flooding"]
+    }
+  },
+  {
+    "id": "d3-028",
+    "domain": 3,
+    "section": "Network Security",
+    "type": "concept",
+    "front": "Jump Server",
+    "back": {
+      "level1": "Hardened system providing controlled access to devices in separate security zone",
+      "level2": "Intermediary host used to access and manage servers in different security zone (often DMZ or secure network). Administrators connect to jump server first, then access target systems from there. Jump server is heavily monitored and hardened. Also called jump box, jump host, or bastion host. Provides single audit point for administrative access.",
+      "level3": "Exam tip: Jump server = controlled access point to secure zone. Security benefits: single point for logging/monitoring admin access, MFA enforcement, session recording, prevents direct internet-to-server access. Common setup: admins RDP/SSH to jump server → from jump server access production systems. Know that jump server itself must be extremely hardened (minimal services, patched, monitored, MFA required). Modern alternative: privileged access management (PAM) solutions. Questions test understanding jump server provides controlled access to secure networks for administration."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Bastion Host", "DMZ", "PAM", "Administrative Access"]
+    }
+  },
+  {
+    "id": "d3-029",
+    "domain": 3,
+    "section": "Secure Communication",
+    "type": "concept",
+    "front": "Site-to-Site VPN",
+    "back": {
+      "level1": "VPN connecting entire networks, typically between office locations",
+      "level2": "Permanent encrypted tunnel between two or more networks/sites over internet. Connects routers or VPN gateways at each location, allowing all devices on one network to access resources on other network transparently. Users don't need VPN client - routing handled by gateway. Common protocols: IPSec, GRE. Used for connecting branch offices to headquarters.",
+      "level3": "Exam tip: Site-to-Site = network-to-network (always on, transparent to users). Use case: connect remote office to main office. Implementation: VPN concentrator/router at each site, IPSec tunnel between them. Users on either network access resources as if local - no VPN client needed. Advantages: transparent, always available, encrypts all traffic between sites. Disadvantages: single point of failure if tunnel down, requires static public IP at each site. Questions test understanding site-to-site connects networks (not individual users) via gateway devices."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["VPN", "IPSec", "Remote Access", "VPN Concentrator"]
+    }
+  },
+  {
+    "id": "d3-030",
+    "domain": 3,
+    "section": "Secure Communication",
+    "type": "concept",
+    "front": "Remote Access VPN",
+    "back": {
+      "level1": "VPN for individual users connecting to corporate network from remote locations",
+      "level2": "On-demand encrypted connection from remote user's device to corporate network. Requires VPN client software on user device. User initiates connection when needed, authenticates, then accesses internal resources. Common protocols: SSL/TLS VPN (browser-based or thin client) or IPSec VPN (thick client). Used for remote workers, traveling employees.",
+      "level3": "Exam tip: Remote Access = user-to-network (on-demand, client required). User connects → VPN client establishes encrypted tunnel to VPN concentrator → user authenticated → granted access to internal network. Two types: SSL/TLS VPN (easier deployment, browser-based, Layer 7) vs IPSec VPN (more secure, requires client install, Layer 3). Know that remote access VPN extends internal network to remote user. Split tunneling: only corporate traffic through VPN. Full tunneling: all traffic through VPN. Questions test remote access VPN for individual users vs site-to-site for networks."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["VPN", "SSL VPN", "IPSec", "Split Tunnel", "Remote Work"]
+    }
+  },
+  {
+    "id": "d3-031",
+    "domain": 3,
+    "section": "Secure Communication",
+    "type": "acronym",
+    "front": "IPSec",
+    "back": {
+      "level1": "Internet Protocol Security - Suite of protocols for securing IP communications",
+      "level2": "Framework providing confidentiality, integrity, authentication at network layer (Layer 3). Two modes: Transport mode (encrypts only payload, used for host-to-host) and Tunnel mode (encrypts entire IP packet, used for VPNs). Two protocols: AH (Authentication Header - integrity/authentication) and ESP (Encapsulating Security Payload - encryption/authentication). Uses IKE for key exchange.",
+      "level3": "Exam tip: IPSec operates at Layer 3 (network) - encrypts IP packets. MEMORIZE modes: Transport = payload only (end-to-end), Tunnel = entire packet (VPN gateway-to-gateway). ESP vs AH: ESP does encryption + authentication (commonly used), AH only authentication (rarely used). IPSec VPN requires client software. Process: IKE Phase 1 (establish secure channel), IKE Phase 2 (negotiate encryption for data). Port: ESP protocol 50, AH protocol 51, IKE UDP 500. Questions test transport vs tunnel mode and knowing IPSec is Layer 3 VPN."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["VPN", "Encryption", "IKE", "ESP", "AH"]
+    }
+  },
+  {
+    "id": "d3-032",
+    "domain": 3,
+    "section": "Secure Communication",
+    "type": "concept",
+    "front": "Split Tunnel vs Full Tunnel VPN",
+    "back": {
+      "level1": "Split Tunnel: only corporate traffic through VPN; Full Tunnel: all traffic through VPN",
+      "level2": "Split Tunneling: VPN only for accessing corporate resources, internet traffic goes direct. Faster internet access, reduces VPN bandwidth. Security risk: device simultaneously connected to internet and corporate network. Full Tunneling: all traffic routed through VPN to corporate network, then to internet. Corporate firewall/filters apply to all traffic. Slower but more secure.",
+      "level3": "Exam tip: Split tunnel advantages: better performance (internet direct), less VPN load. Disadvantages: security risk (malware from internet while connected to corporate network). Full tunnel advantages: all traffic protected, corporate security controls apply, prevent data leakage. Disadvantages: slower (all traffic through VPN), more bandwidth. Know that split tunnel creates security gap - device is bridge between internet and internal network. Questions test understanding trade-off between performance (split) and security (full tunnel)."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["VPN", "Remote Access", "Tunneling", "Security vs Performance"]
+    }
+  },
+  {
+    "id": "d3-033",
+    "domain": 3,
+    "section": "Secure Communication",
+    "type": "acronym",
+    "front": "TLS",
+    "back": {
+      "level1": "Transport Layer Security - Cryptographic protocol for secure communication",
+      "level2": "Successor to SSL, provides encryption, authentication, integrity for network communications. Operates at Layer 4/5 (between transport and application). Used by HTTPS, email (SMTPS, IMAPS), VPN (SSL VPN). TLS 1.3 is current version (faster, more secure). Uses certificates for server authentication. Establishes session keys via handshake.",
+      "level3": "Exam tip: TLS is foundation for HTTPS (HTTP over TLS). Versions: TLS 1.0/1.1 deprecated, TLS 1.2 minimum, TLS 1.3 preferred. Handshake process: client hello → server certificate → key exchange → encrypted session. Know that TLS provides: confidentiality (encryption), integrity (MAC), authentication (certificates). Port: HTTPS 443, SMTPS 465/587, IMAPS 993. Common exam scenario: disable old SSL/TLS versions (SSL 3.0, TLS 1.0/1.1) to prevent downgrade attacks. Questions test knowing TLS is modern encryption for web/email."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["HTTPS", "SSL", "Encryption", "Certificates", "PKI"]
+    }
+  },
+  {
+    "id": "d3-034",
+    "domain": 3,
+    "section": "Secure Communication",
+    "type": "concept",
+    "front": "SSH",
+    "back": {
+      "level1": "Secure Shell - Protocol for secure remote administration",
+      "level2": "Encrypted protocol for remote command-line access to systems. Replaces insecure Telnet (cleartext). Uses public-key cryptography for authentication and symmetric encryption for session. Port 22. Provides secure terminal access, file transfer (SCP/SFTP), port forwarding/tunneling. Common on Linux/Unix, available for Windows.",
+      "level3": "Exam tip: SSH = secure replacement for Telnet. Key features: encrypted login sessions, secure file transfer (SFTP/SCP replaces FTP), port forwarding (SSH tunneling). Authentication methods: password (weak), public key (strong - recommended). SSH keys: private key on client, public key on server. Know that SSH port 22 should be restricted (firewall rules, only from trusted IPs). Security hardening: disable root login, disable password auth (key-only), change default port. Questions test knowing SSH is encrypted remote access vs Telnet (cleartext)."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["Remote Access", "SFTP", "Telnet", "Port 22", "Encryption"]
+    }
+  },
+  {
+    "id": "d3-035",
+    "domain": 3,
+    "section": "Secure Communication",
+    "type": "acronym",
+    "front": "DNSSEC",
+    "back": {
+      "level1": "DNS Security Extensions - Adds authentication to DNS",
+      "level2": "Extensions to DNS providing origin authentication and integrity verification for DNS responses. Uses digital signatures to ensure DNS records haven't been tampered with. Protects against DNS cache poisoning and man-in-the-middle attacks. Doesn't provide confidentiality (DNS queries still visible). Requires zone signing by domain owner.",
+      "level3": "Exam tip: DNSSEC prevents DNS spoofing/cache poisoning but doesn't encrypt queries. How it works: DNS zones digitally signed, resolvers validate signatures before trusting response. If signature invalid, response rejected. Know that DNSSEC adds INTEGRITY and AUTHENTICATION, not CONFIDENTIALITY (use DNS-over-HTTPS/TLS for encryption). Challenges: complex to implement, breaks some DNS features, requires accurate time sync. Questions test understanding DNSSEC validates DNS responses using signatures to prevent cache poisoning."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["DNS", "Cache Poisoning", "Digital Signatures", "DNS Security"]
+    }
+  },
+  {
+    "id": "d3-036",
+    "domain": 3,
+    "section": "Secure Communication",
+    "type": "concept",
+    "front": "WPA2 vs WPA3",
+    "back": {
+      "level1": "WPA2: current wireless security standard using CCMP/AES; WPA3: next-gen with improved encryption",
+      "level2": "WPA2 (2004): Uses CCMP encryption with AES, supports Personal (PSK) and Enterprise (802.1X) modes. Vulnerable to KRACK attack, dictionary attacks on weak passwords. WPA3 (2018): Improved security with SAE (Simultaneous Authentication of Equals) replacing PSK, forward secrecy, protection against offline dictionary attacks, 192-bit encryption mode for enterprise.",
+      "level3": "Exam tip: WPA3 improvements over WPA2: SAE replaces PSK (more secure key exchange), individualized encryption (each client different keys), forward secrecy (past traffic protected if password compromised), protection against brute force. WPA3 modes: Personal (SAE) and Enterprise (192-bit suite). Know that WPA2 is still widely used but WPA3 should be preferred. WEP/WPA deprecated (insecure). Transition mode supports both WPA2 and WPA3. Questions test understanding WPA3 is more secure than WPA2."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Wireless Security", "Encryption", "SAE", "802.11", "Authentication"]
+    }
+  },
+  {
+    "id": "d3-037",
+    "domain": 3,
+    "section": "Secure Communication",
+    "type": "acronym",
+    "front": "EAP",
+    "back": {
+      "level1": "Extensible Authentication Protocol - Framework for authentication methods",
+      "level2": "Authentication framework used with 802.1X for wireless and wired networks. Not an authentication method itself, but framework allowing different authentication types (EAP methods). Common methods: EAP-TLS (certificate-based, most secure), PEAP (password with TLS tunnel), EAP-TTLS (similar to PEAP), EAP-FAST (Cisco). Works with RADIUS servers.",
+      "level3": "Exam tip: EAP is FRAMEWORK, specific methods do actual authentication. Know common EAP types: EAP-TLS (requires client certificates - strongest but harder to deploy), PEAP (username/password in TLS tunnel - easier deployment), EAP-TTLS (similar to PEAP, more flexible), EAP-FAST (Cisco, doesn't require certificates). Used with: WPA2/WPA3-Enterprise, 802.1X wired authentication. Questions test knowing EAP is framework and identifying most secure method (EAP-TLS with certificates)."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["802.1X", "RADIUS", "Authentication", "Wireless", "PEAP", "EAP-TLS"]
+    }
+  },
+  {
+    "id": "d3-038",
+    "domain": 3,
+    "section": "Secure Communication",
+    "type": "acronym",
+    "front": "RADIUS",
+    "back": {
+      "level1": "Remote Authentication Dial-In User Service - Centralized AAA server",
+      "level2": "Client-server protocol providing centralized Authentication, Authorization, and Accounting (AAA). Network devices (switches, APs, VPN gateways) act as RADIUS clients, forwarding authentication requests to RADIUS server. Server validates credentials (often against Active Directory), returns access decision. Uses UDP ports 1812 (auth) and 1813 (accounting).",
+      "level3": "Exam tip: RADIUS provides centralized authentication for: 802.1X wireless/wired, VPN access, network device administration. Process: user tries to connect → network device (RADIUS client) forwards credentials to RADIUS server → RADIUS checks credentials → returns accept/reject. Benefits: central user database, consistent policies, audit logging. Know that RADIUS encrypts passwords but not entire packet. Port: UDP 1812/1813. Compare TACACS+: Cisco, encrypts entire packet, TCP, better for device administration. Questions test RADIUS is AAA protocol using UDP."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["AAA", "802.1X", "Authentication", "TACACS+", "Centralized"]
+    }
+  },
+  {
+    "id": "d3-039",
+    "domain": 3,
+    "section": "Secure Communication",
+    "type": "acronym",
+    "front": "TACACS+",
+    "back": {
+      "level1": "Terminal Access Controller Access-Control System Plus - AAA protocol for device administration",
+      "level2": "Cisco-developed AAA protocol for network device administration. Provides separate authentication, authorization, and accounting processes (more granular than RADIUS). Uses TCP port 49. Encrypts entire payload (not just password like RADIUS). Primarily used for administrator access to routers, switches, firewalls.",
+      "level3": "Exam tip: TACACS+ vs RADIUS: TACACS+ uses TCP (reliable), encrypts entire packet (more secure), separates AAA functions (more flexible), Cisco-focused, primarily for DEVICE ADMIN. RADIUS uses UDP (faster), encrypts password only, combines auth+author, multi-vendor, primarily for USER ACCESS (wireless, VPN, 802.1X). Know TACACS+ advantages: full packet encryption, granular authorization (can specify which commands admin can run), reliable (TCP). Questions test comparing TACACS+ to RADIUS and knowing TACACS+ is for network device administration."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["AAA", "RADIUS", "Cisco", "Device Administration", "Authentication"]
+    }
+  },
+  {
+    "id": "d3-040",
+    "domain": 3,
+    "section": "Secure Communication",
+    "type": "concept",
+    "front": "SPF, DKIM, DMARC",
+    "back": {
+      "level1": "Email authentication technologies preventing spoofing and phishing",
+      "level2": "SPF (Sender Policy Framework): DNS record listing authorized mail servers for domain. Receiving server checks if sender IP is authorized. DKIM (DomainKeys Identified Mail): Cryptographically signs email, receiving server validates signature. DMARC (Domain-based Message Authentication): Policy on how to handle SPF/DKIM failures, requests reports. All three work together to authenticate email sender.",
+      "level3": "Exam tip: Understand each role. SPF: verifies sender IP is authorized (prevents IP spoofing). DKIM: verifies email wasn't altered in transit (digital signature). DMARC: enforces policy when SPF/DKIM fail (quarantine, reject, none) and provides reporting. Implementation: publish DNS TXT records. Know that all three should be used together for comprehensive email security. SPF alone can be bypassed, DKIM protects integrity, DMARC enforces actions. Questions test understanding each technology's purpose and knowing they prevent email spoofing."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["Email Security", "DNS", "Anti-Spoofing", "Phishing Prevention"]
+    }
+  },
+  {
+    "id": "d3-041",
+    "domain": 3,
+    "section": "Infrastructure Security",
+    "type": "acronym",
+    "front": "SCADA",
+    "back": {
+      "level1": "Supervisory Control and Data Acquisition - Industrial control system",
+      "level2": "Control system for industrial processes like power plants, water treatment, manufacturing. Monitors sensors, controls equipment via PLCs/RTUs, provides operator interface. Combines hardware (sensors, actuators, PLCs) and software (HMI, control logic). Traditionally isolated but increasingly internet-connected. Critical infrastructure target for attacks.",
+      "level3": "Exam tip: SCADA is ICS (Industrial Control System) for critical infrastructure. Components: HMI (Human-Machine Interface - operator screens), PLC (Programmable Logic Controller - controls equipment), RTU (Remote Terminal Unit - remote sensors), MTU (Master Terminal Unit - central control). Security concerns: legacy systems can't be patched, physical damage from cyber attack, Stuxnet attack example. Protection: air gap from IT network, network segmentation, monitoring for anomalies. Questions test SCADA is industrial control system requiring special security due to safety concerns."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["ICS", "OT", "PLC", "Critical Infrastructure", "Air Gap"]
+    }
+  },
+  {
+    "id": "d3-042",
+    "domain": 3,
+    "section": "Infrastructure Security",
+    "type": "concept",
+    "front": "OT vs IT",
+    "back": {
+      "level1": "OT (Operational Technology): physical process control; IT: information systems",
+      "level2": "IT (Information Technology): computers, networks, data systems. Priorities: confidentiality, integrity, availability. Can tolerate downtime for patching. OT (Operational Technology): industrial control systems, SCADA, manufacturing equipment. Priorities: availability, safety, integrity. Cannot tolerate downtime - 24/7 operation. Different security approaches required.",
+      "level3": "Exam tip: KEY DIFFERENCE in priorities. IT: CIA (Confidentiality first). OT: AIS (Availability and Safety first). OT challenges: can't patch/reboot (must schedule around production), long equipment lifespan (20+ years), safety-critical (cyber attack could cause physical harm), legacy systems (outdated OS, protocols). OT security: network segmentation from IT, air gaps, specialized monitoring, change control. Know that converging IT and OT networks increases risk - keep separated. Questions test understanding OT prioritizes availability and safety over security updates."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["SCADA", "ICS", "Critical Infrastructure", "Availability"]
+    }
+  },
+  {
+    "id": "d3-043",
+    "domain": 3,
+    "section": "Infrastructure Security",
+    "type": "concept",
+    "front": "IoT Security Challenges",
+    "back": {
+      "level1": "Internet of Things devices have limited security due to resource constraints and poor design",
+      "level2": "IoT devices (smart home, wearables, sensors) pose security risks: weak/default credentials, no security updates, limited processing for encryption, insecure communications, poor physical security. Mirai botnet exploited IoT devices for DDoS. Challenges: can't install endpoint security, hard to patch, long lifespan, diverse manufacturers.",
+      "level3": "Exam tip: IoT security problems: default passwords (biggest issue), no firmware updates, unencrypted communications, can't run antivirus, physical access. Mitigations: network segmentation (separate IoT VLAN), change default credentials, disable unnecessary features, update firmware when possible, monitor for anomalies. Know that IoT extends attack surface - each device is potential entry point. Use cases requiring extra care: medical devices, industrial sensors, building controls. Questions test understanding IoT devices have weak security and should be isolated."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Network Segmentation", "Default Credentials", "Botnet", "Embedded Systems"]
+    }
+  },
+  {
+    "id": "d3-044",
+    "domain": 3,
+    "section": "Infrastructure Security",
+    "type": "concept",
+    "front": "Defense in Depth",
+    "back": {
+      "level1": "Layered security approach with multiple defensive measures",
+      "level2": "Security strategy implementing multiple layers of controls so if one fails, others still protect. Assumes attackers will breach perimeter. Layers include: physical security, network security, host security, application security, data security. No single point of failure. Medieval castle model: moat, walls, guards, inner keep.",
+      "level3": "Exam tip: Defense in depth = multiple layers (not relying on single control). Example layers: perimeter firewall → IDS → internal firewall → host firewall → antivirus → application controls → encryption. If attacker bypasses firewall, IDS detects. If bypasses both, host controls prevent damage. Know this is also called 'layered security' or 'castle approach'. Questions test understanding defense in depth uses multiple controls at different layers so single point failure doesn't compromise entire security."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["Layered Security", "Security Architecture", "Redundancy"]
+    }
+  },
+  {
+    "id": "d3-045",
+    "domain": 3,
+    "section": "Infrastructure Security",
+    "type": "concept",
+    "front": "Fail Secure vs Fail Open",
+    "back": {
+      "level1": "Fail Secure: denies access on failure; Fail Open: permits access on failure",
+      "level2": "Fail Secure (fail closed): system defaults to secure state when malfunction occurs - blocks access, locks doors, denies traffic. Prioritizes security over availability. Fail Open: system defaults to operational state - allows access, opens doors, permits traffic. Prioritizes availability over security. Choice depends on business requirements.",
+      "level3": "Exam tip: MEMORIZE which is more secure. Fail Secure = SECURE (blocks on failure). Fail Open = AVAILABLE (permits on failure). Examples: Fail Secure - firewall loses power, blocks all traffic; fail-locked door (locks when power lost). Fail Open - firewall loses power, passes all traffic; fail-safe door (unlocks for fire exit). Know the trade-off: fail secure is more secure but could cause outage, fail open maintains availability but reduces security. Questions test identifying which mode system uses and understanding security vs availability trade-off."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Availability", "Security vs Availability", "Firewall", "Physical Security"]
+    }
+  },
+  {
+    "id": "d3-046",
+    "domain": 3,
+    "section": "Identity and Access Management",
+    "type": "acronym",
+    "front": "DAC",
+    "back": {
+      "level1": "Discretionary Access Control - Owner controls access to resources",
+      "level2": "Access control model where resource owner determines who can access their resources. Owner has discretion to grant/revoke access. Implemented via access control lists (ACLs). Common in operating systems: file owner sets permissions. Flexible but less secure - relies on user decisions. Permissions can be too permissive or misconfigured.",
+      "level3": "Exam tip: DAC = owner decides (discretionary = at owner's discretion). Example: you create file, you decide who can read/write it. Advantages: flexible, user-friendly, delegated administration. Disadvantages: inconsistent security, users may grant excessive permissions, difficult to enforce organization-wide policies, permissions can spread uncontrolled. Identity-based (focuses on WHO). Used in: Windows NTFS, Linux file permissions. Questions test DAC gives owners control vs MAC (system controls) or RBAC (role controls)."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Access Control", "MAC", "RBAC", "ACL", "Permissions"]
+    }
+  },
+  {
+    "id": "d3-047",
+    "domain": 3,
+    "section": "Identity and Access Management",
+    "type": "acronym",
+    "front": "MAC",
+    "back": {
+      "level1": "Mandatory Access Control - System enforces access based on security labels",
+      "level2": "Access control model where system (not users) enforces access based on security clearances and data classifications. Users assigned clearance levels (Top Secret, Secret, Confidential), data labeled with classifications. Access only if clearance >= classification. User cannot override. Used in military and high-security environments. Enforces strict rules.",
+      "level3": "Exam tip: MAC = system controls (mandatory = system enforces, not negotiable). Example: classified government systems - user with Secret clearance cannot access Top Secret documents regardless of need. Advantages: strong security, consistent enforcement, prevents data leakage. Disadvantages: inflexible, complex administration, not suited for most businesses. Label-based (focuses on WHAT classification). Implemented in: SELinux, military systems. Questions test understanding MAC is most restrictive, system-enforced, uses labels/clearances, suitable for high-security environments."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["Access Control", "DAC", "RBAC", "Classification", "Clearance"]
+    }
+  },
+  {
+    "id": "d3-048",
+    "domain": 3,
+    "section": "Identity and Access Management",
+    "type": "acronym",
+    "front": "RBAC",
+    "back": {
+      "level1": "Role-Based Access Control - Access based on job function/role",
+      "level2": "Access control model where permissions assigned to roles (job functions), users assigned to roles. User inherits permissions from role(s). Centralized management: change role permissions affects all users in role. Aligns with business structure. Most common in enterprise. Examples: Accountant role has access to financial systems, Developer role has code repository access.",
+      "level3": "Exam tip: RBAC = role determines access (not individual users). Implementation: define roles matching job functions, assign permissions to roles, assign users to roles. Advantages: easier administration (manage roles not individual users), aligns with organization structure, supports least privilege, easier auditing. Disadvantages: role explosion (too many roles), users may accumulate roles. Know separation of duties enforced by incompatible roles. Questions test understanding RBAC assigns permissions to roles then users to roles."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Access Control", "DAC", "MAC", "Roles", "Least Privilege"]
+    }
+  },
+  {
+    "id": "d3-049",
+    "domain": 3,
+    "section": "Identity and Access Management",
+    "type": "acronym",
+    "front": "ABAC",
+    "back": {
+      "level1": "Attribute-Based Access Control - Access based on attributes and policies",
+      "level2": "Access control model using attributes of user, resource, and environment to make access decisions. Attributes: user (department, clearance, location), resource (classification, owner), environment (time, location, threat level). Policies evaluate multiple attributes. Most flexible and dynamic. Example: allow access if user.department=Finance AND resource.type=financial AND time=business_hours.",
+      "level3": "Exam tip: ABAC = policy-driven using multiple attributes (most flexible, most complex). Advantages: fine-grained control, dynamic (adapts to context), supports complex policies, reduces role explosion. Disadvantages: complex to implement, difficult to audit, performance overhead evaluating policies. Use cases: cloud environments, APIs, dynamic access requirements. Know that ABAC can consider context: location, time, device posture, threat level. Questions test understanding ABAC is most flexible using attributes and policies vs fixed roles or labels."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["Access Control", "RBAC", "Policy", "Attributes", "Context-Aware"]
+    }
+  },
+  {
+    "id": "d3-050",
+    "domain": 3,
+    "section": "Identity and Access Management",
+    "type": "acronym",
+    "front": "SSO",
+    "back": {
+      "level1": "Single Sign-On - Authenticate once, access multiple systems",
+      "level2": "Authentication scheme allowing user to log in once and access multiple applications/systems without re-entering credentials. Identity provider (IdP) authenticates user, provides token/assertion to service providers (SPs). User experience improved (one login), security simplified (one strong authentication point). Common protocols: SAML, OAuth, OpenID Connect.",
+      "level3": "Exam tip: SSO = one authentication, multiple applications. Benefits: better user experience (fewer passwords), stronger authentication (can enforce MFA at single point), easier administration, better security (users don't create weak passwords for each app). Risks: single point of compromise (if SSO breached, all apps accessible), requires high availability. Know SSO doesn't mean all apps share password - IdP authenticates, then provides tokens to apps. Questions test understanding SSO provides one login for multiple systems."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["Authentication", "SAML", "OAuth", "Federation", "IdP"]
+    }
+  },
+  {
+    "id": "d3-051",
+    "domain": 3,
+    "section": "Identity and Access Management",
+    "type": "acronym",
+    "front": "MFA",
+    "back": {
+      "level1": "Multi-Factor Authentication - Requires two or more authentication factors",
+      "level2": "Security mechanism requiring multiple factors to verify identity. Three factor types: something you know (password), something you have (token, phone, smart card), something you are (biometric). MFA requires factors from at least two different types. Example: password + SMS code, password + fingerprint. Significantly reduces account compromise risk.",
+      "level3": "Exam tip: MFA requires DIFFERENT factor types. Password + security question is NOT MFA (both 'something you know'). Common MFA combinations: password + authenticator app (TOTP), password + smart card + PIN, password + push notification, password + biometric. Know that MFA defeats: stolen passwords, phishing (attacker needs second factor), brute force. SMS-based MFA is weakest (SIM swapping), authenticator apps or hardware tokens stronger. Questions test understanding MFA needs multiple factor TYPES and why it's more secure than passwords alone."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["Authentication", "2FA", "TOTP", "Biometric", "Something You Have"]
+    }
+  },
+  {
+    "id": "d3-052",
+    "domain": 3,
+    "section": "Identity and Access Management",
+    "type": "acronym",
+    "front": "SAML",
+    "back": {
+      "level1": "Security Assertion Markup Language - XML-based standard for SSO",
+      "level2": "Open standard for exchanging authentication and authorization data between identity provider (IdP) and service provider (SP). XML-based. User authenticates with IdP, receives SAML assertion (token), presents to SP for access. Enables SSO across different domains/organizations. Common for enterprise SSO to cloud applications.",
+      "level3": "Exam tip: SAML = SSO protocol, XML-based, commonly used for enterprise SSO. Flow: user requests app → redirected to IdP → authenticates → IdP creates SAML assertion → user presents assertion to app → app grants access. Assertion contains: user identity, attributes, authentication details. Know SAML vs OAuth: SAML for authentication/SSO (enterprise), OAuth for authorization/API access (consumer). SAML assertion signed to prevent tampering. Questions test SAML is XML-based SSO enabling federation between organizations."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["SSO", "Federation", "IdP", "OAuth", "Authentication"]
+    }
+  },
+  {
+    "id": "d3-053",
+    "domain": 3,
+    "section": "Identity and Access Management",
+    "type": "concept",
+    "front": "OAuth 2.0",
+    "back": {
+      "level1": "Open standard for authorization allowing third-party access without sharing credentials",
+      "level2": "Authorization framework enabling applications to obtain limited access to user resources without getting password. User grants app permission, receives access token with specific scope. Commonly used for 'Sign in with Google/Facebook' and API access. Provides delegated authorization, not authentication (use OpenID Connect for authentication).",
+      "level3": "Exam tip: OAuth = AUTHORIZATION (not authentication). Use case: grant app access to your Google Drive without sharing Google password. Flow: app requests permission → user approves → authorization server issues access token → app uses token to access resources. Token has scope (limited permissions). Know OAuth vs SAML: OAuth for delegated authorization/APIs, SAML for SSO/authentication. OAuth 2.0 is current version. Common with REST APIs and mobile apps. Questions test OAuth is authorization protocol for granting limited access."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["Authorization", "API", "Access Token", "SAML", "OpenID Connect"]
+    }
+  },
+  {
+    "id": "d3-054",
+    "domain": 3,
+    "section": "Identity and Access Management",
+    "type": "acronym",
+    "front": "OpenID Connect",
+    "back": {
+      "level1": "Identity layer built on OAuth 2.0 providing authentication",
+      "level2": "Authentication protocol built on top of OAuth 2.0. Extends OAuth with identity layer to enable SSO and user authentication. Returns ID token (JWT) containing user identity information in addition to OAuth access token. Used for 'Sign in with Google/Facebook'. Provides authentication while OAuth provides authorization.",
+      "level3": "Exam tip: OpenID Connect (OIDC) = authentication layer on OAuth 2.0. OAuth alone only does authorization, OIDC adds authentication. Returns: access token (OAuth - for API access) + ID token (OIDC - proves user identity). ID token is JWT containing user claims. Use case: modern web/mobile app authentication. Know relationship: OIDC builds on OAuth 2.0, uses OAuth for authorization then adds authentication. Compare: SAML (XML, enterprise), OIDC (JSON/REST, modern/mobile). Questions test OIDC provides authentication using OAuth 2.0 as foundation."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": false,
+      "relatedTerms": ["OAuth", "SSO", "Authentication", "JWT", "SAML"]
+    }
+  },
+  {
+    "id": "d3-055",
+    "domain": 3,
+    "section": "Identity and Access Management",
+    "type": "concept",
+    "front": "Kerberos",
+    "back": {
+      "level1": "Network authentication protocol using tickets and symmetric encryption",
+      "level2": "Authentication protocol developed by MIT, used by Active Directory. Uses tickets to prove identity without sending passwords over network. Key Distribution Center (KDC) issues tickets. Process: user gets Ticket Granting Ticket (TGT) from Authentication Server, uses TGT to get Service Tickets from Ticket Granting Server. Time-synchronized. Port 88.",
+      "level3": "Exam tip: Kerberos = ticket-based authentication (default for Windows AD). Components: KDC (Key Distribution Center with AS and TGS), client, application server. Process: user logs in → gets TGT → uses TGT to request service tickets → presents service ticket to access resources. Advantages: password never sent over network, mutual authentication, SSO within domain. Requirements: time synchronization (tickets time-stamped, 5 min tolerance). Port TCP/UDP 88. Questions test Kerberos uses tickets and requires time sync."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["Authentication", "Active Directory", "Tickets", "KDC", "TGT"]
+    }
+  },
+  {
+    "id": "d3-056",
+    "domain": 3,
+    "section": "Identity and Access Management",
+    "type": "acronym",
+    "front": "LDAP",
+    "back": {
+      "level1": "Lightweight Directory Access Protocol - Protocol for accessing directory services",
+      "level2": "Application protocol for querying and modifying directory services. Directory stores user accounts, groups, organizational structure in hierarchical database. LDAP provides standard way to access directories like Active Directory, OpenLDAP. Uses port 389 (unencrypted) or 636 (LDAPS - encrypted). Applications use LDAP to authenticate users against directory.",
+      "level3": "Exam tip: LDAP is PROTOCOL for accessing directories (Active Directory is directory, LDAP is how you query it). Uses: authentication (apps query directory to validate credentials), authorization (retrieve user attributes/groups), directory lookup. Distinguished Name (DN) identifies entry (like file path). Port 389 unencrypted (vulnerable), use LDAPS 636 (LDAP over SSL) or StartTLS. Know that LDAP provides read/write access to directory but doesn't define directory structure. Questions test LDAP is protocol for directory access, typically port 389/636."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Active Directory", "Directory Services", "Authentication", "Port 389"]
+    }
+  },
+  {
+    "id": "d3-057",
+    "domain": 3,
+    "section": "Identity and Access Management",
+    "type": "acronym",
+    "front": "PKI",
+    "back": {
+      "level1": "Public Key Infrastructure - Framework for managing digital certificates",
+      "level2": "System of hardware, software, policies, and procedures for creating, distributing, managing, and revoking digital certificates. Components: Certificate Authority (CA) issues certificates, Registration Authority (RA) validates requests, Certificate Repository stores certificates, Certificate Revocation List (CRL) tracks revoked certificates. Enables encryption, digital signatures, authentication.",
+      "level3": "Exam tip: PKI provides certificate lifecycle management. Components: Root CA (top authority), Intermediate CAs (delegate authority), RA (validates certificate requests), CRL/OCSP (revocation checking). Certificate uses: HTTPS (server authentication), S/MIME (email encryption), code signing, VPN authentication. Trust chain: certificate signed by CA, CA certificate signed by root CA. Know that root CA private key is most critical - if compromised, entire PKI fails. Questions test PKI components and understanding CAs issue trusted certificates."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["Certificates", "CA", "Digital Signature", "Encryption", "Trust"]
+    }
+  },
+  {
+    "id": "d3-058",
+    "domain": 3,
+    "section": "Identity and Access Management",
+    "type": "concept",
+    "front": "Certificate Authority (CA)",
+    "back": {
+      "level1": "Trusted entity that issues and manages digital certificates",
+      "level2": "Organization responsible for verifying certificate requester identity and issuing certificates. Root CA is ultimate trust anchor. Intermediate CAs delegate authority from root. Public CAs (DigiCert, Let's Encrypt) for internet, private/enterprise CAs for internal use. CA digitally signs certificates to establish trust. Browsers/OS trust root CAs.",
+      "level3": "Exam tip: CA establishes trust in PKI. Root CA: top of hierarchy, self-signed, trusted by OS/browsers, private key extremely protected. Intermediate CA: issued by root, signs end-entity certificates, limits root key exposure. Know certificate validation: client verifies certificate signature using CA's public key, traces chain to trusted root CA. Internal CA: for organization's internal certificates (cheaper than public CA, but only trusted internally). Questions test understanding CA signs certificates to establish trust and certificate chain to root."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["PKI", "Certificates", "Root CA", "Trust", "Digital Signature"]
+    }
+  },
+  {
+    "id": "d3-059",
+    "domain": 3,
+    "section": "Identity and Access Management",
+    "type": "acronym",
+    "front": "CRL vs OCSP",
+    "back": {
+      "level1": "CRL: Certificate Revocation List; OCSP: Online Certificate Status Protocol - Certificate revocation checking",
+      "level2": "CRL: Published list of revoked certificates (serial numbers) issued by CA. Clients download entire CRL periodically to check if certificate revoked. Can be large, updated infrequently. OCSP: Real-time protocol for checking single certificate status. Client queries OCSP responder with certificate serial number, gets current status (good/revoked/unknown). More efficient than CRL.",
+      "level3": "Exam tip: CRL vs OCSP for revocation checking. CRL disadvantages: large downloads, delayed updates (published periodically), bandwidth intensive. CRL advantages: works offline, no query privacy concerns. OCSP advantages: real-time status, only checks needed certificate, smaller response. OCSP disadvantages: requires online access, privacy concerns (CA knows which sites you visit), OCSP responder is single point of failure. OCSP Stapling: server provides OCSP response with certificate (solves privacy and performance issues). Questions test understanding OCSP is modern real-time alternative to CRL."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["PKI", "Certificate Revocation", "CA", "OCSP Stapling"]
+    }
+  },
+  {
+    "id": "d3-060",
+    "domain": 3,
+    "section": "Identity and Access Management",
+    "type": "concept",
+    "front": "Certificate Types",
+    "back": {
+      "level1": "Self-signed, Wildcard, SAN certificates serve different use cases",
+      "level2": "Self-signed: Signed by own private key (not CA), free but not trusted by browsers, used for testing/internal. Wildcard: Covers domain and all subdomains (*.example.com), single cert for multiple sites, risk if compromised affects all subdomains. SAN (Subject Alternative Name): One cert covering multiple specific domains (example.com, www.example.com, mail.example.com).",
+      "level3": "Exam tip: Certificate types and use cases. Self-signed: testing, internal CAs, no cost but browsers show warning (must manually trust). Wildcard advantages: manage one cert for all subdomains. Disadvantages: if compromised, attacker can impersonate ANY subdomain, cannot have Extended Validation. SAN advantages: one cert for multiple specific domains, better than multiple certs. Know domain validation types: DV (domain only), OV (organization verified), EV (extended validation - green bar). Questions test understanding self-signed isn't trusted publicly and wildcard covers all subdomains."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["PKI", "Certificates", "SSL/TLS", "Wildcard", "Trust"]
+    }
+  },
+  {
+    "id": "d3-061",
+    "domain": 3,
+    "section": "Identity and Access Management",
+    "type": "acronym",
+    "front": "TOTP and HOTP",
+    "back": {
+      "level1": "TOTP: Time-based One-Time Password; HOTP: HMAC-based One-Time Password",
+      "level2": "TOTP: Generates one-time codes based on current time and shared secret. Code changes every 30 seconds. Requires time sync between client and server. Used by Google Authenticator, Microsoft Authenticator. HOTP: Generates codes based on counter and shared secret. Counter increments with each use. No time sync required but can get out of sync if codes generated but not used.",
+      "level3": "Exam tip: Both are MFA algorithms. TOTP advantages: time-based so codes expire quickly (30 sec), most common (Google/Microsoft Authenticator apps). TOTP disadvantages: requires time synchronization. HOTP advantages: no time sync needed, works offline. HOTP disadvantages: counter can desync, codes don't expire on their own. Know that both use shared secret (QR code during setup). TOTP preferred for most use cases. Questions test understanding TOTP is time-based (expires) and HOTP is counter-based."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["MFA", "OTP", "Authenticator App", "Time-based", "Counter"]
+    }
+  },
+  {
+    "id": "d3-062",
+    "domain": 3,
+    "section": "Identity and Access Management",
+    "type": "concept",
+    "front": "Biometric Authentication",
+    "back": {
+      "level1": "Authentication using physical or behavioral characteristics: fingerprint, face, iris, voice",
+      "level2": "Something you are authentication factor. Types: fingerprint (most common), facial recognition, iris/retina scan (most accurate), voice recognition, hand geometry. Measured by False Acceptance Rate (FAR - unauthorized accepted) and False Rejection Rate (FRR - authorized rejected). Crossover Error Rate (CER) where FAR=FRR indicates accuracy.",
+      "level3": "Exam tip: Biometric advantages: difficult to forge, can't be lost/forgotten, convenient. Disadvantages: expensive, privacy concerns, false positives/negatives, can't be revoked/changed (you can't change fingerprint like password). Know metrics: FAR (false accept - security issue), FRR (false reject - usability issue), CER (lower is better). Sensitivity trade-off: stricter threshold reduces FAR but increases FRR. Common attacks: fake fingerprints, photos for facial recognition (3D liveness detection prevents). Questions test biometric metrics and understanding biometrics can't be changed if compromised."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["MFA", "Something You Are", "FAR", "FRR", "CER"]
+    }
+  },
+  {
+    "id": "d3-063",
+    "domain": 3,
+    "section": "Identity and Access Management",
+    "type": "acronym",
+    "front": "PAM",
+    "back": {
+      "level1": "Privileged Access Management - Securing and managing administrative accounts",
+      "level2": "Solutions for controlling and monitoring privileged account access (admin, root, service accounts). Features: password vaulting (secure password storage), session recording, just-in-time access, automatic password rotation, approval workflows. Prevents credential theft, enforces least privilege, provides audit trail for compliance.",
+      "level3": "Exam tip: PAM = privileged account security. Problems PAM solves: shared admin passwords, standing privileges (always-on admin access), no accountability for admin actions, credential theft. PAM features: vault stores passwords (admins check out when needed), session recording (video of admin actions), JIT access (temporary elevation), password rotation (change after each use). Know that PAM is critical for compliance (audit admin activity) and security (prevent lateral movement with stolen admin creds). Questions test understanding PAM secures administrative accounts with vaulting and monitoring."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["Least Privilege", "Admin Accounts", "Password Vaulting", "Session Recording"]
+    }
+  },
+  {
+    "id": "d3-064",
+    "domain": 3,
+    "section": "Identity and Access Management",
+    "type": "concept",
+    "front": "Federation",
+    "back": {
+      "level1": "Linking identity across multiple systems or organizations",
+      "level2": "Relationship between organizations allowing users to use same identity/credentials across different systems. Identity Provider (IdP) manages authentication, Service Providers (SP) trust IdP. User authenticates once with IdP, gains access to multiple SPs. Enables SSO across organizational boundaries. Uses protocols: SAML, OAuth, OpenID Connect.",
+      "level3": "Exam tip: Federation extends SSO across organizations. Example: university students use university login to access external library databases (university is IdP, library is SP). Trust relationship: SP trusts IdP to authenticate users. Benefits: users don't need separate account for each service, organizations don't manage external users. Know federation vs SSO: SSO within organization, federation between organizations. Common in: academia (InCommon), cloud services, B2B partnerships. Questions test understanding federation enables cross-organization SSO through trust relationships."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["SSO", "SAML", "IdP", "Trust", "Cross-Organization"]
+    }
+  },
+  {
+    "id": "d3-065",
+    "domain": 3,
+    "section": "Enterprise Architecture",
+    "type": "concept",
+    "front": "Microservices",
+    "back": {
+      "level1": "Application architecture with independent, loosely-coupled services",
+      "level2": "Software architecture where application built as collection of small, independent services. Each microservice: owns its data, communicates via APIs (REST, message queues), can be deployed independently, uses different tech stack if needed. Contrasts with monolithic (all functionality in single application). Enables agility, scalability, resilience.",
+      "level3": "Exam tip: Microservices = small independent services vs monolithic = one large application. Advantages: independent deployment (change one service without affecting others), scalability (scale only services under load), fault isolation (one service failure doesn't crash entire app), technology flexibility. Disadvantages: complex distributed system, network overhead, difficult debugging, data consistency challenges. Security: more attack surface (each service exposes APIs), service-to-service authentication needed, API gateway for centralized security. Questions test microservices are independently deployable services communicating via APIs."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": false,
+      "relatedTerms": ["Containers", "APIs", "Distributed Systems", "Scalability"]
+    }
+  },
+  {
+    "id": "d3-066",
+    "domain": 3,
+    "section": "Enterprise Architecture",
+    "type": "acronym",
+    "front": "API Gateway",
+    "back": {
+      "level1": "Entry point for API requests providing security, routing, and management",
+      "level2": "Server sitting between clients and backend services, acting as reverse proxy for APIs. Handles: authentication/authorization, rate limiting, request routing, load balancing, caching, logging, SSL termination. Centralizes API security and management. Common in microservices architectures. Examples: Kong, AWS API Gateway, Azure API Management.",
+      "level3": "Exam tip: API Gateway = single entry point for all API calls. Security functions: authenticate clients (API keys, OAuth tokens), rate limiting (prevent abuse), input validation, IP filtering, DDoS protection. Other functions: request transformation, protocol translation, version management. Benefits: centralized security enforcement, consistent policies across services, shields backend from direct access. Know API gateway is also load balancer and reverse proxy. Questions test understanding API gateway centralizes security for microservices/APIs."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": false,
+      "relatedTerms": ["Microservices", "APIs", "Reverse Proxy", "Rate Limiting"]
+    }
+  },
+  {
+    "id": "d3-067",
+    "domain": 3,
+    "section": "Network Security",
+    "type": "concept",
+    "front": "Network Tap vs Port Mirroring",
+    "back": {
+      "level1": "Network Tap: physical device copying traffic; Port Mirroring (SPAN): switch feature copying traffic",
+      "level2": "Network Tap: Hardware device inserted into network cable, duplicates all traffic to monitoring port without affecting network. Passive, always on, captures everything, no switch configuration needed. Port Mirroring/SPAN: Switch feature copying traffic from one or more ports to monitoring port. Configured in software, may impact switch performance, can miss packets under heavy load.",
+      "level3": "Exam tip: Tap vs SPAN for network monitoring. Network Tap advantages: no performance impact, captures all traffic (including errors), hardware-based, never drops packets. Disadvantages: requires physical installation, costs money. SPAN advantages: no additional hardware, flexible (monitor multiple ports), software configured. Disadvantages: may drop packets under load, impacts switch CPU, might not capture VLAN tags/errors. Use tap for critical monitoring (IDS, forensics), SPAN for troubleshooting. Questions test understanding taps are hardware/passive, SPAN is software/active."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Network Monitoring", "IDS", "Packet Capture", "SPAN"]
+    }
+  },
+  {
+    "id": "d3-068",
+    "domain": 3,
+    "section": "Secure Communication",
+    "type": "concept",
+    "front": "HTTPS",
+    "back": {
+      "level1": "HTTP over TLS - Encrypted web traffic using SSL/TLS",
+      "level2": "HTTP protocol secured with TLS encryption. Provides confidentiality (encryption), integrity (tampering detection), authentication (server identity via certificate). Port 443. Browser verifies server certificate against trusted CAs. Requires valid SSL/TLS certificate on web server. Green padlock in browser indicates HTTPS.",
+      "level3": "Exam tip: HTTPS = HTTP + TLS encryption. Benefits: prevents eavesdropping (credentials, session cookies, data encrypted), prevents MITM attacks (certificate validates server identity), required for sensitive data (PCI DSS requires HTTPS for payment forms). Browser warnings if: certificate expired, self-signed, domain mismatch, untrusted CA. Know HTTP (port 80) sends everything in cleartext - never use for login/sensitive data. Modern best practice: HTTPS everywhere (not just login pages). Questions test HTTPS uses TLS for encryption and authentication."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["TLS", "Encryption", "Certificates", "Port 443", "SSL"]
+    }
+  },
+  {
+    "id": "d3-069",
+    "domain": 3,
+    "section": "Secure Communication",
+    "type": "concept",
+    "front": "Captive Portal",
+    "back": {
+      "level1": "Web page requiring user interaction before granting network access",
+      "level2": "Authentication mechanism redirecting users to web page before allowing internet access. Common in: guest Wi-Fi (hotels, airports, coffee shops), hotspots. User must accept terms, enter credentials, or provide payment before access granted. Implemented by intercepting HTTP requests and redirecting to portal page.",
+      "level3": "Exam tip: Captive portal = login/accept page before network access. Use cases: guest wireless (accept terms of use), public hotspot (payment or advertising), bring-your-own-device (authenticate before access). Security: captive portal itself should use HTTPS to protect credentials, often combined with other controls (NAC, VLAN). Know that captive portal doesn't encrypt user traffic after authentication - users should use VPN on public hotspots. Implementation: usually works with NAC solution. Questions test captive portal provides authentication via web page before network access."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["Guest Wireless", "Authentication", "NAC", "Public Wi-Fi"]
+    }
+  },
+  {
+    "id": "d3-070",
+    "domain": 3,
+    "section": "Infrastructure Security",
+    "type": "concept",
+    "front": "Infrastructure as Code (IaC)",
+    "back": {
+      "level1": "Managing infrastructure through machine-readable definition files",
+      "level2": "Practice of managing and provisioning infrastructure using code/configuration files instead of manual processes. Terraform, CloudFormation, Ansible define desired infrastructure state. Benefits: version control, repeatability, consistency, automation, disaster recovery. Treats infrastructure like software - can be tested, reviewed, versioned.",
+      "level3": "Exam tip: IaC = infrastructure defined in code (not manual configuration). Security benefits: consistent security configuration (no manual errors), peer review of changes (code review), audit trail (version control), automated compliance checking, rapid disaster recovery (redeploy from code). Security risks: secrets in code (use secret management), misconfiguration replicated at scale, unauthorized code changes affect infrastructure. Tools: Terraform (multi-cloud), CloudFormation (AWS), ARM templates (Azure). Questions test IaC enables consistent, repeatable infrastructure deployment through code."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": false,
+      "relatedTerms": ["Automation", "DevOps", "Cloud", "Configuration Management"]
+    }
+  },
+  {
+    "id": "d3-071",
+    "domain": 3,
+    "section": "Network Security",
+    "type": "concept",
+    "front": "Screened Subnet",
+    "back": {
+      "level1": "Another term for DMZ - isolated network segment between firewalls",
+      "level2": "Network architecture placing public-facing servers in protected subnet between two firewalls. External firewall protects from internet, internal firewall protects internal network from DMZ. Also called three-legged firewall or screened subnet. Same concept as DMZ but preferred term in newer security documentation.",
+      "level3": "Exam tip: Screened subnet = DMZ (newer terminology, same concept). Architecture: Internet → External Firewall → Screened Subnet (public servers) → Internal Firewall → Internal Network. Two security layers: even if screened subnet compromised, internal network protected by second firewall. Know that this is defense in depth - multiple layers. Rules: external firewall allows internet to screened subnet only, internal firewall allows screened subnet to internal for specific services only. Questions test screened subnet provides layered protection for public-facing services."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["DMZ", "Firewall", "Network Segmentation", "Defense in Depth"]
+    }
+  },
+  {
+    "id": "d3-072",
+    "domain": 3,
+    "section": "Identity and Access Management",
+    "type": "concept",
+    "front": "Just-in-Time (JIT) Access",
+    "back": {
+      "level1": "Temporary privilege elevation granted only when needed",
+      "level2": "Security model where users granted elevated privileges (admin) only for limited time when needed for specific task. After time expires or task completes, privileges revoked. Reduces standing privileges (always-on admin access). Implemented via PAM solutions or cloud IAM. Users request access, approval granted, temporary elevation, automatic revocation.",
+      "level3": "Exam tip: JIT = temporary privilege elevation (opposite of standing privileges). Benefits: reduces attack surface (credentials not always privileged), limits damage if account compromised (attacker gets limited window), enforces least privilege, provides approval workflow. Process: user requests admin access → approver authorizes → system grants temporary elevation (e.g., 4 hours) → access automatically revoked. Common in: cloud environments, PAM solutions, DevOps. Questions test JIT provides temporary privilege elevation reducing risk from standing admin access."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["PAM", "Least Privilege", "Privilege Elevation", "Zero Standing Privileges"]
+    }
+  },
+  {
+    "id": "d3-073",
+    "domain": 3,
+    "section": "Identity and Access Management",
+    "type": "acronym",
+    "front": "FIDO2 and WebAuthn",
+    "back": {
+      "level1": "Modern passwordless authentication standard using public key cryptography",
+      "level2": "FIDO2: Standard for passwordless authentication using hardware security keys or platform authenticators (biometric). WebAuthn: Web API implementing FIDO2 in browsers. User registers public key with service, authenticates using private key (never leaves device). Resistant to phishing (public key cryptography, domain-bound). Examples: YubiKey, Windows Hello, Touch ID.",
+      "level3": "Exam tip: FIDO2/WebAuthn = passwordless authentication using public key crypto. How it works: user registers security key with service (public key sent to server, private key stays on device) → during login, server challenges user → user authenticates to security key (PIN or biometric) → key signs challenge with private key → server verifies signature with public key. Benefits: phishing-resistant (private key never sent), no password to steal, MFA built-in. U2F is predecessor (second factor only, FIDO2 is passwordless). Questions test FIDO2 is phishing-resistant passwordless authentication."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": false,
+      "relatedTerms": ["Passwordless", "MFA", "Security Key", "Phishing-Resistant", "YubiKey"]
+    }
+  },
+  {
+    "id": "d3-074",
+    "domain": 3,
+    "section": "Enterprise Architecture",
+    "type": "concept",
+    "front": "Serverless / FaaS",
+    "back": {
+      "level1": "Function as a Service - Running code without managing servers",
+      "level2": "Cloud computing model where provider manages all infrastructure, users only deploy code functions. Functions triggered by events (HTTP request, file upload, schedule), execute, then shut down. Pay only for execution time. Provider handles: servers, scaling, patching, availability. Examples: AWS Lambda, Azure Functions, Google Cloud Functions.",
+      "level3": "Exam tip: Serverless = no server management (provider manages everything). Advantages: no infrastructure management, automatic scaling, pay per execution (cost-efficient for sporadic workloads), faster development. Disadvantages: vendor lock-in, cold start latency, limited execution time, difficult to debug. Security: reduced attack surface (no OS to patch), provider handles infrastructure security, but function code security is customer responsibility. Use cases: API backends, data processing, scheduled tasks, event-driven workflows. Questions test serverless means provider manages infrastructure, customer only manages code."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": false,
+      "relatedTerms": ["Cloud", "Lambda", "Event-Driven", "PaaS"]
+    }
+  },
+  {
+    "id": "d3-075",
+    "domain": 3,
+    "section": "Network Security",
+    "type": "concept",
+    "front": "Microsegmentation",
+    "back": {
+      "level1": "Granular network segmentation at workload level using software-defined policies",
+      "level2": "Security technique dividing data center into small, isolated segments with security policies for each workload or application. Uses software-defined networking to enforce policies regardless of network topology. More granular than traditional VLAN segmentation. Limits lateral movement - even if attacker breaches perimeter, can't move freely. Common in cloud and data centers.",
+      "level3": "Exam tip: Microsegmentation = very granular segmentation (workload-level vs network-level). Traditional segmentation: VLANs, subnets, firewall zones (coarse-grained). Microsegmentation: individual VMs/containers (fine-grained), software-defined policies travel with workload. Benefits: limits lateral movement, Zero Trust implementation, reduces blast radius, adapts to dynamic environments (cloud, containers). Implementation: requires SDN, network virtualization, or cloud-native tools. Questions test microsegmentation provides workload-level isolation limiting lateral movement."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["Zero Trust", "Network Segmentation", "SDN", "Lateral Movement", "East-West Traffic"]
+    }
+  }
+]
