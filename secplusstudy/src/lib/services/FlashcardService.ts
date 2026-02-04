@@ -7,6 +7,8 @@ export interface IFlashcardService {
   getBySection(domainId: number, section: string): Promise<Flashcard[]>;
 }
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export class JsonFlashcardService implements IFlashcardService {
   private cache: Map<number, Flashcard[]> = new Map();
 
@@ -28,7 +30,7 @@ export class JsonFlashcardService implements IFlashcardService {
     }
 
     try {
-      const response = await fetch(`/data/flashcards_domain${domainId}.json`);
+      const response = await fetch(`${basePath}/data/flashcards_domain${domainId}.json`);
       if (!response.ok) {
         console.error(`Failed to load flashcards for domain ${domainId}`);
         return [];
