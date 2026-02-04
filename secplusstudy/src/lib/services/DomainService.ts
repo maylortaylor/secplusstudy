@@ -1,5 +1,7 @@
 import { Domain, DomainSchema } from '@/types/domain';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export class DomainService {
   private static cache: Domain[] | null = null;
 
@@ -9,7 +11,7 @@ export class DomainService {
     }
 
     try {
-      const response = await fetch('/data/domains.json');
+      const response = await fetch(`${basePath}/data/domains.json`);
       if (!response.ok) {
         console.error('Failed to load domains');
         return [];
