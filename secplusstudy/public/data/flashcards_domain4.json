@@ -508,5 +508,600 @@
       "commonlyTested": true,
       "relatedTerms": ["SOAR", "Automation", "Integration", "Workflow"]
     }
+  },
+  {
+    "id": "d4-031",
+    "domain": 4,
+    "section": "Threat Intelligence",
+    "type": "concept",
+    "front": "Cyber Kill Chain",
+    "back": {
+      "level1": "Reconnaissance → Weaponization → Delivery → Exploitation → Installation → Command & Control → Actions on Objectives",
+      "level2": "Lockheed Martin's 7-stage framework describing the phases of a cyber attack. Starts with reconnaissance (gathering information), through weaponization (creating malware), delivery (sending to target), exploitation (triggering vulnerability), installation (persisting on system), C2 (establishing communication), and finally actions on objectives (achieving attacker's goal like data theft).",
+      "level3": "Exam tip: MEMORIZE all 7 stages in order. This framework is heavily tested. Know that defensive strategies map to each stage: reconnaissance (threat intelligence), delivery (email filtering), exploitation (patching), installation (antivirus), C2 (firewall/IDS), actions (DLP). Questions often ask which stage an activity belongs to or which defense stops which stage. Key insight: breaking the chain at ANY point stops the attack. Most effective to stop early stages (reconnaissance, delivery) before compromise occurs."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["MITRE ATT&CK", "Diamond Model", "Attack Framework", "Threat Modeling"]
+    }
+  },
+  {
+    "id": "d4-032",
+    "domain": 4,
+    "section": "Threat Intelligence",
+    "type": "concept",
+    "front": "MITRE ATT&CK Framework",
+    "back": {
+      "level1": "Adversarial Tactics, Techniques, and Common Knowledge - Knowledge base of adversary behaviors",
+      "level2": "Comprehensive matrix documenting real-world attacker tactics (strategic goals like Initial Access, Persistence, Privilege Escalation) and techniques (specific methods like Phishing, DLL Injection, Pass-the-Hash). Organized by platform (Windows, Linux, macOS, Cloud) and includes mitigations and detection methods for each technique.",
+      "level3": "Exam tip: MITRE ATT&CK is about TTPs (Tactics, Techniques, Procedures). Know the major tactics: Initial Access, Execution, Persistence, Privilege Escalation, Defense Evasion, Credential Access, Discovery, Lateral Movement, Collection, Exfiltration, Impact. Unlike Kill Chain (linear), ATT&CK is a matrix showing multiple paths attackers can take. Used for: threat intelligence, detection engineering, red/blue team exercises. Questions test knowing what ATT&CK is (behavior knowledge base), how it differs from Kill Chain, and use cases. Common example techniques: T1566 (Phishing), T1078 (Valid Accounts)."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["Cyber Kill Chain", "TTPs", "Threat Intelligence", "Red Team"]
+    }
+  },
+  {
+    "id": "d4-033",
+    "domain": 4,
+    "section": "Threat Intelligence",
+    "type": "concept",
+    "front": "Diamond Model",
+    "back": {
+      "level1": "Framework with four core features: Adversary, Capability, Infrastructure, Victim",
+      "level2": "Intrusion analysis model showing relationships between four elements forming a diamond: Adversary (who), Capability (what tools/malware), Infrastructure (how - C2 servers, domains), and Victim (target). Each edge represents a relationship. Model helps analysts pivot between elements during investigation (if you know infrastructure, you can find other victims or capabilities used).",
+      "level3": "Exam tip: Diamond Model is for ANALYSIS and PIVOTING during investigations. The four points: Adversary (threat actor), Capability (tools/malware/exploits), Infrastructure (domains, IPs, email addresses, C2 servers), Victim (target org/person). Key concept: knowing one element helps discover others. Example: found malicious domain (infrastructure) → identify other victims using it → discover adversary's other infrastructure → find additional capabilities. Questions test understanding the four elements and how model aids investigation. Remember: this is for INVESTIGATION, not prevention."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Threat Intelligence", "Incident Analysis", "IOCs", "Pivoting"]
+    }
+  },
+  {
+    "id": "d4-034",
+    "domain": 4,
+    "section": "Threat Intelligence",
+    "type": "concept",
+    "front": "Indicators of Compromise (IOCs)",
+    "back": {
+      "level1": "Observable artifacts that indicate potential intrusion or malicious activity",
+      "level2": "Technical evidence of compromise including: suspicious IP addresses, malicious domains, file hashes (MD5/SHA256), registry key changes, unusual network traffic patterns, unexpected processes, known malware signatures. IOCs are shared via threat intelligence feeds and used to detect and block threats across organizations.",
+      "level3": "Exam tip: IOCs are EVIDENCE of compromise. Common types: IP addresses of C2 servers, malicious file hashes, domains hosting malware, email addresses used in phishing, suspicious registry keys, mutex names, file paths. Know that IOCs have shelf life - they change as attackers adapt. Shared via STIX/TAXII, threat feeds, ISACs. Consumed by SIEM, IDS/IPS, EDR, firewalls. Difference from IOAs (Indicators of Attack) - IOCs show compromise happened, IOAs show attack in progress. Questions test identifying IOC types and how they're used in detection."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["IOA", "Threat Intelligence", "STIX/TAXII", "Threat Feeds"]
+    }
+  },
+  {
+    "id": "d4-035",
+    "domain": 4,
+    "section": "Threat Intelligence",
+    "type": "concept",
+    "front": "Threat Hunting",
+    "back": {
+      "level1": "Proactive search for threats that evaded automated detection systems",
+      "level2": "Hypothesis-driven investigation where analysts actively search for signs of compromise rather than waiting for alerts. Uses threat intelligence, behavioral analysis, and anomaly detection to find advanced threats. Starts with hypothesis (e.g., 'Attackers may be using PowerShell for persistence'), then hunts for evidence using logs, EDR data, and forensic tools.",
+      "level3": "Exam tip: Threat hunting is PROACTIVE (vs reactive alert response). Key characteristics: hypothesis-driven (based on threat intelligence or anomaly observations), requires skilled analysts, uses multiple data sources (logs, EDR, network traffic), focuses on finding sophisticated threats that bypass automated defenses. Common techniques: searching for known TTPs, behavioral anomalies, IOC sweeps across environment. Know that hunting often discovers new detection rules to add to automated systems. Questions test distinguishing hunting (proactive, hypothesis-based) from monitoring (reactive, alert-based)."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Threat Intelligence", "SIEM", "EDR", "Proactive Security"]
+    }
+  },
+  {
+    "id": "d4-036",
+    "domain": 4,
+    "section": "Security Monitoring",
+    "type": "concept",
+    "front": "Syslog",
+    "back": {
+      "level1": "Standard protocol for message logging with severity levels 0-7",
+      "level2": "Protocol for transmitting log messages from network devices, servers, and applications to centralized log collectors. Uses UDP port 514 (or TCP 6514 for syslog-ng/rsyslog). Messages include timestamp, hostname, facility (source), severity, and message content. Severity levels: 0=Emergency, 1=Alert, 2=Critical, 3=Error, 4=Warning, 5=Notice, 6=Informational, 7=Debug.",
+      "level3": "Exam tip: MEMORIZE severity levels 0-7. Emergency (0) is most severe (system unusable), Debug (7) is least severe. Common question: which severity for specific events. Know that Syslog uses UDP by default (unreliable but fast), can use TCP for reliability. Facilities identify message source (kern, user, mail, daemon, auth, local0-7). Messages sent to SIEM or log management system. Configuration typically done in /etc/syslog.conf or /etc/rsyslog.conf. Questions test severity levels, protocol details (UDP 514), and use cases for centralized logging."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Log Management", "SIEM", "rsyslog", "Centralized Logging"]
+    }
+  },
+  {
+    "id": "d4-037",
+    "domain": 4,
+    "section": "Security Monitoring",
+    "type": "concept",
+    "front": "Windows Event Logs",
+    "back": {
+      "level1": "Windows logging system capturing security, system, and application events with Event IDs",
+      "level2": "Three main logs: Security (authentication, access, policy changes), System (hardware, drivers, services), Application (software events). Events identified by Event ID - unique number for each event type. Viewed via Event Viewer (eventvwr.msc). Critical for forensics and security monitoring. Can forward to SIEM using WEF (Windows Event Forwarding) or agents.",
+      "level3": "Exam tip: Know key Event IDs: 4624 (successful logon), 4625 (failed logon), 4720 (account created), 4722 (account enabled), 4724 (password reset), 4728 (user added to security group), 4732 (user added to local group), 4740 (account lockout), 4768 (Kerberos TGT requested), 4769 (Kerberos service ticket), 7045 (service installed). Security log requires audit policy enabled. Questions test knowing which Event ID corresponds to specific actions (failed login=4625, successful=4624). Understand log clearing (Event ID 1102) is indicator of tampering."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["Event Viewer", "Log Analysis", "SIEM", "Forensics"]
+    }
+  },
+  {
+    "id": "d4-038",
+    "domain": 4,
+    "section": "Security Monitoring",
+    "type": "concept",
+    "front": "Log Correlation",
+    "back": {
+      "level1": "Analyzing relationships between events from multiple log sources to identify patterns",
+      "level2": "Process of combining and analyzing logs from different sources (firewall, IDS, authentication servers, applications) to detect complex attack patterns that wouldn't be visible in single log source. SIEM performs correlation using rules and machine learning to connect related events and generate meaningful alerts from noisy data.",
+      "level3": "Exam tip: Correlation is about finding RELATIONSHIPS across logs. Example: firewall shows port scan from IP 1.2.3.4, then authentication log shows failed logins from same IP, then IDS detects exploit attempt - correlation connects these to identify coordinated attack. Differs from aggregation (just collecting logs centrally). Correlation rules define patterns like: if failed logins > 5 in 1 minute from same IP = brute force attempt. Advanced correlation uses time windows, thresholds, and sequences. Questions test understanding correlation value and distinguishing from simple log collection."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["SIEM", "Log Analysis", "Event Correlation", "Pattern Detection"]
+    }
+  },
+  {
+    "id": "d4-039",
+    "domain": 4,
+    "section": "Security Monitoring",
+    "type": "concept",
+    "front": "Packet Capture (PCAP)",
+    "back": {
+      "level1": "Recording full network packets for detailed analysis",
+      "level2": "Capturing complete network traffic including headers and payloads, stored in pcap format. Provides deepest visibility - can reconstruct TCP sessions, extract files, analyze application data. Uses tools like tcpdump, Wireshark, tshark. Requires significant storage (captures everything) and processing power. Used for forensics, troubleshooting, and deep threat analysis.",
+      "level3": "Exam tip: PCAP captures EVERYTHING vs NetFlow which captures metadata only. PCAP advantages: full packet data, can analyze payload, reconstruct sessions, extract files. Disadvantages: massive storage requirements, privacy concerns (captures sensitive data), performance impact, not scalable to large networks. Know when to use: forensic investigations, malware analysis, deep troubleshooting. Filter expressions (BPF - Berkeley Packet Filter) reduce captured data. Questions test PCAP vs NetFlow trade-offs and knowing PCAP provides complete traffic details."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Wireshark", "tcpdump", "NetFlow", "Network Forensics"]
+    }
+  },
+  {
+    "id": "d4-040",
+    "domain": 4,
+    "section": "Security Monitoring",
+    "type": "tool",
+    "front": "Wireshark",
+    "back": {
+      "level1": "Open-source network protocol analyzer for capturing and analyzing packets",
+      "level2": "GUI-based packet capture and analysis tool that can capture live traffic or open pcap files. Provides detailed decode of hundreds of protocols, allows filtering, following TCP streams, extracting files, and statistical analysis. Essential tool for network troubleshooting, security analysis, and forensic investigations.",
+      "level3": "Exam tip: Wireshark is the most common packet analyzer. Key features: capture filters (limit what's captured - uses BPF syntax), display filters (filter after capture - uses Wireshark syntax), follow TCP stream (reconstruct conversations), export objects (extract files from HTTP), protocol hierarchy (see traffic breakdown). Know common filters: ip.addr==x.x.x.x (specific IP), tcp.port==80 (HTTP traffic), http.request (HTTP requests only). Questions test knowing Wireshark is for packet analysis and basic use cases. Command-line equivalent: tshark."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["tcpdump", "Packet Analysis", "PCAP", "Network Forensics"]
+    }
+  },
+  {
+    "id": "d4-041",
+    "domain": 4,
+    "section": "Security Monitoring",
+    "type": "concept",
+    "front": "Security Operations Center (SOC)",
+    "back": {
+      "level1": "Centralized unit that monitors, detects, analyzes, and responds to security incidents",
+      "level2": "Team of security analysts working in shifts to provide 24/7 monitoring of organizational security. Uses SIEM, IDS/IPS, EDR, and other tools to detect threats. Structured in tiers: Tier 1 (triage, initial investigation), Tier 2 (deep analysis, incident response), Tier 3 (threat hunting, advanced analysis, tool development). Handles alerts, incidents, and continuous monitoring.",
+      "level3": "Exam tip: Understand SOC tier structure. Tier 1 analysts (junior) - monitor dashboards, triage alerts, escalate suspicious activity, handle most volume. Tier 2 (senior) - deep investigation, incident response, correlation analysis, handle escalations. Tier 3 (expert) - threat hunting, malware analysis, tool development, handle complex incidents. Some orgs add Tier 0 (automated triage) and SOC Manager. Know SOC metrics: MTTD (Mean Time to Detect), MTTR (Mean Time to Respond), alert volume, false positive rate. Questions test understanding tier responsibilities and SOC role in security operations."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["SIEM", "Incident Response", "MTTD", "MTTR", "Alert Triage"]
+    }
+  },
+  {
+    "id": "d4-042",
+    "domain": 4,
+    "section": "Security Monitoring",
+    "type": "concept",
+    "front": "MTTD and MTTR",
+    "back": {
+      "level1": "Mean Time to Detect and Mean Time to Respond - Key security metrics",
+      "level2": "MTTD measures average time from when security incident occurs until it's detected. MTTR measures average time from detection until incident is fully resolved/remediated. Both are critical metrics for measuring security program effectiveness. Lower values indicate better security operations. Industry average MTTD is weeks-months for sophisticated attacks.",
+      "level3": "Exam tip: Know both metrics and what they measure. MTTD: compromise → detection (shorter is better). MTTR: detection → resolution (shorter is better). Example: malware infected system on Jan 1, detected Jan 15 (MTTD=14 days), resolved Jan 16 (MTTR=1 day). Improving MTTD: better monitoring, threat hunting, behavioral detection, log correlation. Improving MTTR: automation (SOAR), playbooks, skilled analysts, clear procedures. Questions test understanding what each metric measures and how to improve them. Related: dwell time (how long attacker stays undetected - industry average ~200 days)."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["SOC", "Metrics", "KPI", "Incident Response", "Dwell Time"]
+    }
+  },
+  {
+    "id": "d4-043",
+    "domain": 4,
+    "section": "Security Monitoring",
+    "type": "concept",
+    "front": "Alert Tuning and Fatigue",
+    "back": {
+      "level1": "Optimizing detection rules to reduce false positives; burnout from excessive alerts",
+      "level2": "Alert tuning: adjusting SIEM rules, IDS signatures, and detection thresholds to minimize false positives while maintaining detection capability. Alert fatigue: condition where analysts become desensitized due to overwhelming alert volume, causing them to miss real threats. SOCs typically face thousands of alerts daily, most being false positives.",
+      "level3": "Exam tip: Alert fatigue is major SOC problem leading to missed threats. Caused by: too many alerts, high false positive rate, alert duplication, poor prioritization. Solutions: tune detection rules, whitelist known-good activity, automate triage, prioritize by risk, implement SOAR for automated response. Know the balance: too sensitive = alert fatigue, too lenient = missed attacks. Questions test understanding alert fatigue causes and mitigations. Remember: quality over quantity - better to have fewer accurate alerts than thousands of false positives."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["SOC", "SIEM", "False Positives", "Detection Engineering"]
+    }
+  },
+  {
+    "id": "d4-044",
+    "domain": 4,
+    "section": "Vulnerability Management",
+    "type": "tool",
+    "front": "Nessus",
+    "back": {
+      "level1": "Popular commercial vulnerability scanner by Tenable",
+      "level2": "Comprehensive vulnerability scanning tool that identifies security weaknesses, misconfigurations, missing patches, and compliance violations. Supports credentialed and non-credentialed scans across networks, systems, applications, and cloud. Provides detailed remediation guidance and integrates with patch management systems. Uses plugin-based architecture with frequent updates.",
+      "level3": "Exam tip: Nessus is one of most common vulnerability scanners (along with Qualys, Rapid7, OpenVAS). Key features: credentialed scanning for deeper assessment, compliance checks (PCI DSS, HIPAA), plugin-based (regularly updated vulnerability checks), risk-based prioritization. Know it performs active scanning (sends probes to targets) and can identify: missing patches, misconfigurations, weak passwords, outdated software. Nessus Professional for small deployments, Tenable.sc (Security Center) for enterprise. Questions test knowing Nessus is vulnerability scanner and its capabilities."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["Vulnerability Scanning", "Qualys", "OpenVAS", "CVSS"]
+    }
+  },
+  {
+    "id": "d4-045",
+    "domain": 4,
+    "section": "Digital Forensics",
+    "type": "tool",
+    "front": "FTK (Forensic Toolkit)",
+    "back": {
+      "level1": "Commercial forensic software for analyzing digital evidence",
+      "level2": "Comprehensive forensic suite by AccessData/Exterro including FTK Imager (acquisition) and FTK (analysis). Features: disk imaging, file recovery, registry analysis, email analysis, password cracking, timeline creation, keyword searching. Widely used by law enforcement and corporate investigators. Known for fast processing of large datasets.",
+      "level3": "Exam tip: FTK is popular commercial forensic tool. Two components: FTK Imager (free tool for creating forensic images and previewing evidence) and FTK (full analysis platform). Key capabilities: process large volumes of data quickly, recover deleted files, crack passwords, analyze registry, search across multiple evidence sources, create detailed reports. Uses database for indexing which enables fast searching. Alternative tools: EnCase, X-Ways, Autopsy (free). Questions test knowing FTK is for forensic analysis and evidence examination."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["EnCase", "Autopsy", "Digital Forensics", "Evidence Analysis"]
+    }
+  },
+  {
+    "id": "d4-046",
+    "domain": 4,
+    "section": "Digital Forensics",
+    "type": "concept",
+    "front": "File Carving",
+    "back": {
+      "level1": "Recovering files from unallocated disk space without file system metadata",
+      "level2": "Forensic technique for extracting files from disk images by identifying file signatures (magic numbers) and structures rather than relying on file system. Can recover deleted files even after file system metadata is gone. Tools analyze raw disk data looking for file headers (JPEG starts with FFD8, PDF with %PDF) and footers to reconstruct files.",
+      "level3": "Exam tip: File carving recovers files when file system metadata is deleted/corrupted. Works by: scanning disk sectors for file signatures (magic numbers - known byte patterns indicating file type), extracting data between header and footer, reconstructing file. Common with: deleted files, formatted drives, corrupted file systems. Tools: Foremost, Scalpel, PhotoRec. Know that carved files lose original filename and timestamps (metadata gone). Useful for recovering evidence after suspect 'deletes' files or formats drive. Questions test understanding file carving recovers deleted/hidden files using signatures."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Forensics", "Deleted Files", "Data Recovery", "Magic Numbers"]
+    }
+  },
+  {
+    "id": "d4-047",
+    "domain": 4,
+    "section": "Digital Forensics",
+    "type": "concept",
+    "front": "Timeline Analysis",
+    "back": {
+      "level1": "Reconstructing sequence of events by analyzing timestamps from multiple sources",
+      "level2": "Forensic technique creating chronological view of system activity by correlating timestamps from: file system (MAC times - Modified, Accessed, Changed), logs, registry, browser history, application data. Helps answer: What happened? When? In what order? Timeline tools (log2timeline, plaso) automate collection and correlation of timestamps.",
+      "level3": "Exam tip: Timeline analysis reconstructs event sequence during investigation. Key timestamp sources: file MAC times (Modified, Accessed, Changed/Created), Windows registry, event logs, browser history, application logs, email headers, network connection logs. Know that timestamps can be in different time zones and formats - must normalize. Tools: log2timeline/plaso (create super timelines), Autopsy, FTK. Used to: establish user activity sequence, prove data access, identify when malware executed. Questions test understanding timeline analysis correlates timestamps to reconstruct events."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Forensics", "MAC Times", "log2timeline", "Event Reconstruction"]
+    }
+  },
+  {
+    "id": "d4-048",
+    "domain": 4,
+    "section": "Threat Intelligence",
+    "type": "concept",
+    "front": "Threat Intelligence Sources",
+    "back": {
+      "level1": "OSINT, Commercial Feeds, ISACs/ISAOs, Dark Web, Internal Sources",
+      "level2": "Open Source Intelligence (OSINT): publicly available data from blogs, news, security researchers. Commercial Feeds: paid services providing IOCs and analysis (CrowdStrike, Recorded Future). ISACs/ISAOs: Information Sharing and Analysis Centers for specific industries. Dark Web Monitoring: monitoring criminal forums and markets. Internal: organization's own incident data, honeypot logs.",
+      "level3": "Exam tip: Know threat intelligence source types. OSINT advantages: free, timely; disadvantages: not tailored, lower fidelity. Commercial feeds: high quality, curated, expensive. ISACs: industry-specific, peer sharing (FS-ISAC for financial, H-ISAC for healthcare). Know that intelligence should be: timely (current threats), relevant (applies to your environment), actionable (can act on it). Tactical intelligence: IOCs for immediate defense. Operational: adversary TTPs. Strategic: trends and risk landscape. Questions test source types and when to use each."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["OSINT", "ISAC", "IOC", "Threat Feeds", "Dark Web"]
+    }
+  },
+  {
+    "id": "d4-049",
+    "domain": 4,
+    "section": "Incident Response",
+    "type": "concept",
+    "front": "Incident Categories",
+    "back": {
+      "level1": "DDoS, Ransomware, Data Breach, Insider Threat, Phishing, Malware, Unauthorized Access",
+      "level2": "Common incident types requiring different response approaches. DDoS: service disruption. Ransomware: encryption with extortion. Data Breach: unauthorized data access/exfiltration. Insider Threat: malicious employee. Phishing: social engineering. Malware: virus/worm/trojan infection. Unauthorized Access: compromised credentials or exploitation. Each category has specific containment and recovery procedures.",
+      "level3": "Exam tip: Know different incident types and response priorities. Ransomware: isolate immediately, check backups, DON'T pay (usually). Data breach: contain, identify scope, legal notification, forensics. DDoS: traffic filtering, rate limiting, CDN/scrubbing service. Insider threat: preserve evidence, revoke access, legal hold. Phishing: user education, email filtering, credential reset. Questions test identifying incident type from scenario and appropriate initial response. Remember: containment approach varies - ransomware needs aggressive isolation, data breach needs evidence preservation."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["Incident Response", "Ransomware", "Data Breach", "DDoS"]
+    }
+  },
+  {
+    "id": "d4-050",
+    "domain": 4,
+    "section": "Incident Response",
+    "type": "concept",
+    "front": "Root Cause Analysis",
+    "back": {
+      "level1": "Identifying the underlying reason for security incident occurrence",
+      "level2": "Investigative process determining how attacker initially compromised the environment. Goes beyond immediate cause (malware execution) to find root cause (unpatched vulnerability, weak password, successful phish). Uses techniques like 5 Whys, fishbone diagrams, and timeline analysis. Essential for preventing recurrence and improving security.",
+      "level3": "Exam tip: Root cause analysis finds the ORIGIN of compromise, not just symptoms. Example: symptom=ransomware encrypted files, immediate cause=malware executed, root cause=user clicked phishing email → unpatched email client vulnerability → lack of security awareness training. Process: gather evidence, reconstruct attack timeline, identify entry point, determine why defenses failed, recommend fixes. Part of lessons learned phase. Know common root causes: unpatched vulnerabilities, weak passwords, lack of MFA, insufficient monitoring, user error. Questions test understanding RCA finds origin to prevent recurrence."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Incident Response", "Lessons Learned", "5 Whys", "Post-Incident"]
+    }
+  },
+  {
+    "id": "d4-051",
+    "domain": 4,
+    "section": "Incident Response",
+    "type": "concept",
+    "front": "Isolation vs Segmentation",
+    "back": {
+      "level1": "Isolation: complete disconnect; Segmentation: controlled separation into network zones",
+      "level2": "Isolation: completely disconnecting compromised system from all networks (pull network cable, disable NIC, air gap). Prevents spread but stops evidence collection and monitoring. Segmentation: moving system to isolated VLAN/network segment with monitoring, allowing controlled analysis while preventing lateral movement. Maintains some connectivity for investigation.",
+      "level3": "Exam tip: Key distinction for incident response containment. Isolation = COMPLETE disconnect (most aggressive, stops all communication, use for ransomware or rapidly spreading malware). Segmentation = CONTROLLED separation (allows monitoring and analysis, use when need to observe attacker or gather evidence). Questions often ask which is appropriate for scenarios. Isolation pros: absolute containment. Cons: can't monitor attacker, lose volatile evidence if shutdown. Segmentation pros: continued monitoring, preserve evidence. Cons: still some risk if misconfigured. Choose based on threat severity and investigation needs."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Containment", "Incident Response", "Network Segmentation", "Air Gap"]
+    }
+  },
+  {
+    "id": "d4-052",
+    "domain": 4,
+    "section": "Digital Forensics",
+    "type": "concept",
+    "front": "Live vs Dead Acquisition",
+    "back": {
+      "level1": "Live: capturing evidence from running system; Dead: imaging powered-off system",
+      "level2": "Live acquisition: collecting evidence while system is running - captures volatile data (RAM, active connections, running processes) but risks altering evidence. Dead acquisition: powering off system then imaging - preserves disk state but loses volatile data. Choice depends on whether volatile evidence is critical and risk of evidence modification.",
+      "level3": "Exam tip: Know trade-offs. Live acquisition: captures RAM, running processes, network connections, encryption keys (needed for encrypted drives). Risks: running acquisition tools modifies system state, suspect could detect. Used when: volatile evidence needed, encrypted drives (keys in memory), long-running investigations. Dead acquisition: safer for evidence integrity, standard for most cases. Loses: memory contents, active connections, processes. Best practice: if doing live, capture volatile data first (order of volatility), then do memory dump, then disk image. Questions test when each is appropriate and understanding trade-offs."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Forensics", "Volatile Data", "Evidence Collection", "Memory Dump"]
+    }
+  },
+  {
+    "id": "d4-053",
+    "domain": 4,
+    "section": "Digital Forensics",
+    "type": "concept",
+    "front": "Hashing Algorithms in Forensics",
+    "back": {
+      "level1": "MD5, SHA-1, SHA-256 used to verify evidence integrity",
+      "level2": "Cryptographic hash functions create unique fingerprint of files or disk images. Hashing original evidence and forensic copy allows verification that copy is exact duplicate and hasn't been modified. Any change to evidence results in different hash. Hash values documented in chain of custody. SHA-256 preferred over MD5/SHA-1 due to better collision resistance.",
+      "level3": "Exam tip: Hashing proves evidence INTEGRITY. Process: hash original evidence, create forensic copy, hash copy, compare hashes - if match, copy is exact. MD5 (128-bit): fast but has known collision vulnerabilities, still widely used. SHA-1 (160-bit): better than MD5 but also has weaknesses. SHA-256 (256-bit): current best practice, most secure. Hashes included in forensic reports and chain of custody documentation. Know that even tiny change (single bit) produces completely different hash. Questions test understanding hashing verifies evidence wasn't modified and knowing which algorithms are used."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Forensics", "MD5", "SHA-256", "Evidence Integrity", "Chain of Custody"]
+    }
+  },
+  {
+    "id": "d4-054",
+    "domain": 4,
+    "section": "Vulnerability Management",
+    "type": "concept",
+    "front": "Agent-based vs Agentless Scanning",
+    "back": {
+      "level1": "Agent-based: software installed on endpoints; Agentless: network-based scanning",
+      "level2": "Agent-based: vulnerability scanner installs agent software on each system providing continuous assessment, detailed visibility, works from inside firewall. Agentless: scanner probes systems over network without installing software, easier deployment but less detailed, requires network access and credentials for deep scans.",
+      "level3": "Exam tip: Know trade-offs. Agent-based advantages: continuous monitoring, works offline/mobile devices, detailed system info, no network scanning impact. Disadvantages: deployment/maintenance overhead, agent conflicts, resource usage. Agentless advantages: no deployment, no endpoint resources, scans any network-accessible device. Disadvantages: point-in-time only, network overhead, may require credentials, limited mobile/remote coverage. Questions test when to use each: use agent-based for laptops/remote workers, agentless for network devices/servers/OT. Modern approach: hybrid using both."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Vulnerability Scanning", "Endpoint Security", "Assessment"]
+    }
+  },
+  {
+    "id": "d4-055",
+    "domain": 4,
+    "section": "Incident Response",
+    "type": "concept",
+    "front": "Tabletop Exercise",
+    "back": {
+      "level1": "Discussion-based incident response simulation without actual system changes",
+      "level2": "IR testing method where team walks through incident scenario in meeting format. Facilitator presents scenario (ransomware attack, data breach), team discusses response steps, identifies gaps in procedures, clarifies roles. Low-cost, low-risk way to test and improve IR plans. Identifies procedural gaps, communication issues, and training needs without actual incident.",
+      "level3": "Exam tip: Tabletop is DISCUSSION-based (vs hands-on drill). Advantages: low cost, no downtime, safe environment, tests procedures and communication. Process: prepare scenario, assemble IR team, facilitator presents situation and injects new details, team discusses response actions, document lessons learned. Know the exercise levels: tabletop (discussion), walkthrough (step through procedures), functional (simulate without full activation), full-scale (actual drill). Questions test knowing tabletop is discussion-based IR practice and its benefits for team preparation without disruption."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["Incident Response", "IR Testing", "Business Continuity", "Exercise"]
+    }
+  },
+  {
+    "id": "d4-056",
+    "domain": 4,
+    "section": "Security Monitoring",
+    "type": "concept",
+    "front": "Data Loss Prevention (DLP)",
+    "back": {
+      "level1": "Technology that detects and prevents unauthorized data exfiltration",
+      "level2": "Security solution monitoring data in use, in motion, and at rest to prevent unauthorized transmission. Uses content inspection (keywords, patterns, file types), contextual analysis (who, what, when, where), and data classification tags. Can detect sensitive data (SSN, credit cards, PII) being emailed, uploaded, copied to USB, or sent to unauthorized destinations.",
+      "level3": "Exam tip: DLP has three protection points: Data at Rest (on servers/endpoints - scans and tags), Data in Motion (network/email - blocks transmission), Data in Use (endpoint activity - prevents copy/paste, screenshot, print). Detection methods: pattern matching (regex for SSN/CC), fingerprinting (exact file matches), classification tags (documents marked confidential). Actions: alert only, block, quarantine, encrypt. Know that DLP requires: data classification, tuning to avoid false positives, user training. Questions test DLP use cases (prevent data exfiltration) and understanding three protection states."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Data Exfiltration", "Data Classification", "Insider Threat", "Content Filtering"]
+    }
+  },
+  {
+    "id": "d4-057",
+    "domain": 4,
+    "section": "Security Monitoring",
+    "type": "concept",
+    "front": "File Integrity Monitoring (FIM)",
+    "back": {
+      "level1": "Detecting unauthorized changes to critical files by monitoring file hashes",
+      "level2": "Security control that creates baseline hashes of critical system files, configurations, and binaries, then continuously monitors for changes. Alerts when files are modified, added, or deleted. Detects: malware installation, unauthorized configuration changes, rootkits, compliance violations. Tools include Tripwire, AIDE (Advanced Intrusion Detection Environment), OSSEC.",
+      "level3": "Exam tip: FIM detects UNAUTHORIZED CHANGES using hashing. Process: create baseline (hash all critical files), store hashes securely, periodically re-hash files, alert on differences. Monitors: OS files, application binaries, configuration files, critical data. Know that changes trigger alerts requiring investigation - could be legitimate patching/updates or malicious modification. PCI DSS requires FIM for critical files. Tools: Tripwire (commercial), AIDE (Linux open source), Windows File Checksum Integrity Verifier. Questions test understanding FIM detects file tampering and knowing it uses hashing for comparison."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Tripwire", "AIDE", "Integrity", "Change Detection", "PCI DSS"]
+    }
+  },
+  {
+    "id": "d4-058",
+    "domain": 4,
+    "section": "Digital Forensics",
+    "type": "concept",
+    "front": "Metadata and MAC Times",
+    "back": {
+      "level1": "File metadata includes MAC times: Modified, Accessed, Changed/Created timestamps",
+      "level2": "Metadata is data about data - file properties beyond content. MAC times are filesystem timestamps: Modified (content changed), Accessed (file opened/read), Changed (metadata/permissions changed - Linux) or Created (file creation - Windows). Also includes: file size, owner, permissions, EXIF data for images. Critical for timeline analysis and establishing user activity.",
+      "level3": "Exam tip: MAC times are crucial forensic evidence. Modified: when file content last changed. Accessed: when file last opened (unreliable - can be disabled for performance, updated on reads). Changed/Created: Linux uses Changed (inode modification), Windows uses Created (file creation time). Know that: MAC times can be manipulated by attackers (timestomping), EXIF data in images contains camera info/GPS/timestamps, metadata survives file copying (though timestamps may change). Questions test understanding MAC times meaning and their forensic value for establishing file activity timeline."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Forensics", "Timeline Analysis", "EXIF", "Timestamps", "Timestomping"]
+    }
+  },
+  {
+    "id": "d4-059",
+    "domain": 4,
+    "section": "Threat Intelligence",
+    "type": "standard",
+    "front": "OWASP Top 10",
+    "back": {
+      "level1": "Open Web Application Security Project's list of most critical web application security risks",
+      "level2": "Regularly updated list of most common and critical web application vulnerabilities. 2021 Top 10 includes: Broken Access Control, Cryptographic Failures, Injection, Insecure Design, Security Misconfiguration, Vulnerable and Outdated Components, Identification and Authentication Failures, Software and Data Integrity Failures, Security Logging and Monitoring Failures, Server-Side Request Forgery (SSRF).",
+      "level3": "Exam tip: Know top risks and examples. Broken Access Control (privilege escalation, IDOR). Injection (SQL injection, command injection). Authentication Failures (weak passwords, session management). Security Misconfiguration (default credentials, unnecessary features). Know that OWASP also publishes: API Security Top 10, Mobile Top 10, guidance documents. Used for: security training, code review checklists, pentesting scope, risk awareness. Questions test knowing OWASP Top 10 is web application security reference and recognizing common vulnerabilities like SQL injection, XSS (Cross-Site Scripting), broken authentication."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Web Security", "SQL Injection", "XSS", "Application Security"]
+    }
+  },
+  {
+    "id": "d4-060",
+    "domain": 4,
+    "section": "Vulnerability Management",
+    "type": "concept",
+    "front": "Configuration Scanning",
+    "back": {
+      "level1": "Automated assessment of system settings against security baselines",
+      "level2": "Scanning systems to verify they comply with security configuration standards like CIS Benchmarks or DISA STIGs. Checks: unnecessary services disabled, secure password policies, proper permissions, encryption enabled, logging configured, secure protocols. SCAP scanners automate this process. Identifies configuration drift from approved baselines.",
+      "level3": "Exam tip: Configuration scanning checks SETTINGS vs vulnerability scanning checks PATCHES. Uses baselines: CIS Benchmarks (consensus community standards), DISA STIGs (DoD), vendor hardening guides (Microsoft Security Baseline), regulatory requirements (PCI DSS). SCAP (Security Content Automation Protocol) enables automated compliance checking. Findings: non-compliant settings requiring remediation. Know that configuration weaknesses are common attack vectors - default passwords, unnecessary services, weak encryption. Questions test distinguishing configuration scanning (settings/compliance) from vulnerability scanning (CVE/patches)."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["CIS Benchmarks", "DISA STIG", "SCAP", "Compliance", "Hardening"]
+    }
+  },
+  {
+    "id": "d4-061",
+    "domain": 4,
+    "section": "Incident Response",
+    "type": "concept",
+    "front": "Evidence Preservation",
+    "back": {
+      "level1": "Protecting digital evidence from alteration, damage, or destruction",
+      "level2": "Ensuring evidence remains in original state for legal admissibility. Includes: write blockers during acquisition, hashing to prove integrity, proper storage in tamper-evident containers, access logging, environmental controls (temperature, humidity for magnetic media), chain of custody documentation. Any evidence modification or improper handling risks inadmissibility in court.",
+      "level3": "Exam tip: Evidence preservation is critical for legal proceedings. Key principles: minimize changes to original (use write blockers, forensic software), document everything (chain of custody), hash for integrity verification, store securely (locked evidence room, access logs), maintain environmental controls. Know that even viewing files can modify access timestamps - why forensic copies are used for analysis. Questions test understanding preservation requirements: use of write blockers, hashing, chain of custody, analyzing copies not originals. Remember: improperly handled evidence may be excluded from legal proceedings."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Chain of Custody", "Write Blocker", "Forensics", "Legal Hold"]
+    }
+  },
+  {
+    "id": "d4-062",
+    "domain": 4,
+    "section": "Security Monitoring",
+    "type": "concept",
+    "front": "Honeypot and Honeynet",
+    "back": {
+      "level1": "Honeypot: decoy system; Honeynet: network of honeypots designed to attract and study attackers",
+      "level2": "Honeypot is intentionally vulnerable system with no legitimate purpose, deployed to detect attacks and gather intelligence. Attackers waste time on decoys while revealing TTPs. Honeynet is network of multiple honeypots simulating enterprise environment. Low-interaction honeypots emulate services. High-interaction are full systems. Used for research, detection, and deception.",
+      "level3": "Exam tip: Honeypots serve three purposes: DETECTION (alerts when accessed - no legitimate users), DEFLECTION (waste attacker time), INTELLIGENCE (study attacker methods). Low-interaction: emulated services, safer, less realistic. High-interaction: real systems, more dangerous (can be used to attack others), more realistic. Placement: outside firewall (Internet-facing) or inside (detect insider/lateral movement). Legal/ethical considerations: honey tokens (fake data), deception ethics, liability if honeypot used in attacks. Questions test honeypot purpose (detect/study attackers) and understanding they're decoys with no production purpose."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Deception", "Threat Intelligence", "Intrusion Detection", "Honey Token"]
+    }
+  },
+  {
+    "id": "d4-063",
+    "domain": 4,
+    "section": "Security Automation",
+    "type": "concept",
+    "front": "Security Automation Scripts",
+    "back": {
+      "level1": "Using PowerShell, Python, Bash scripts to automate security tasks",
+      "level2": "Scripting enables automation of repetitive security tasks: log analysis, IOC checking, user provisioning/deprovisioning, compliance scanning, incident response actions, report generation. PowerShell for Windows administration, Python for cross-platform security tools, Bash for Linux/Unix automation. Scripts can integrate with APIs of security tools for orchestration.",
+      "level3": "Exam tip: Know common security scripting use cases. PowerShell: Active Directory management, Windows event log analysis, endpoint configuration. Python: parsing logs, IOC lookup, API integration, security tool development. Bash: Linux administration, log processing, cron jobs for scheduled tasks. Benefits: consistency, speed, reduced human error, scalability. Risks: improper scripts can cause damage, credential management in scripts, testing before production. Questions test understanding automation value for security operations and knowing which languages are commonly used (PowerShell/Python/Bash)."
+    },
+    "metadata": {
+      "difficulty": "low",
+      "commonlyTested": false,
+      "relatedTerms": ["PowerShell", "Python", "Bash", "Automation", "Orchestration"]
+    }
+  },
+  {
+    "id": "d4-064",
+    "domain": 4,
+    "section": "Vulnerability Management",
+    "type": "concept",
+    "front": "Scan Frequency and Timing",
+    "back": {
+      "level1": "How often to perform vulnerability scans based on risk and change rate",
+      "level2": "Scanning frequency depends on: system criticality, change rate, regulatory requirements, risk tolerance. Critical systems: continuous or daily. Standard systems: weekly or monthly. Timing considerations: scan during maintenance windows to avoid business impact, after patching to verify, when new threats emerge, before production deployment. Balance thoroughness with network/system impact.",
+      "level3": "Exam tip: No one-size-fits-all schedule. Factors determining frequency: PCI DSS requires quarterly external and internal scans (after changes too), HIPAA suggests regular assessments, high-risk systems need more frequent scanning. Timing: credentialed scans impact performance so schedule off-peak, non-credentialed can run anytime. Continuous scanning with agents vs scheduled network scans. Post-patch scanning verifies remediation. Questions test understanding scanning frequency varies by risk/compliance requirements and knowing scan timing should minimize business impact."
+    },
+    "metadata": {
+      "difficulty": "low",
+      "commonlyTested": true,
+      "relatedTerms": ["Vulnerability Scanning", "PCI DSS", "Risk Management", "Compliance"]
+    }
+  },
+  {
+    "id": "d4-065",
+    "domain": 4,
+    "section": "Threat Intelligence",
+    "type": "concept",
+    "front": "Threat Feed Integration",
+    "back": {
+      "level1": "Automated consumption of threat intelligence IOCs into security tools",
+      "level2": "Integrating external threat feeds (IP reputation, malicious domains, file hashes) into security infrastructure. SIEM, firewalls, IDS/IPS, EDR, and proxies consume feeds to automatically block or alert on known threats. Feeds delivered via STIX/TAXII, APIs, or simple lists. Requires tuning to avoid false positives and ensure relevance to environment.",
+      "level3": "Exam tip: Threat feeds provide AUTOMATED threat intelligence. Sources: commercial (high quality, expensive), open source (free, variable quality), ISACs (industry-specific). Integration points: SIEM (correlate with events), firewall/IPS (block bad IPs), DNS (block malicious domains), proxy (block URLs), EDR (block file hashes). Challenges: feed quality varies, false positives, feeds can be large (performance impact), need context (why is IP bad?). Questions test understanding feeds provide automated IOC updates and knowing they integrate into multiple security tools for automated blocking/alerting."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["IOC", "STIX/TAXII", "Threat Intelligence", "Automation"]
+    }
   }
 ]

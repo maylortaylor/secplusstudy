@@ -508,5 +508,770 @@
       "commonlyTested": true,
       "relatedTerms": ["Cloud", "GDPR", "Data Localization", "Privacy", "Jurisdiction"]
     }
+  },
+  {
+    "id": "d5-031",
+    "domain": 5,
+    "section": "Security Governance",
+    "type": "standard",
+    "front": "NIST Cybersecurity Framework (CSF)",
+    "back": {
+      "level1": "Identify, Protect, Detect, Respond, Recover - Five core functions",
+      "level2": "Voluntary framework for managing cybersecurity risk developed by NIST. Five functions provide structure for cybersecurity programs: Identify (understand risks, assets, capabilities), Protect (implement safeguards), Detect (find cybersecurity events), Respond (take action on detected incidents), Recover (restore capabilities after incident). Each function has categories and subcategories with specific outcomes.",
+      "level3": "Exam tip: MEMORIZE the five functions in order: Identify → Protect → Detect → Respond → Recover. Know that CSF is VOLUNTARY (not regulatory) but widely adopted. Framework Core has three components: Functions (five core areas), Categories (subdivisions - Asset Management, Access Control, etc.), Subcategories (specific outcomes). Framework helps organizations: assess current posture, set goals, prioritize improvements, communicate risk. Questions test knowing the five functions, understanding CSF is voluntary risk management framework, and knowing it's iterative/continuous improvement model."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["NIST", "Risk Management", "Framework", "Cybersecurity"]
+    }
+  },
+  {
+    "id": "d5-032",
+    "domain": 5,
+    "section": "Risk Management",
+    "type": "standard",
+    "front": "NIST Risk Management Framework (RMF)",
+    "back": {
+      "level1": "7-step process: Prepare → Categorize → Select → Implement → Assess → Authorize → Monitor",
+      "level2": "NIST SP 800-37 framework for integrating security and risk management into system development lifecycle. Seven steps: (1) Prepare organization and systems, (2) Categorize information and systems by impact, (3) Select appropriate security controls, (4) Implement controls and document, (5) Assess control effectiveness, (6) Authorize system operation based on acceptable risk, (7) Monitor controls continuously. Mandatory for federal systems.",
+      "level3": "Exam tip: MEMORIZE all 7 steps in order. RMF is more prescriptive than CSF - tells exactly what to do. Key points: Step 2 uses FIPS 199 categorization (Low/Moderate/High impact). Step 3 selects controls from NIST SP 800-53. Step 6 requires Authorizing Official (AO) to accept risk and authorize operation. Step 7 is continuous monitoring (not one-time). Know that RMF is MANDATORY for federal systems, CSF is voluntary. Questions test knowing the seven steps, understanding it's for federal systems, and knowing each step's purpose."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["NIST", "Federal", "FISMA", "SP 800-53", "Risk Management"]
+    }
+  },
+  {
+    "id": "d5-033",
+    "domain": 5,
+    "section": "Compliance and Regulations",
+    "type": "standard",
+    "front": "ISO/IEC 27001",
+    "back": {
+      "level1": "International standard for Information Security Management Systems (ISMS)",
+      "level2": "Specification for establishing, implementing, maintaining, and continually improving an ISMS. Provides systematic approach to managing sensitive information. Requires: risk assessment, statement of applicability (selecting controls), management commitment, internal audits, continual improvement. Organizations can be certified by accredited auditors. Companion standard ISO 27002 provides control implementation guidance.",
+      "level3": "Exam tip: ISO 27001 specifies requirements for ISMS certification. Key components: Annex A lists 93 controls organized in 14 categories. Organizations perform risk assessment, select applicable controls, document in Statement of Applicability (SOA). Know the PDCA cycle: Plan (establish ISMS), Do (implement controls), Check (monitor/review), Act (maintain/improve). Certification requires third-party audit. Differences: ISO 27001 is CERTIFICATION standard (what you must do), ISO 27002 is GUIDANCE (how to do it). Questions test knowing ISO 27001 is international ISMS standard and certification is possible."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["ISO 27002", "ISMS", "Certification", "International Standard"]
+    }
+  },
+  {
+    "id": "d5-034",
+    "domain": 5,
+    "section": "Compliance and Regulations",
+    "type": "standard",
+    "front": "ISO/IEC 27002",
+    "back": {
+      "level1": "Code of practice for information security controls - Implementation guidance for ISO 27001",
+      "level2": "Provides detailed guidance and best practices for implementing information security controls. Companion to ISO 27001, offering practical advice on control selection and implementation. Organized into 14 control categories including: access control, cryptography, physical security, operations security, communications security, supplier relationships. Not a certification standard - used as reference for implementing controls.",
+      "level3": "Exam tip: ISO 27002 is the HOW-TO guide for ISO 27001 controls. 14 control domains: Information security policies, Organization of information security, Human resource security, Asset management, Access control, Cryptography, Physical and environmental security, Operations security, Communications security, System acquisition/development/maintenance, Supplier relationships, Incident management, Business continuity, Compliance. Remember: 27001 = requirements for ISMS certification, 27002 = implementation guidance (not certifiable). Questions test distinguishing 27001 (certification) from 27002 (guidance)."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["ISO 27001", "Security Controls", "Best Practices"]
+    }
+  },
+  {
+    "id": "d5-035",
+    "domain": 5,
+    "section": "Business Continuity",
+    "type": "concept",
+    "front": "Hot Site, Warm Site, Cold Site",
+    "back": {
+      "level1": "Disaster recovery site types: Hot (ready immediately), Warm (requires setup), Cold (empty facility)",
+      "level2": "Hot Site: fully equipped and operational alternate facility with current data, ready for immediate failover (hours). Warm Site: equipped with hardware/network but requires data restoration and configuration (days). Cold Site: empty facility with power/cooling, requires equipment installation and data recovery (weeks). Mobile Site: transportable recovery facility. Cloud-based: virtual recovery environment.",
+      "level3": "Exam tip: MEMORIZE recovery times and costs. Hot Site: RTO hours, most expensive, current data mirrored, immediate failover. Warm Site: RTO days, moderate cost, hardware ready but data needs restore. Cold Site: RTO weeks, least expensive, just space and utilities. Questions test selecting appropriate site for RTO requirements and cost. Example: critical system with 4-hour RTO = Hot Site. Know trade-off: faster recovery = higher cost. Cloud becoming popular as cost-effective hot/warm site alternative."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Disaster Recovery", "BCP", "RTO", "Failover"]
+    }
+  },
+  {
+    "id": "d5-036",
+    "domain": 5,
+    "section": "Business Continuity",
+    "type": "concept",
+    "front": "Backup Types",
+    "back": {
+      "level1": "Full, Incremental, Differential - backup strategies with different recovery trade-offs",
+      "level2": "Full: Complete copy of all data (slowest backup, fastest restore). Incremental: Backs up only data changed since last backup (any type) - fast backup, slower restore (need full + all incrementals). Differential: Backs up data changed since last full backup (medium speed, restores from full + last differential). Snapshot: Point-in-time image of system state.",
+      "level3": "Exam tip: Know backup/restore trade-offs. Full: backs up everything, simple restore (just latest full), but slow and storage-intensive. Incremental: fastest backup (only changes), minimal storage, but slowest restore (need full + every incremental in sequence). Differential: compromise (only changes since last full), moderate backup time (grows until next full), faster restore than incremental (just full + last differential). Common strategy: Full weekly + Daily incrementals, or Full weekly + Daily differentials. Questions test selecting backup type for RTO/RPO requirements and understanding restore procedures."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["Backup", "Disaster Recovery", "RTO", "RPO"]
+    }
+  },
+  {
+    "id": "d5-037",
+    "domain": 5,
+    "section": "Business Continuity",
+    "type": "concept",
+    "front": "Business Continuity Plan (BCP) vs Disaster Recovery Plan (DRP)",
+    "back": {
+      "level1": "BCP: maintaining business operations during disruptions; DRP: restoring IT systems after disasters",
+      "level2": "BCP is broader strategy for continuing business functions during/after disruption - includes people, processes, facilities, communications. DRP is subset of BCP focused specifically on recovering IT infrastructure and data. BCP addresses: alternate work sites, succession planning, vendor alternatives. DRP addresses: backup restoration, system recovery, alternate processing sites.",
+      "level3": "Exam tip: BCP is BUSINESS-FOCUSED (keep business running), DRP is IT-FOCUSED (restore systems). BCP developed by business units with IT input. DRP developed by IT. BCP addresses: how to continue operations with reduced staff, alternate vendors, manual processes. DRP addresses: restore priority, backup locations, recovery sites, system dependencies. Know that DRP is component of BCP. Questions test distinguishing between them: customer service continuity = BCP, database restoration = DRP. Both require testing, documented procedures, and regular updates."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Business Continuity", "Disaster Recovery", "BIA", "Resilience"]
+    }
+  },
+  {
+    "id": "d5-038",
+    "domain": 5,
+    "section": "Security Governance",
+    "type": "concept",
+    "front": "Service Level Agreement (SLA)",
+    "back": {
+      "level1": "Contract defining service expectations, performance metrics, and penalties between provider and customer",
+      "level2": "Formal agreement specifying: service performance targets (uptime percentage, response time), measurement methods, responsibilities, penalties for non-compliance, remedies. Common metrics: uptime (99.9% = 43 minutes/month downtime), response time, resolution time. Penalties often include service credits. Critical for cloud services, ISPs, MSPs, and vendors.",
+      "level3": "Exam tip: SLA defines MEASURABLE service commitments. Key elements: performance metrics (uptime %, response time), measurement period (monthly, quarterly), penalties/credits for violations, exclusions (scheduled maintenance), customer responsibilities. Know common uptime levels: 99% (3.65 days/year down), 99.9% (8.76 hours/year), 99.99% (52 minutes/year), 99.999% (5 minutes/year - 'five nines'). Questions test understanding SLA is contract with penalties, knowing it should include metrics and consequences, and distinguishing from MOU (no penalties)."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Cloud", "Vendor Management", "Uptime", "Service Credits"]
+    }
+  },
+  {
+    "id": "d5-039",
+    "domain": 5,
+    "section": "Security Governance",
+    "type": "concept",
+    "front": "MOU vs MOA",
+    "back": {
+      "level1": "Memorandum of Understanding: non-binding agreement; Memorandum of Agreement: binding commitment",
+      "level2": "MOU: Informal agreement expressing intent to work together, outlines general cooperation, not legally binding, no penalties for non-compliance. MOA: More formal agreement with specific obligations, deliverables, and responsibilities, may be legally binding, includes consequences for non-performance. Both used between organizations to define collaboration before formal contracts.",
+      "level3": "Exam tip: MOU = INTENT to collaborate (handshake agreement, non-binding). MOA = COMMITMENT with obligations (more formal, may be binding). Key differences: MOU broad and general, MOA specific and detailed. MOU no penalties, MOA may include consequences. Example: two agencies sign MOU to share threat intelligence (general cooperation), then MOA specifying data formats, sharing frequency, security requirements. Questions test distinguishing them: if describes penalties/obligations = MOA, if describes cooperation/intent = MOU. Both precede formal contracts/SLAs."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Agreements", "Contracts", "SLA", "Vendor Management"]
+    }
+  },
+  {
+    "id": "d5-040",
+    "domain": 5,
+    "section": "Security Governance",
+    "type": "concept",
+    "front": "BPA and ISA",
+    "back": {
+      "level1": "Business Partnership Agreement and Interconnection Security Agreement for partnerships and system connections",
+      "level2": "BPA: Agreement between business partners defining relationship terms, responsibilities, profit sharing, dispute resolution, confidentiality. ISA: Technical agreement for connecting information systems, specifying security requirements, data flows, access controls, monitoring, incident response. ISA required when two organizations' systems interconnect (common in government/federal environments).",
+      "level3": "Exam tip: BPA is BUSINESS relationship (partners sharing risk/reward, joint ventures). ISA is TECHNICAL connection security (system-to-system interconnection requirements). ISA components: system security plans, MOUs/MOAs, connection diagrams, data sensitivity levels, security controls each side provides, monitoring requirements. Common scenario: government agency connecting to contractor system requires ISA documenting security measures. Questions test knowing ISA is for system interconnections and knowing it specifies technical security requirements for connections. BPA rarely tested, ISA more common on exam."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": false,
+      "relatedTerms": ["Agreements", "System Interconnection", "Federal", "FISMA"]
+    }
+  },
+  {
+    "id": "d5-041",
+    "domain": 5,
+    "section": "Security Policies",
+    "type": "concept",
+    "front": "Password Policy",
+    "back": {
+      "level1": "Rules governing password creation, management, and lifecycle",
+      "level2": "Defines requirements for password security: minimum length (12+ characters recommended), complexity (mix of character types), expiration (90 days traditional, but NIST now recommends no routine expiration), history (prevent reuse), lockout after failed attempts, no sharing, secure storage (encrypted). Modern guidance favors length and passphrases over complexity and frequent changes.",
+      "level3": "Exam tip: Know evolving password guidance. Traditional (outdated): 8 characters, complexity, 90-day expiration. NIST SP 800-63B (current): minimum 8 characters (12+ recommended), allow all characters, check against breach lists, NO routine expiration (only change when compromised), screen for common passwords. Length > complexity. Passphrases encouraged. Questions may test either approach, context determines. Most exams still include traditional requirements. Key points: minimum length, complexity requirements, expiration period, account lockout threshold, password history preventing reuse."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["Authentication", "NIST SP 800-63", "Passwords", "Security Policy"]
+    }
+  },
+  {
+    "id": "d5-042",
+    "domain": 5,
+    "section": "Security Policies",
+    "type": "concept",
+    "front": "BYOD Policy",
+    "back": {
+      "level1": "Bring Your Own Device - rules for using personal devices for work",
+      "level2": "Policy governing personal device (phones, tablets, laptops) usage for business purposes. Addresses: allowed devices, security requirements (MDM enrollment, encryption, passcode), acceptable use, data access/storage, company rights (remote wipe), support responsibilities, privacy expectations. Balances employee convenience with organizational security and data protection.",
+      "level3": "Exam tip: BYOD policies address security vs convenience trade-off. Key components: security requirements (device encryption, screen lock, OS updates, MDM enrollment), acceptable use (no jailbreak/root), company rights (remote wipe lost devices, inspect for compliance), data separation (containerization - work apps isolated from personal), privacy (what company can access), support (company doesn't support personal use issues). Know risks: data leakage, lost/stolen devices, malware, compliance challenges. Mitigations: MDM/MAM, encryption, remote wipe, VPN for access. Questions test policy components and security controls for BYOD."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["MDM", "MAM", "Mobile Security", "Personal Devices"]
+    }
+  },
+  {
+    "id": "d5-043",
+    "domain": 5,
+    "section": "Risk Management",
+    "type": "concept",
+    "front": "ALE, SLE, ARO Calculations",
+    "back": {
+      "level1": "Annual Loss Expectancy = Single Loss Expectancy × Annual Rate of Occurrence",
+      "level2": "Quantitative risk formulas. SLE (Single Loss Expectancy) = Asset Value × Exposure Factor (% of asset lost). ARO (Annual Rate of Occurrence) = expected frequency per year. ALE (Annual Loss Expectancy) = SLE × ARO. Used for cost-benefit analysis of security controls - if control costs less than ALE, it's justified.",
+      "level3": "Exam tip: MEMORIZE formulas and how to calculate. Example: Server worth $100K, 30% would be lost in fire (EF=0.3), fire expected every 10 years (ARO=0.1). SLE = $100K × 0.3 = $30K. ALE = $30K × 0.1 = $3K/year. If sprinkler system costs $2K/year, it's cost-effective (saves $3K, costs $2K). Know that ALE helps justify security spending. Questions often give values and ask to calculate ALE, or ask which formula to use. Remember: EF is percentage (0-1), ARO can be fraction (0.1 = once per 10 years) or multiple (2 = twice per year)."
+    },
+    "metadata": {
+      "difficulty": "hard",
+      "commonlyTested": true,
+      "relatedTerms": ["Quantitative Risk", "Risk Assessment", "Cost-Benefit", "Exposure Factor"]
+    }
+  },
+  {
+    "id": "d5-044",
+    "domain": 5,
+    "section": "Security Governance",
+    "type": "concept",
+    "front": "Job Rotation",
+    "back": {
+      "level1": "Security control requiring employees to periodically change roles/positions",
+      "level2": "Personnel security control where employees rotate between different jobs or responsibilities on scheduled basis. Serves multiple purposes: detect fraud (new person discovers irregularities), reduce single points of failure, cross-training (business continuity), prevent collusion, reduce burnout. Especially important for sensitive positions like system administrators and financial roles.",
+      "level3": "Exam tip: Job rotation is DETECTIVE control (like mandatory vacation) for fraud/error detection. Benefits: fraud detection (schemes require continuous attention, rotation exposes them), knowledge sharing (multiple people know critical processes), reduced dependency (continuity if key person leaves), fresh perspectives. Challenges: training costs, temporary productivity loss, resistance from employees. Know that job rotation differs from separation of duties (SoD divides one process across people, rotation moves people between different complete processes). Questions test job rotation purpose (fraud detection, cross-training) and distinguishing from SoD."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["Mandatory Vacation", "Fraud Detection", "Personnel Security", "SoD"]
+    }
+  },
+  {
+    "id": "d5-045",
+    "domain": 5,
+    "section": "Security Governance",
+    "type": "concept",
+    "front": "Least Privilege",
+    "back": {
+      "level1": "Users should have minimum access rights necessary to perform job functions",
+      "level2": "Fundamental security principle requiring users, processes, and systems to operate with minimum privileges required - no more, no less. Reduces risk from: insider threats, malware (runs with user's privileges), compromised accounts, accidental damage. Implemented through: role-based access control (RBAC), just-in-time access, privilege escalation only when needed, regular access reviews.",
+      "level3": "Exam tip: Least privilege limits BLAST RADIUS of compromise. Example: developer shouldn't have production admin access, users shouldn't have local admin rights, service accounts should have minimal permissions. Implementation: default deny, grant only required access, use RBAC/groups, time-limited elevated access (JIT - Just In Time admin), review regularly (attestation). Know related concepts: need-to-know (data access), separation of duties (no one person completes critical task alone). Questions test identifying least privilege violations (user has unnecessary access) and knowing remediation (remove excess privileges, implement RBAC)."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["RBAC", "Access Control", "Privilege Escalation", "JIT Access"]
+    }
+  },
+  {
+    "id": "d5-046",
+    "domain": 5,
+    "section": "Privacy",
+    "type": "concept",
+    "front": "Personally Identifiable Information (PII)",
+    "back": {
+      "level1": "Information that can identify an individual, alone or combined with other data",
+      "level2": "Data that identifies or can be used to identify, contact, or locate a specific individual. Includes: name, SSN, driver's license, passport, email, phone, address, biometrics, IP address, financial account numbers. PII requires protection under privacy regulations (GDPR, CCPA, state laws). Sensitivity varies: SSN is more sensitive than name.",
+      "level3": "Exam tip: PII is any data identifying person. Direct identifiers (alone identify): SSN, driver's license, passport, biometric, full name+address. Indirect identifiers (combined identify): birthdate + zip code, employee ID + department. Know that PII protection requirements: encryption at rest/transit, access controls, data minimization, breach notification, user consent. Differs from PHI (health information specifically). Questions test identifying what is PII in scenarios and knowing protection requirements. Remember: pseudonymization reduces but doesn't eliminate PII (can still re-identify)."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["Privacy", "GDPR", "PHI", "Data Protection", "Breach Notification"]
+    }
+  },
+  {
+    "id": "d5-047",
+    "domain": 5,
+    "section": "Privacy",
+    "type": "concept",
+    "front": "De-identification and Anonymization",
+    "back": {
+      "level1": "De-identification: removing/masking identifiers; Anonymization: irreversibly removing identity linkage",
+      "level2": "De-identification removes or obscures direct identifiers (name, SSN) making re-identification harder but not impossible. Anonymization irreversibly removes any linkage to individual, preventing re-identification even with additional data. Techniques include: data masking, aggregation, generalization, perturbation. Anonymized data often exempt from privacy regulations.",
+      "level3": "Exam tip: Anonymization is IRREVERSIBLE, de-identification is REVERSIBLE. De-identification methods: pseudonymization (replace identifiers with pseudonyms - reversible with key), masking (hide parts - xxx-xx-1234), generalization (age 47 → age group 40-50). Anonymization: aggregation (individual records combined), differential privacy (add statistical noise). Know that truly anonymous data is VERY difficult - research shows records can be re-identified by combining public data. Questions test distinguishing anonymization (irreversible, exempt from regulations) vs de-identification (reversible, still regulated)."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Privacy", "Pseudonymization", "Data Masking", "GDPR"]
+    }
+  },
+  {
+    "id": "d5-048",
+    "domain": 5,
+    "section": "Privacy",
+    "type": "concept",
+    "front": "Data Minimization",
+    "back": {
+      "level1": "Collecting and retaining only data necessary for specified purposes",
+      "level2": "Privacy principle requiring organizations to limit data collection to what's directly relevant and necessary for legitimate purposes. Don't collect data 'just in case' or 'might be useful later'. Includes: minimal collection, limited retention (delete when no longer needed), purpose limitation (use only for stated purpose). Core principle in GDPR and privacy-by-design.",
+      "level3": "Exam tip: Data minimization = collect ONLY what's needed, keep ONLY as long as needed. Benefits: reduced breach impact (less data to lose), lower compliance burden, reduced storage costs, privacy protection. Implementation: define data collection purposes, question if each field necessary, anonymize when possible, delete after retention period. Know this conflicts with big data analytics (wants all data forever) and litigation holds (requires data preservation). Questions test understanding minimization reduces privacy risk and knowing it's GDPR principle requiring justification for data collection."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["Privacy", "GDPR", "Privacy by Design", "Data Collection"]
+    }
+  },
+  {
+    "id": "d5-049",
+    "domain": 5,
+    "section": "Security Governance",
+    "type": "concept",
+    "front": "Due Diligence vs Due Care",
+    "back": {
+      "level1": "Due Diligence: research/planning; Due Care: implementing and maintaining protections",
+      "level2": "Due Diligence is investigation and planning phase - identifying risks, researching solutions, understanding threats, assessing options. Due Care is action phase - implementing controls, following policies, maintaining systems, exercising reasonable care to protect assets. Both needed to demonstrate legal responsibility and avoid negligence.",
+      "level3": "Exam tip: Due Diligence = IDENTIFY risks and solutions (research, assessment, planning). Due Care = IMPLEMENT and maintain protections (action, follow-through). Example: researching firewall options and vendors = due diligence; deploying firewall and keeping it patched = due care. Legal significance: both required to show reasonable effort in security. Lack of either can indicate negligence. Questions test distinguishing them: planning/assessment = diligence, implementation/maintenance = care. Remember: you can't have due care without due diligence (can't implement well without planning)."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Legal", "Negligence", "Governance", "Compliance"]
+    }
+  },
+  {
+    "id": "d5-050",
+    "domain": 5,
+    "section": "Security Governance",
+    "type": "concept",
+    "front": "Background Checks and NDA",
+    "back": {
+      "level1": "Pre-employment screening and confidentiality agreements for personnel security",
+      "level2": "Background checks verify candidate credentials, criminal history, credit (for financial positions), education, references before granting access. Depth varies by position sensitivity and legal restrictions. Non-Disclosure Agreement (NDA) is legal contract prohibiting disclosure of confidential information, signed at hiring, protects trade secrets and sensitive data. NDA survives employment termination.",
+      "level3": "Exam tip: Background checks are PREVENTIVE control for personnel security. Types: criminal history, credit check (financial positions), education/credential verification, reference checks, social media review, drug testing. Legal considerations: Fair Credit Reporting Act (FCRA) requirements, state/country restrictions, candidate must consent. NDA (confidentiality agreement) protects: trade secrets, proprietary information, customer data, business strategies. Know that NDA violations have legal consequences. Questions test knowing background checks appropriate for high-trust positions and understanding NDA protects confidential information even after employment ends."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["Personnel Security", "Onboarding", "Confidentiality", "Legal"]
+    }
+  },
+  {
+    "id": "d5-051",
+    "domain": 5,
+    "section": "Security Governance",
+    "type": "concept",
+    "front": "Onboarding and Offboarding",
+    "back": {
+      "level1": "Onboarding: provisioning new employees; Offboarding: secure removal of departing employees",
+      "level2": "Onboarding process: background check, NDA signing, account creation, access provisioning (least privilege), asset assignment (laptop, badge), security training, policy acknowledgment. Offboarding process: access revocation, asset return, exit interview, knowledge transfer, account disabling, badge deactivation. Security focuses on: timely access removal, data protection, preventing insider threats.",
+      "level3": "Exam tip: Offboarding is CRITICAL security control. Offboarding checklist: disable accounts immediately (separation day, not after), revoke physical access (badges, keys), collect company assets (laptop, phone, documents), change shared passwords employee knew, remove from email groups, backup employee data, conduct exit interview (security awareness, no copying data). Know risks: terminated employees with lingering access, disgruntled employees, data theft before departure. Best practice: automate offboarding with HR system integration, disable not delete accounts (preserve audit trail). Questions test offboarding steps and timing (immediate access revocation)."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Personnel Security", "Access Revocation", "Insider Threat", "HR"]
+    }
+  },
+  {
+    "id": "d5-052",
+    "domain": 5,
+    "section": "Security Governance",
+    "type": "concept",
+    "front": "Chief Information Security Officer (CISO)",
+    "back": {
+      "level1": "Executive responsible for organization's information security program and strategy",
+      "level2": "C-level executive managing cybersecurity strategy, team, and budget. Responsibilities: develop security strategy aligned with business, manage security operations, communicate risk to board/executives, ensure compliance, incident response oversight, security awareness programs, vendor risk management. Reports to CEO, CIO, or CRO. Bridges technical security and business objectives.",
+      "level3": "Exam tip: CISO is EXECUTIVE role (strategic, not tactical). Key responsibilities: security strategy and vision, board/executive risk communication, budget management, compliance oversight, security team leadership. Know that CISO doesn't configure firewalls (that's operations) - sets policies and direction. Challenges: communicating technical risk to business, balancing security with business enablement, talent acquisition, demonstrating ROI. Questions test knowing CISO is strategic executive role responsible for security program and understanding distinction from security engineer/analyst (tactical roles)."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["Executive", "Governance", "Security Program", "Leadership"]
+    }
+  },
+  {
+    "id": "d5-053",
+    "domain": 5,
+    "section": "Security Governance",
+    "type": "concept",
+    "front": "Data Protection Officer (DPO)",
+    "back": {
+      "level1": "Required GDPR role responsible for data protection compliance and privacy oversight",
+      "level2": "Position mandated by GDPR for organizations doing large-scale processing of sensitive data or public authorities. Responsibilities: monitor GDPR compliance, conduct DPIAs, serve as contact for data subjects and supervisory authorities, advise on data protection, train staff. Must be independent and report to highest management. Can be internal employee or external contractor.",
+      "level3": "Exam tip: DPO is GDPR-specific requirement (not all organizations need one). When required: public authorities, large-scale regular monitoring, large-scale processing of special category data (health, biometric, racial). DPO must: have expert privacy knowledge, be independent (not receive instructions on privacy matters), have resources to perform duties, be accessible to data subjects. Know DPO differs from CISO: DPO focuses on privacy/data protection compliance, CISO focuses on broader security program. Questions test knowing when DPO required and understanding role is GDPR privacy compliance."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["GDPR", "Privacy", "Compliance", "Data Protection"]
+    }
+  },
+  {
+    "id": "d5-054",
+    "domain": 5,
+    "section": "Compliance and Regulations",
+    "type": "standard",
+    "front": "FISMA",
+    "back": {
+      "level1": "Federal Information Security Management Act - US law requiring federal agency security programs",
+      "level2": "Federal law requiring civilian agencies to develop, document, and implement information security programs. Requires: annual FISMA reporting to OMB, security controls from NIST SP 800-53, systems categorized by FIPS 199 (Low/Moderate/High), continuous monitoring, independent audits. OMB provides FISMA implementation guidance. NIST provides technical standards via Special Publications.",
+      "level3": "Exam tip: FISMA applies to FEDERAL AGENCIES and contractors handling federal data. Key requirements: implement NIST RMF, select controls from SP 800-53 based on FIPS 199 categorization, continuous monitoring, annual security assessments, report to OMB. Know that FISMA compliance uses: FIPS 199 for categorization, FIPS 200 for minimum controls, SP 800-53 for control catalog, SP 800-37 for RMF. Compliance verified through independent audits. Questions test knowing FISMA is federal requirement and understanding it mandates NIST RMF/controls."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Federal", "NIST RMF", "SP 800-53", "FIPS 199", "Government"]
+    }
+  },
+  {
+    "id": "d5-055",
+    "domain": 5,
+    "section": "Compliance and Regulations",
+    "type": "standard",
+    "front": "FERPA",
+    "back": {
+      "level1": "Family Educational Rights and Privacy Act - protects student education records",
+      "level2": "US federal law protecting privacy of student education records. Applies to schools receiving federal funding. Gives parents/eligible students (18+) rights to: inspect records, request corrections, control disclosure. Schools must have written permission to release records except to: school officials with legitimate interest, other schools student transfers to, audits, emergencies. Violations risk loss of federal funding.",
+      "level3": "Exam tip: FERPA protects STUDENT EDUCATION RECORDS (grades, transcripts, disciplinary records, financial aid). Key points: parents have rights until student turns 18 (then student controls), schools need consent to disclose except specific exceptions (safety emergencies, subpoena, school officials with legitimate need, directory information if student didn't opt-out). Know that FERPA applies to schools (K-12, colleges), violations investigated by Department of Education, penalties include loss of federal funding. Questions test knowing FERPA protects student records and understanding consent requirements with specific exceptions."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Privacy", "Education", "Student Records", "Compliance"]
+    }
+  },
+  {
+    "id": "d5-056",
+    "domain": 5,
+    "section": "Compliance and Regulations",
+    "type": "standard",
+    "front": "GLBA",
+    "back": {
+      "level1": "Gramm-Leach-Bliley Act - requires financial institutions to protect customer information",
+      "level2": "US law requiring financial institutions to explain information sharing practices and protect sensitive data. Three main provisions: Financial Privacy Rule (disclose privacy practices), Safeguards Rule (implement security program protecting customer data), Pretexting Provisions (protect against social engineering for customer info). Applies to banks, credit unions, insurance companies, investment firms.",
+      "level3": "Exam tip: GLBA applies to FINANCIAL INSTITUTIONS. Safeguards Rule requires: designate security coordinator, risk assessment, design/implement safeguards, oversee service providers, evaluate/adjust program. Must protect 'nonpublic personal information' (NPI): SSN, account numbers, credit history. Privacy notices must be provided: at account opening, annually, before sharing with non-affiliates. Know that FTC enforces for non-banking institutions. Questions test knowing GLBA requires financial data protection, privacy notices, and security program implementation."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Financial Privacy", "Banking", "Privacy Notice", "Compliance"]
+    }
+  },
+  {
+    "id": "d5-057",
+    "domain": 5,
+    "section": "Compliance and Regulations",
+    "type": "standard",
+    "front": "CCPA/CPRA",
+    "back": {
+      "level1": "California Consumer Privacy Act - grants California residents rights over their personal information",
+      "level2": "California privacy law giving residents rights to: know what personal information collected, know if sold/shared, access their data, delete data, opt-out of sale, non-discrimination for exercising rights. Applies to for-profit businesses meeting thresholds (revenue $25M+, 50K+ consumers, or 50%+ revenue from selling data). CPRA (2023) strengthened CCPA with additional protections and enforcement.",
+      "level3": "Exam tip: CCPA is California's GDPR-like law but less strict. Consumer rights (CCPA): right to know, access, delete, opt-out of sale, non-discrimination. Business obligations: privacy notice, response to requests within 45 days, verified request process, don't discriminate against exercisers. CPRA added: right to correct, right to limit use of sensitive data, California Privacy Protection Agency (enforcement). Know that unlike GDPR (requires consent for processing), CCPA allows processing with opt-out option. Questions test consumer rights and business obligations under CCPA."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Privacy", "California", "Consumer Rights", "Data Protection"]
+    }
+  },
+  {
+    "id": "d5-058",
+    "domain": 5,
+    "section": "Compliance and Regulations",
+    "type": "standard",
+    "front": "COPPA",
+    "back": {
+      "level1": "Children's Online Privacy Protection Act - protects online privacy of children under 13",
+      "level2": "US law requiring websites/online services directed at children under 13 (or with actual knowledge of child users) to obtain verifiable parental consent before collecting personal information. Requirements: privacy notice, parental consent for collection, parental access to child's info, option to delete, reasonable security, data retention limits. FTC enforces with significant fines for violations.",
+      "level3": "Exam tip: COPPA protects CHILDREN UNDER 13 online. Triggers: site directed at kids (content, design, advertising), OR actual knowledge collecting from kids. Requirements: verifiable parental consent (not just checkbox - methods include credit card, government ID, video conference), parents can review/delete child's data, reasonable security for child data, retain only as long as needed. Know many sites avoid COPPA by prohibiting users under 13 (like social media). Violations result in FTC fines ($thousands per child per violation). Questions test age threshold (under 13) and parental consent requirement."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["Privacy", "Children", "Parental Consent", "Online Services"]
+    }
+  },
+  {
+    "id": "d5-059",
+    "domain": 5,
+    "section": "Risk Management",
+    "type": "concept",
+    "front": "Risk Matrix (Heat Map)",
+    "back": {
+      "level1": "Visual representation plotting risks by likelihood and impact to prioritize responses",
+      "level2": "Grid showing risks plotted with likelihood (probability) on one axis and impact (severity) on other. Typically color-coded: red (high risk - high likelihood + high impact), yellow (medium), green (low). Helps visualize risk landscape, prioritize remediation efforts, and communicate risk to stakeholders. Common sizes: 3×3 or 5×5 grids.",
+      "level3": "Exam tip: Risk matrix provides VISUAL risk prioritization. Axes: Likelihood (rare, unlikely, possible, likely, almost certain) vs Impact (negligible, minor, moderate, major, catastrophic). Quadrants: High likelihood + High impact = CRITICAL (red - address immediately). Low likelihood + Low impact = ACCEPT (green - low priority). Questions test interpreting matrix: if risk in red zone = high priority remediation, green = accept/monitor. Know that matrix placement determines risk response: red/high = mitigate or avoid, yellow/medium = mitigate or transfer, green/low = accept. Useful for executive communication (visual, simple)."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["Risk Assessment", "Risk Prioritization", "Qualitative Risk", "Visualization"]
+    }
+  },
+  {
+    "id": "d5-060",
+    "domain": 5,
+    "section": "Business Continuity",
+    "type": "concept",
+    "front": "Business Continuity Testing Types",
+    "back": {
+      "level1": "Tabletop, Walkthrough, Simulation, Full Interruption - increasing levels of BCP/DRP testing",
+      "level2": "Tabletop: discussion-based, review procedures in meeting. Walkthrough: step through plan without execution. Simulation: execute plan with simulated disaster but no real cutover. Full Interruption: actual failover to alternate site/systems with real downtime. Parallel Test: run backup systems alongside production without switching over.",
+      "level3": "Exam tip: Tests progress from DISCUSSION to ACTUAL EXECUTION. Tabletop: lowest risk/cost, discussion only, identifies plan gaps. Walkthrough: talk through steps, may inspect sites. Simulation: hands-on but simulated (test DR site functionality without switching). Parallel: run both production and DR simultaneously (expensive). Full interruption: actual failover (highest confidence but business disruption). Know testing frequency: tabletop annually minimum, full interruption rarely due to risk. Questions test selecting appropriate test type for risk tolerance and ordering tests by disruption level (tabletop < walkthrough < simulation < full)."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["BCP", "DRP", "Testing", "Business Continuity"]
+    }
+  },
+  {
+    "id": "d5-061",
+    "domain": 5,
+    "section": "Security Governance",
+    "type": "concept",
+    "front": "Master Service Agreement (MSA)",
+    "back": {
+      "level1": "Umbrella contract defining general terms for ongoing business relationship",
+      "level2": "Framework agreement establishing general terms, conditions, and legal framework for future transactions between parties. Contains: payment terms, liability limits, confidentiality, dispute resolution, termination clauses. Individual projects governed by Statements of Work (SOW) under the MSA. Avoids renegotiating terms for each project.",
+      "level3": "Exam tip: MSA is UMBRELLA agreement for multiple projects. Structure: MSA sets general terms (liability, payment, confidentiality, IP rights), SOWs define specific project scope/deliverables/pricing. Benefits: faster project initiation (legal terms already agreed), consistent terms across projects, reduced negotiation time. Common in: IT services, consulting, software development, cloud services. Know that MSA is long-term framework, SOW is project-specific. Questions test understanding MSA purpose (ongoing relationship framework) and knowing it works with SOWs for specific engagements."
+    },
+    "metadata": {
+      "difficulty": "low",
+      "commonlyTested": false,
+      "relatedTerms": ["Contracts", "SOW", "Vendor Management", "Legal"]
+    }
+  },
+  {
+    "id": "d5-062",
+    "domain": 5,
+    "section": "Security Awareness",
+    "type": "concept",
+    "front": "Role-Based Security Training",
+    "back": {
+      "level1": "Tailoring security education to specific job functions and risk levels",
+      "level2": "Customized training based on employee role. General users: phishing, passwords, physical security, acceptable use. Developers: secure coding, OWASP Top 10, code review. Administrators: privilege management, patching, configuration hardening. Executives: risk management, regulatory compliance, incident communication. More relevant and effective than one-size-fits-all training.",
+      "level3": "Exam tip: Role-based training provides RELEVANT content for each audience. Examples: General users (basic security hygiene - phishing, passwords, device security), IT admins (change management, least privilege, logging), Developers (secure coding, input validation, OWASP), Finance (wire transfer fraud, financial data protection), Executives (strategic risk, board reporting, incident communication), Privileged users (extra scrutiny due to access level). Benefits: more engaging (relevant to job), better retention, addresses role-specific risks. Questions test understanding training should be tailored to roles, not generic for all."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["Security Awareness", "Training", "Personnel Security"]
+    }
+  },
+  {
+    "id": "d5-063",
+    "domain": 5,
+    "section": "Risk Management",
+    "type": "concept",
+    "front": "Vendor Assessment and Questionnaires",
+    "back": {
+      "level1": "Evaluating third-party security posture before and during business relationship",
+      "level2": "Process of assessing vendor security through questionnaires, audits, and certifications. Pre-contract: security questionnaires (SIG, CAIQ), compliance certifications (SOC 2, ISO 27001), pentesting results. Ongoing: annual reassessments, right to audit, incident notification requirements. Questions cover: security controls, data protection, incident response, BCP/DR, compliance.",
+      "level3": "Exam tip: Vendor assessment manages THIRD-PARTY risk. Common questionnaires: SIG (Standardized Information Gathering), CAIQ (Consensus Assessments Initiative Questionnaire - for cloud), custom security questionnaires. Assessment areas: access controls, encryption, vulnerability management, incident response, business continuity, compliance, sub-processor management. Evidence requests: SOC 2 report, ISO 27001 certificate, penetration test results, security policies. Know that assessment rigor should match vendor risk (critical vendor = thorough assessment). Questions test understanding vendor security review importance and knowing common assessment methods (questionnaires, certifications, audits)."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Third-Party Risk", "SOC 2", "Vendor Management", "Due Diligence"]
+    }
+  },
+  {
+    "id": "d5-064",
+    "domain": 5,
+    "section": "Security Governance",
+    "type": "concept",
+    "front": "Penetration Testing Types",
+    "back": {
+      "level1": "Black Box, White Box, Gray Box - pentesting approaches with varying information disclosure",
+      "level2": "Black Box (unknown environment): no prior knowledge given to testers, simulates external attacker. White Box (known environment): full knowledge of systems, architecture, credentials provided, comprehensive assessment. Gray Box (partial knowledge): some information given (architecture but not credentials), balances realism and coverage. Each has different time, cost, and coverage trade-offs.",
+      "level3": "Exam tip: Know testing approaches and when to use each. Black box: tests security from external threat perspective, discovers what attacker sees, longer time needed, may miss internal issues. White box: most thorough, tests all components, faster, requires collaboration. Gray box: realistic balance, common for web apps. Related concepts: Internal vs External (network perspective), Announced vs Unannounced (surprise factor). Questions test selecting appropriate approach: external threat simulation = black box, comprehensive coverage = white box, balanced approach = gray box. Know rules of engagement define scope, timing, contacts."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Pentesting", "Security Assessment", "Red Team", "Vulnerability Assessment"]
+    }
+  },
+  {
+    "id": "d5-065",
+    "domain": 5,
+    "section": "Privacy",
+    "type": "concept",
+    "front": "Privacy by Design",
+    "back": {
+      "level1": "Embedding privacy considerations into system design from the beginning",
+      "level2": "Proactive approach integrating privacy into technology design, business practices, and physical infrastructure from inception. Seven foundational principles: proactive not reactive, privacy as default setting, privacy embedded in design, full functionality (positive-sum not zero-sum), end-to-end security, visibility and transparency, respect for user privacy. Prevents privacy issues rather than fixing after implementation.",
+      "level3": "Exam tip: Privacy by Design = build privacy IN from START (not bolt-on after). Key principles: default to maximum privacy (user must opt-in to share more, not opt-out), minimize data collection, strong security throughout lifecycle, transparent privacy practices, user-centric. Examples: encryption by default, data minimization built into forms, deletion automated after retention period, granular privacy controls. Know that GDPR encourages privacy by design but it's a concept (not regulatory requirement per se). Questions test understanding privacy by design means proactive privacy integration from beginning, not after-the-fact fixes."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Privacy", "GDPR", "Data Protection", "Secure Design"]
+    }
+  },
+  {
+    "id": "d5-066",
+    "domain": 5,
+    "section": "Risk Management",
+    "type": "concept",
+    "front": "Risk Ownership and Assignment",
+    "back": {
+      "level1": "Assigning accountability for managing specific risks to responsible individuals",
+      "level2": "Process of designating risk owners who are accountable for monitoring and managing assigned risks. Risk owner (typically business unit leader or process owner) responsible for: understanding the risk, implementing mitigations, monitoring effectiveness, reporting status, escalating when risk exceeds tolerance. Separates accountability from the risk management team who facilitates the process.",
+      "level3": "Exam tip: Risk OWNER is accountable for managing the risk. Owner responsibilities: accept/reject risk, fund/approve mitigations, monitor risk levels, ensure controls operate effectively. Owner is typically BUSINESS role (has authority over the process/asset at risk), not security team. Security team facilitates, provides expertise, tracks register, but business owns risk. Know that risk ownership ensures accountability - someone responsible for each identified risk. Questions test understanding risk owner is business person accountable for specific risk and knowing owner decides risk treatment (accept/mitigate/transfer/avoid)."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Risk Management", "Accountability", "Risk Register", "Governance"]
+    }
+  },
+  {
+    "id": "d5-067",
+    "domain": 5,
+    "section": "Risk Management",
+    "type": "concept",
+    "front": "Risk Exceptions and Exemptions",
+    "back": {
+      "level1": "Formal process for accepting specific risks that violate security policies or standards",
+      "level2": "Documented approval to deviate from security requirements when business need justifies accepting the risk. Requires: business justification, risk assessment, compensating controls (if possible), approval by risk owner/CISO/leadership, time limit (temporary exception) or conditions, documented in risk register. Used when compliance isn't feasible or business benefit outweighs risk.",
+      "level3": "Exam tip: Exceptions acknowledge risk acceptance for BUSINESS REASONS. Process: requestor submits business justification, security reviews and documents risks, compensating controls identified (if possible), executive/risk owner approves, exception documented with expiration date and conditions, tracked in risk register, periodic review. Common scenarios: legacy system can't be patched (business critical, replacement planned), vendor can't meet security requirement (only viable vendor, mitigations added). Know that exceptions aren't permanent free passes - require approval, documentation, review. Questions test exception process (justification, approval, documentation, time-bound)."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Risk Acceptance", "Policy Exceptions", "Risk Management", "Compensating Controls"]
+    }
+  },
+  {
+    "id": "d5-068",
+    "domain": 5,
+    "section": "Security Governance",
+    "type": "concept",
+    "front": "Configuration Management Database (CMDB)",
+    "back": {
+      "level1": "Repository containing information about IT infrastructure components and their relationships",
+      "level2": "Database storing configuration items (CIs) - hardware, software, network devices, applications, documentation, people - and their attributes, relationships, and dependencies. Used for: change impact analysis (what's affected by changes), incident troubleshooting (understand dependencies), asset management, compliance. Core component of ITIL configuration management process.",
+      "level3": "Exam tip: CMDB is single source of truth for IT INFRASTRUCTURE. Contains: configuration items (servers, applications, network devices), attributes (hostname, IP, OS, location, owner), relationships (server hosts app, app connects to database). Benefits: change impact analysis (if we patch this server, what's affected?), incident response (what dependencies does failed system have?), compliance reporting. Challenges: keeping updated, accuracy of relationships, integration with discovery tools. Questions test understanding CMDB purpose (IT infrastructure inventory with relationships) and use for change/incident management."
+    },
+    "metadata": {
+      "difficulty": "low",
+      "commonlyTested": true,
+      "relatedTerms": ["ITIL", "Change Management", "Configuration Management", "Asset Inventory"]
+    }
+  },
+  {
+    "id": "d5-069",
+    "domain": 5,
+    "section": "Security Governance",
+    "type": "concept",
+    "front": "Change Advisory Board (CAB)",
+    "back": {
+      "level1": "Group of stakeholders who review and approve IT changes",
+      "level2": "Committee that evaluates proposed changes for: technical feasibility, security impact, business risk, timing, resources, rollback plans. Typical members: IT management, operations, security, application owners, affected business units. CAB approves/rejects changes, prioritizes, schedules. Emergency changes may bypass CAB with post-implementation review. Part of ITIL change management.",
+      "level3": "Exam tip: CAB provides GOVERNANCE for IT changes. Responsibilities: review change requests, assess risk/impact, approve or reject, schedule changes, review emergency changes post-implementation. CAB considers: business impact (will change affect operations?), security implications, timing (avoid critical periods), dependencies (other changes in progress), backout plan (can it be reversed?). Know emergency changes may skip CAB approval but still need justification and post-review. Questions test understanding CAB role in change approval and knowing it's part of change management governance."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["Change Management", "ITIL", "Governance", "Approval Process"]
+    }
+  },
+  {
+    "id": "d5-070",
+    "domain": 5,
+    "section": "Risk Management",
+    "type": "concept",
+    "front": "Threat Assessment",
+    "back": {
+      "level1": "Identifying and analyzing potential threat actors, motivations, and capabilities",
+      "level2": "Process of determining what threats organization faces: threat actors (nation-states, cybercriminals, hacktivists, insiders), their motivations (financial gain, espionage, disruption, ideology), capabilities (sophistication, resources, access), and likelihood of attack. Internal threats (insiders, negligence) vs External threats (hackers, competitors). Informs risk assessment and security strategy.",
+      "level3": "Exam tip: Threat assessment identifies WHO might attack and WHY. Threat actor types: Nation-state APTs (espionage, sabotage, high sophistication), Organized crime (financial motivation, moderate-high skill), Hacktivists (ideology/protest, variable skill), Script kiddies (recognition, low skill), Insiders (revenge/financial, authorized access). Assessment factors: intent (target your industry?), capability (technical sophistication), opportunity (attack surface). Output: threat profile guiding security priorities. Questions test knowing different threat actor types and understanding threat assessment identifies adversaries to prioritize defenses."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["Threat Actors", "Risk Assessment", "Threat Intelligence", "APT"]
+    }
+  },
+  {
+    "id": "d5-071",
+    "domain": 5,
+    "section": "Business Continuity",
+    "type": "concept",
+    "front": "Succession Planning",
+    "back": {
+      "level1": "Identifying and developing internal personnel to fill key leadership positions",
+      "level2": "Process ensuring continuity of critical roles if key personnel leave, retire, or become unavailable. Identifies: critical positions, required competencies, potential successors, development needs. Includes: cross-training, mentoring, knowledge transfer, documentation of critical procedures. Part of business continuity preventing single points of failure in organizational knowledge and leadership.",
+      "level3": "Exam tip: Succession planning prevents single person dependencies. Critical for: executive roles (CISO replacement if departure), key technical roles (only person knowing legacy system), specialized skills (rare expertise). Activities: identify critical roles, document responsibilities/knowledge, identify potential successors, create development plans, cross-train team members, knowledge transfer (documentation, mentoring). Know that succession planning reduces: business disruption from departures, insider threat risk (exclusive knowledge = power), continuity risk. Questions test understanding succession planning importance for business continuity and reducing single points of failure."
+    },
+    "metadata": {
+      "difficulty": "low",
+      "commonlyTested": true,
+      "relatedTerms": ["Business Continuity", "Knowledge Transfer", "Cross-Training", "Single Point of Failure"]
+    }
+  },
+  {
+    "id": "d5-072",
+    "domain": 5,
+    "section": "Security Awareness",
+    "type": "concept",
+    "front": "Security Champions Program",
+    "back": {
+      "level1": "Network of security advocates embedded in business units to promote security culture",
+      "level2": "Program designating security champions - employees (non-security role) in each department who receive advanced security training and act as security liaisons. Champions: promote security awareness in their teams, provide security perspective in projects, report concerns to security team, help roll out security initiatives. Extends security team's reach and builds security culture.",
+      "level3": "Exam tip: Security champions EMBED security in business units. Champion characteristics: security-interested (volunteers typically), respected by peers, good communicator. Responsibilities: advocate security in their area, answer basic questions (escalate complex), promote awareness, provide feedback to security team on business needs. Benefits: scales security team (can't be everywhere), improves communication (champions speak business language), builds culture (security = everyone's job). Program needs: training for champions, recognition, regular meetings, clear escalation path. Questions test understanding champions program extends security culture across organization."
+    },
+    "metadata": {
+      "difficulty": "low",
+      "commonlyTested": false,
+      "relatedTerms": ["Security Awareness", "Security Culture", "Training", "Program"]
+    }
+  },
+  {
+    "id": "d5-073",
+    "domain": 5,
+    "section": "Privacy",
+    "type": "concept",
+    "front": "Right to be Forgotten (Erasure)",
+    "back": {
+      "level1": "GDPR right allowing individuals to request deletion of their personal data",
+      "level2": "GDPR data subject right to have personal information erased when: no longer necessary for original purpose, consent withdrawn, unlawful processing, legal obligation to delete. Organizations must respond within 30 days. Exceptions: legal obligations, public interest, freedom of expression, legal claims. Organizations must notify data processors and third parties of deletion request.",
+      "level3": "Exam tip: Right to erasure (right to be forgotten) is GDPR requirement. When erasure required: purpose fulfilled (original collection reason no longer applies), consent withdrawn (and no other legal basis), objection to processing, unlawful processing, legal requirement. When can refuse: legal obligation to retain, public health interest, legal claims/defense, freedom of expression. Implementation challenges: identifying all data copies, third-party notification, backups (mark for deletion, purge when rotated). Questions test knowing this is GDPR right, when it applies, and understanding organizations must delete unless exception applies."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["GDPR", "Privacy", "Data Subject Rights", "Data Deletion"]
+    }
+  },
+  {
+    "id": "d5-074",
+    "domain": 5,
+    "section": "Security Policies",
+    "type": "concept",
+    "front": "Incident Response Policy",
+    "back": {
+      "level1": "High-level requirements for detecting, reporting, and responding to security incidents",
+      "level2": "Policy establishing incident response program requirements: IR team structure and roles, incident classification and severity, reporting procedures, escalation criteria, communication protocols, documentation requirements, legal/regulatory notification, post-incident review. Provides authority and mandate for IR activities. Detailed procedures documented separately in IR plan.",
+      "level3": "Exam tip: IR policy is high-level (requirements and authority), IR plan is detailed (procedures). Policy content: IR team charter and authority, incident definition and categories, reporting requirements (who reports what, when), escalation paths (when to notify executives/legal/law enforcement), communication guidelines, evidence preservation, cooperation with investigations, metrics and reporting. Know policy requires management approval (grants authority), reviewed annually. Questions test understanding policy provides IR framework and authority, distinguishing from detailed IR plan procedures."
+    },
+    "metadata": {
+      "difficulty": "easy",
+      "commonlyTested": true,
+      "relatedTerms": ["Incident Response", "Security Policy", "NIST", "IR Plan"]
+    }
+  },
+  {
+    "id": "d5-075",
+    "domain": 5,
+    "section": "Security Governance",
+    "type": "concept",
+    "front": "Security Program Metrics and Reporting",
+    "back": {
+      "level1": "Measuring and communicating security program effectiveness to stakeholders",
+      "level2": "Systematic collection and reporting of security metrics to demonstrate value, track progress, identify gaps. Metrics categories: operational (vulnerabilities patched, incidents responded), risk (risk scores, exposure), compliance (audit findings, policy violations), financial (security spend, incident costs). Tailored reporting: executives want strategic/risk view, technical teams want operational details.",
+      "level3": "Exam tip: Security metrics demonstrate program VALUE and drive decisions. Good metrics: measurable, actionable, relevant to audience. Executive metrics: overall risk score, major incidents, compliance status, security spend vs industry, third-party risk. Technical metrics: MTTD, MTTR, vulnerability remediation SLAs, patch compliance %, phishing click rates, coverage gaps. Know reporting frequency varies: executives quarterly/annually, management monthly, operations daily/weekly. Visualizations (dashboards, trends) improve communication. Questions test selecting appropriate metrics for audience and understanding metrics purpose (measure effectiveness, communicate value, drive improvement)."
+    },
+    "metadata": {
+      "difficulty": "medium",
+      "commonlyTested": true,
+      "relatedTerms": ["KPI", "Metrics", "Reporting", "Security Program", "Dashboard"]
+    }
   }
 ]
