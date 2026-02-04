@@ -117,7 +117,7 @@ export const FlashcardViewer: React.FC<FlashcardViewerProps> = ({
       {/* Flashcard */}
       <div className="flex-1 flex items-center justify-center p-4">
         <div
-          className="relative w-full max-w-2xl h-[500px] cursor-pointer"
+          className="relative w-full max-w-3xl h-[700px] cursor-pointer"
           onClick={handleFlip}
         >
           <AnimatePresence mode="wait">
