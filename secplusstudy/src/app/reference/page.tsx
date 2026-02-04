@@ -135,7 +135,7 @@ export default function ReferencePage() {
               All Domains
             </Button>
             {domains
-              .filter((d) => d.id === 2 || d.id === 4 || d.id === 5)
+              .filter((d) => d.id === 1 || d.id === 2 || d.id === 3 || d.id === 4 || d.id === 5)
               .map((domain) => (
                 <Button
                   key={domain.id}

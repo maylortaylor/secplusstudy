@@ -60,31 +60,26 @@ export default function HomePage() {
               number={1}
               name="General Security Concepts"
               percentage={12}
-              available={false}
             />
             <DomainItem
               number={2}
               name="Threats, Vulnerabilities, and Mitigations"
               percentage={22}
-              available={true}
             />
             <DomainItem
               number={3}
               name="Security Architecture"
               percentage={18}
-              available={false}
             />
             <DomainItem
               number={4}
               name="Security Operations"
               percentage={28}
-              available={true}
             />
             <DomainItem
               number={5}
               name="Security Program Management and Oversight"
               percentage={20}
-              available={true}
             />
           </div>
         </div>
@@ -105,12 +100,10 @@ function DomainItem({
   number,
   name,
   percentage,
-  available,
 }: {
   number: number;
   name: string;
   percentage: number;
-  available: boolean;
 }) {
   return (
     <div className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
@@ -125,15 +118,6 @@ function DomainItem({
           </div>
         </div>
       </div>
-      {available ? (
-        <span className="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-300 text-sm font-medium rounded-full">
-          Available
-        </span>
-      ) : (
-        <span className="px-3 py-1 bg-gray-200 dark:bg-gray-600 text-gray-600 dark:text-gray-400 text-sm font-medium rounded-full">
-          Coming Soon
-        </span>
-      )}
     </div>
   );
 }
