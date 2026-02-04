@@ -1065,7 +1065,7 @@
       "level3": "Exam tip: Know common security scripting use cases. PowerShell: Active Directory management, Windows event log analysis, endpoint configuration. Python: parsing logs, IOC lookup, API integration, security tool development. Bash: Linux administration, log processing, cron jobs for scheduled tasks. Benefits: consistency, speed, reduced human error, scalability. Risks: improper scripts can cause damage, credential management in scripts, testing before production. Questions test understanding automation value for security operations and knowing which languages are commonly used (PowerShell/Python/Bash)."
     },
     "metadata": {
-      "difficulty": "low",
+      "difficulty": "easy",
       "commonlyTested": false,
       "relatedTerms": ["PowerShell", "Python", "Bash", "Automation", "Orchestration"]
     }
@@ -1082,7 +1082,7 @@
       "level3": "Exam tip: No one-size-fits-all schedule. Factors determining frequency: PCI DSS requires quarterly external and internal scans (after changes too), HIPAA suggests regular assessments, high-risk systems need more frequent scanning. Timing: credentialed scans impact performance so schedule off-peak, non-credentialed can run anytime. Continuous scanning with agents vs scheduled network scans. Post-patch scanning verifies remediation. Questions test understanding scanning frequency varies by risk/compliance requirements and knowing scan timing should minimize business impact."
     },
     "metadata": {
-      "difficulty": "low",
+      "difficulty": "easy",
       "commonlyTested": true,
       "relatedTerms": ["Vulnerability Scanning", "PCI DSS", "Risk Management", "Compliance"]
     }

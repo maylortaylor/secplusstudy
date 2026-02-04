@@ -53,7 +53,7 @@ export default function StudyPage() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {domains.map((domain) => {
-            const isAvailable = domain.id === 4 || domain.id === 5;
+            const isAvailable = domain.id === 2 || domain.id === 4 || domain.id === 5;
 
             return (
               <div
@@ -108,7 +108,7 @@ export default function StudyPage() {
             <h3 className="text-2xl font-bold mb-4">Study All Available Domains</h3>
             <p className="mb-6 opacity-90">
               Review flashcards from all available domains in one session. Cards are prioritized
-              by domain importance (D4 → D5).
+              by domain importance (D4 → D2 → D5).
             </p>
             <Button
               variant="secondary"

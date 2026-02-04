@@ -11,7 +11,7 @@ export class JsonFlashcardService implements IFlashcardService {
   private cache: Map<number, Flashcard[]> = new Map();
 
   async getAll(): Promise<Flashcard[]> {
-    const domains = [4, 5];
+    const domains = [2, 4, 5];
     const allCards: Flashcard[] = [];
 
     for (const domain of domains) {

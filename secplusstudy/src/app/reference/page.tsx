@@ -18,6 +18,8 @@ export default function ReferencePage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedDomain, setSelectedDomain] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
+  const [expandedCards, setExpandedCards] = useState<Set<string>>(new Set());
+  const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     const loadData = async () => {
@@ -32,12 +34,39 @@ export default function ReferencePage() {
     loadData();
   }, []);
 
+  const toggleCard = (cardId: string) => {
+    setExpandedCards((prev) => {
+      const newSet = new Set(prev);
+      if (newSet.has(cardId)) {
+        newSet.delete(cardId);
+      } else {
+        newSet.add(cardId);
+      }
+      return newSet;
+    });
+  };
+
+  const toggleSection = (sectionKey: string) => {
+    setExpandedSections((prev) => {
+      const newSet = new Set(prev);
+      if (newSet.has(sectionKey)) {
+        newSet.delete(sectionKey);
+      } else {
+        newSet.add(sectionKey);
+      }
+      return newSet;
+    });
+  };
+
   const filteredFlashcards = flashcards.filter((card) => {
+    const searchLower = searchQuery.toLowerCase();
     const matchesSearch =
       searchQuery === '' ||
-      card.front.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      card.section.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      card.back.level1.toLowerCase().includes(searchQuery.toLowerCase());
+      card.front.toLowerCase().includes(searchLower) ||
+      card.section.toLowerCase().includes(searchLower) ||
+      card.back.level1.toLowerCase().includes(searchLower) ||
+      card.back.level2.toLowerCase().includes(searchLower) ||
+      card.back.level3.toLowerCase().includes(searchLower);
 
     const matchesDomain = selectedDomain === null || card.domain === selectedDomain;
 
@@ -106,7 +135,7 @@ export default function ReferencePage() {
               All Domains
             </Button>
             {domains
-              .filter((d) => d.id === 4 || d.id === 5)
+              .filter((d) => d.id === 2 || d.id === 4 || d.id === 5)
               .map((domain) => (
                 <Button
                   key={domain.id}
@@ -131,31 +160,85 @@ export default function ReferencePage() {
                 defaultOpen={parseInt(domainId) === 4}
               >
                 <div className="space-y-8">
-                  {Object.entries(sections).map(([section, cards]) => (
-                    <div key={section}>
-                      <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4 pb-2 border-b-2 border-blue-500 dark:border-blue-400">
-                        {section}
-                      </h3>
-                      <div className="space-y-4">
-                        {cards.map((card) => (
-                          <div
-                            key={card.id}
-                            className="p-5 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:shadow-md dark:hover:border-blue-500 transition-all"
-                          >
-                            <div className="font-bold text-lg text-gray-900 dark:text-white mb-2">
-                              {card.front}
-                            </div>
-                            <div className="text-base text-blue-600 dark:text-blue-400 mb-3 font-medium">
-                              {card.back.level1}
-                            </div>
-                            <div className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
-                              {card.back.level2}
-                            </div>
+                  {Object.entries(sections).map(([section, cards]) => {
+                    const sectionKey = `${domainId}-${section}`;
+                    const isSectionExpanded = expandedSections.has(sectionKey);
+
+                    return (
+                      <div key={section} className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+                        <button
+                          onClick={() => toggleSection(sectionKey)}
+                          className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800/50 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors flex items-center justify-between"
+                        >
+                          <div className="flex items-center gap-3">
+                            <Icon
+                              name="chevron-down"
+                              size={20}
+                              className={`transition-transform text-gray-600 dark:text-gray-400 ${isSectionExpanded ? '' : '-rotate-90'}`}
+                            />
+                            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                              {section}
+                            </h3>
                           </div>
-                        ))}
+                          <span className="text-sm text-gray-500 dark:text-gray-400">
+                            {cards.length} {cards.length === 1 ? 'term' : 'terms'}
+                          </span>
+                        </button>
+
+                        {isSectionExpanded && (
+                          <div className="p-5 space-y-4 bg-white dark:bg-gray-900/50">
+                            {cards.map((card) => {
+                              const isExpanded = expandedCards.has(card.id);
+                              return (
+                                <div
+                                  key={card.id}
+                                  className="p-5 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:shadow-md dark:hover:border-blue-500 transition-all"
+                                >
+                                  <div className="font-bold text-lg text-gray-900 dark:text-white mb-2">
+                                    {card.front}
+                                  </div>
+                                  <div className="text-base text-blue-600 dark:text-blue-400 mb-3 font-medium">
+                                    {card.back.level1}
+                                  </div>
+                                  <div className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+                                    {card.back.level2}
+                                  </div>
+
+                                  {isExpanded && (
+                                    <div className="mt-4 p-4 bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 rounded">
+                                      <div className="text-sm font-semibold text-blue-900 dark:text-blue-300 mb-2">
+                                        💡 Exam Tips:
+                                      </div>
+                                      <div className="text-sm text-gray-800 dark:text-gray-200 leading-relaxed">
+                                        {card.back.level3}
+                                      </div>
+                                    </div>
+                                  )}
+
+                                  <button
+                                    onClick={() => toggleCard(card.id)}
+                                    className="mt-3 text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium flex items-center gap-2 transition-colors"
+                                  >
+                                    {isExpanded ? (
+                                      <>
+                                        <Icon name="chevron-down" size={16} className="rotate-180 transition-transform" />
+                                        Hide Exam Tips
+                                      </>
+                                    ) : (
+                                      <>
+                                        <Icon name="chevron-down" size={16} className="transition-transform" />
+                                        Show Exam Tips
+                                      </>
+                                    )}
+                                  </button>
+                                </div>
+                              );
+                            })}
+                          </div>
+                        )}
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </Accordion>
             );

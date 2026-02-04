@@ -1031,7 +1031,7 @@
       "level3": "Exam tip: MSA is UMBRELLA agreement for multiple projects. Structure: MSA sets general terms (liability, payment, confidentiality, IP rights), SOWs define specific project scope/deliverables/pricing. Benefits: faster project initiation (legal terms already agreed), consistent terms across projects, reduced negotiation time. Common in: IT services, consulting, software development, cloud services. Know that MSA is long-term framework, SOW is project-specific. Questions test understanding MSA purpose (ongoing relationship framework) and knowing it works with SOWs for specific engagements."
     },
     "metadata": {
-      "difficulty": "low",
+      "difficulty": "easy",
       "commonlyTested": false,
       "relatedTerms": ["Contracts", "SOW", "Vendor Management", "Legal"]
     }
@@ -1150,7 +1150,7 @@
       "level3": "Exam tip: CMDB is single source of truth for IT INFRASTRUCTURE. Contains: configuration items (servers, applications, network devices), attributes (hostname, IP, OS, location, owner), relationships (server hosts app, app connects to database). Benefits: change impact analysis (if we patch this server, what's affected?), incident response (what dependencies does failed system have?), compliance reporting. Challenges: keeping updated, accuracy of relationships, integration with discovery tools. Questions test understanding CMDB purpose (IT infrastructure inventory with relationships) and use for change/incident management."
     },
     "metadata": {
-      "difficulty": "low",
+      "difficulty": "easy",
       "commonlyTested": true,
       "relatedTerms": ["ITIL", "Change Management", "Configuration Management", "Asset Inventory"]
     }
@@ -1201,7 +1201,7 @@
       "level3": "Exam tip: Succession planning prevents single person dependencies. Critical for: executive roles (CISO replacement if departure), key technical roles (only person knowing legacy system), specialized skills (rare expertise). Activities: identify critical roles, document responsibilities/knowledge, identify potential successors, create development plans, cross-train team members, knowledge transfer (documentation, mentoring). Know that succession planning reduces: business disruption from departures, insider threat risk (exclusive knowledge = power), continuity risk. Questions test understanding succession planning importance for business continuity and reducing single points of failure."
     },
     "metadata": {
-      "difficulty": "low",
+      "difficulty": "easy",
       "commonlyTested": true,
       "relatedTerms": ["Business Continuity", "Knowledge Transfer", "Cross-Training", "Single Point of Failure"]
     }
@@ -1218,7 +1218,7 @@
       "level3": "Exam tip: Security champions EMBED security in business units. Champion characteristics: security-interested (volunteers typically), respected by peers, good communicator. Responsibilities: advocate security in their area, answer basic questions (escalate complex), promote awareness, provide feedback to security team on business needs. Benefits: scales security team (can't be everywhere), improves communication (champions speak business language), builds culture (security = everyone's job). Program needs: training for champions, recognition, regular meetings, clear escalation path. Questions test understanding champions program extends security culture across organization."
     },
     "metadata": {
-      "difficulty": "low",
+      "difficulty": "easy",
       "commonlyTested": false,
       "relatedTerms": ["Security Awareness", "Security Culture", "Training", "Program"]
     }

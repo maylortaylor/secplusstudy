@@ -66,7 +66,7 @@ export default function HomePage() {
               number={2}
               name="Threats, Vulnerabilities, and Mitigations"
               percentage={22}
-              available={false}
+              available={true}
             />
             <DomainItem
               number={3}
