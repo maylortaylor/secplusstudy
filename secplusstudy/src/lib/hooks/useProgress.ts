@@ -46,6 +46,14 @@ export function useProgress() {
     [refreshProgress]
   );
 
+  const toggleReview = useCallback(
+    (cardId: string) => {
+      ProgressRepository.toggleReview(cardId);
+      refreshProgress();
+    },
+    [refreshProgress]
+  );
+
   const clearAll = useCallback(() => {
     ProgressRepository.clearAllProgress();
     refreshProgress();
@@ -57,6 +65,7 @@ export function useProgress() {
     markCorrect,
     markMissed,
     markReview,
+    toggleReview,
     clearAll,
     refreshProgress,
   };

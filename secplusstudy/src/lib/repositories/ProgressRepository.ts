@@ -93,4 +93,20 @@ export class ProgressRepository {
 
     this.saveProgress(cardId, progress);
   }
+
+  static toggleReview(cardId: string): void {
+    const progress = this.getProgress(cardId) || {
+      cardId,
+      timesCorrect: 0,
+      timesMissed: 0,
+      lastSeen: null,
+      mastered: false,
+      needsReview: false,
+    };
+
+    progress.needsReview = !progress.needsReview;
+    progress.lastSeen = new Date().toISOString();
+
+    this.saveProgress(cardId, progress);
+  }
 }

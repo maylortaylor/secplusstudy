@@ -18,10 +18,11 @@ export interface IconProps {
 }
 
 export const Icon: React.FC<IconProps> = ({ name, size = 24, className = '' }) => {
+  const isFilled = className.includes('fill-current');
   const svgProps = {
     width: size,
     height: size,
-    fill: 'none',
+    fill: isFilled ? 'currentColor' : 'none',
     stroke: 'currentColor',
     strokeWidth: 2,
     strokeLinecap: 'round' as const,

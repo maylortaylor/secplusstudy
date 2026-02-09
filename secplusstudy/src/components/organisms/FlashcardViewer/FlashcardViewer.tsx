@@ -23,11 +23,13 @@ export const FlashcardViewer: React.FC<FlashcardViewerProps> = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
   const [disclosureLevel, setDisclosureLevel] = useState<DisclosureLevel>(1);
-  const { markReview } = useProgress();
+  const { toggleReview, getProgress } = useProgress();
 
   const currentCard = flashcards[currentIndex];
   const isFirst = currentIndex === 0;
   const isLast = currentIndex === flashcards.length - 1;
+  const currentProgress = getProgress(currentCard?.id || '');
+  const isFlagged = currentProgress?.needsReview || false;
 
   const handleFlip = useCallback(() => {
     setIsFlipped(!isFlipped);
@@ -62,9 +64,9 @@ export const FlashcardViewer: React.FC<FlashcardViewerProps> = ({
 
   const handleFlag = useCallback(() => {
     if (currentCard) {
-      markReview(currentCard.id);
+      toggleReview(currentCard.id);
     }
-  }, [currentCard, markReview]);
+  }, [currentCard, toggleReview]);
 
   useKeyboard({
     onSpace: handleFlip,
@@ -99,9 +101,18 @@ export const FlashcardViewer: React.FC<FlashcardViewerProps> = ({
             {currentIndex + 1} / {flashcards.length}
           </div>
 
-          <Button variant="ghost" onClick={handleFlag} size="sm">
-            <Icon name="flag" size={20} />
-            <span className="ml-2">Flag for Review</span>
+          <Button
+            variant="ghost"
+            onClick={handleFlag}
+            size="sm"
+            className={isFlagged ? 'text-red-600 dark:text-red-500' : ''}
+          >
+            <Icon
+              name="flag"
+              size={20}
+              className={isFlagged ? 'fill-current' : ''}
+            />
+            <span className="ml-2">{isFlagged ? 'Unflag' : 'Flag for Review'}</span>
           </Button>
         </div>
       </div>
