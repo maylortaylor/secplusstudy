@@ -9,13 +9,8 @@ import { Icon } from '@/components/atoms/Icon/Icon';
 
 export default function ProfilePage() {
   const { preferences, setTheme, setUiSize } = usePreferences();
-  const { allProgress, clearAll } = useProgress();
+  const { clearAll } = useProgress();
   const [showConfirmClear, setShowConfirmClear] = useState(false);
-
-  const progressStats = Object.values(allProgress);
-  const masteredCount = progressStats.filter((p) => p.mastered).length;
-  const needsReviewCount = progressStats.filter((p) => p.needsReview).length;
-  const totalStudied = progressStats.length;
 
   const handleClearProgress = () => {
     clearAll();
@@ -89,33 +84,6 @@ export default function ProfilePage() {
             >
               Large
             </Button>
-          </div>
-        </div>
-
-        {/* Study Statistics */}
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 mb-6">
-          <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
-            Study Statistics
-          </h2>
-          <div className="grid grid-cols-3 gap-4">
-            <div className="text-center p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
-              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">
-                {totalStudied}
-              </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">Cards Studied</div>
-            </div>
-            <div className="text-center p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
-              <div className="text-3xl font-bold text-green-600 dark:text-green-400">
-                {masteredCount}
-              </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">Mastered</div>
-            </div>
-            <div className="text-center p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
-              <div className="text-3xl font-bold text-yellow-600 dark:text-yellow-400">
-                {needsReviewCount}
-              </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">Needs Review</div>
-            </div>
           </div>
         </div>
 

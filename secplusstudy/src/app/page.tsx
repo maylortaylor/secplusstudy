@@ -1,9 +1,19 @@
 'use client';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useProgress } from '@/lib/hooks/useProgress';
 import { Button } from '@/components/atoms/Button/Button';
 
 export default function HomePage() {
+  const router = useRouter();
+  const { allProgress } = useProgress();
+
+  const progressStats = Object.values(allProgress);
+  const masteredCount = progressStats.filter((p) => p.mastered).length;
+  const needsReviewCount = progressStats.filter((p) => p.needsReview).length;
+  const totalStudied = progressStats.length;
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center">
       <div className="w-full max-w-5xl mx-auto px-6 py-16">
@@ -80,6 +90,36 @@ export default function HomePage() {
               fileName="professor-messer-sy0-701-comptia-security-plus-practice-exams-v17_Feb2026.pdf"
               icon="🧪"
             />
+          </div>
+        </div>
+
+        {/* Study Statistics */}
+        <div className="mt-16 bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+            Study Statistics
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="text-center p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">
+                {totalStudied}
+              </div>
+              <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">Cards Studied</div>
+            </div>
+            <div className="text-center p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+              <div className="text-3xl font-bold text-green-600 dark:text-green-400">
+                {masteredCount}
+              </div>
+              <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">Mastered</div>
+            </div>
+            <button
+              onClick={() => router.push('/study/flagged')}
+              className="text-center p-4 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors cursor-pointer"
+            >
+              <div className="text-3xl font-bold text-yellow-600 dark:text-yellow-400">
+                {needsReviewCount}
+              </div>
+              <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">Needs Review</div>
+            </button>
           </div>
         </div>
 
