@@ -25,8 +25,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function StudyDomainPage({ params }: { params: { domainId: string } }) {
-  const domainId = parseInt(params.domainId, 10);
+export default async function StudyDomainPage({ params }: { params: Promise<{ domainId: string }> }) {
+  const { domainId: domainIdStr } = await params;
+  const domainId = parseInt(domainIdStr, 10);
   const flashcards = await getFlashcardsForDomain(domainId);
 
   return <StudyDomainClientPage flashcards={flashcards} domainId={domainId} />;
