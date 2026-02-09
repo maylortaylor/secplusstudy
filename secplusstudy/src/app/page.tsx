@@ -50,6 +50,39 @@ export default function HomePage() {
           </Link>
         </div>
 
+        {/* Exam Resources */}
+        <div className="mt-16 bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+            📄 Exam Resources
+          </h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            <ResourceCard
+              title="CompTIA Security+ SY0-701"
+              subtitle="Official Exam Objectives"
+              fileName="CompTIA Security+ SY0-701 Exam Objectives (7.0)_Jan2026.pdf"
+              icon="📋"
+            />
+            <ResourceCard
+              title="Security Study Guide"
+              subtitle="9th Edition with 500+ Practice Tests"
+              fileName="CompTIA-Security-Study-Guide-with-over-500-Practice-Test-Questions-Exam-SY0-701-9th-Edition_Feb2026.pdf"
+              icon="📚"
+            />
+            <ResourceCard
+              title="Professor Messer Hacks"
+              subtitle="Essential Exam Tips & Mnemonics"
+              fileName="professor-messer-comptia-exam-hacks-v107a_Jac2026.pdf"
+              icon="💡"
+            />
+            <ResourceCard
+              title="Professor Messer Practice Exams"
+              subtitle="Full-Length Practice Tests (v17)"
+              fileName="professor-messer-sy0-701-comptia-security-plus-practice-exams-v17_Feb2026.pdf"
+              icon="🧪"
+            />
+          </div>
+        </div>
+
         {/* Domain Overview */}
         <div className="mt-16 bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
@@ -119,5 +152,41 @@ function DomainItem({
         </div>
       </div>
     </div>
+  );
+}
+
+function ResourceCard({
+  title,
+  subtitle,
+  fileName,
+  icon,
+}: {
+  title: string;
+  subtitle: string;
+  fileName: string;
+  icon: string;
+}) {
+  return (
+    <a
+      href={`/files/${encodeURIComponent(fileName)}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block p-4 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors border-l-4 border-blue-500 hover:border-blue-600"
+    >
+      <div className="flex items-start gap-4">
+        <div className="text-3xl">{icon}</div>
+        <div className="flex-1 min-w-0">
+          <h4 className="font-semibold text-gray-900 dark:text-white text-sm md:text-base">
+            {title}
+          </h4>
+          <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400 mt-1">
+            {subtitle}
+          </p>
+          <div className="mt-2 inline-flex items-center gap-1 text-blue-600 dark:text-blue-400 text-xs font-medium">
+            📥 Download PDF
+          </div>
+        </div>
+      </div>
+    </a>
   );
 }
