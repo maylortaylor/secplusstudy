@@ -166,9 +166,10 @@ function ResourceCard({
   fileName: string;
   icon: string;
 }) {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
   return (
     <a
-      href={`/files/${encodeURIComponent(fileName)}`}
+      href={`${basePath}/files/${encodeURIComponent(fileName)}`}
       target="_blank"
       rel="noopener noreferrer"
       className="block p-4 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors border-l-4 border-blue-500 hover:border-blue-600"
